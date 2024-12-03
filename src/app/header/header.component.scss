@@ -28,6 +28,18 @@ body {
     padding: 0 20px;
 }
 
+.header.fixed {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .logo img {
     width: 187px;
     height: 210px;
