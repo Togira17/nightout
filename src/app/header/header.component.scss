@@ -82,7 +82,7 @@ body {
     background-color: transparent;
     border: none;
     font-size: 18px;
-    color: rgb(0, 0, 0);
+    color: rgb(61, 59, 59);
     cursor: pointer;
 }
 
@@ -92,6 +92,12 @@ body {
     width: $medidaIcono;
     height: $medidaIcono;
 }
+.textoFiltro {
+    font-size: 16px; /* Tamaño de fuente para el texto */
+    color: rgb(94, 94, 94); /* Color del texto */
+    font-weight: bold;
+}
+
 
 /* Estilos para los textos */
 .filter span, .cart span, .user span {
@@ -99,7 +105,13 @@ body {
     color: rgb(94, 94, 94); /* Color inicial del texto */
     font-weight: bold;
 }
-
+.textoFiltro{
+    margin-bottom: 
+    0px;
+    margin-left: -80px;
+   color: rgb(94, 94, 94);
+   font-weight: bold;
+}
 .lbl-menu{
     width: 40px;
     height: 30px;
@@ -110,7 +122,7 @@ body {
 .lbl-menu #spn1,#spn2,#spn3{
     position: absolute;
     content: '';
-    background:#000000;
+    background:#837f7f;
     width: 40px;
     height: 5px;
     border-radius: 5px;
