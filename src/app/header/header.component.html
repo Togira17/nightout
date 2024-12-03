@@ -1,12 +1,14 @@
 <header #header [class.fixed]="isFixed" class="header">
     <div class="navbar">
         <div class="logo">
-            <img src="../../assets/img/logotipo.png"  alt="Logo" href="/inicio">
+            <a  href="../main/main.component.html">
+                <img src="../../assets/img/logotipo.png"  alt="NightoutLogo">
+            </a>
         </div>
         <nav class="nav">
             <div class="filter">
                 <input type="checkbox" id="btn-menu">
-                <label for="btn-menu" class="lbl-menu">
+                <label for="btn-menu" class="lbl-menu" aria-label="Abrir menú"> <!--Con aria label proporcionamos una descripicion de texto para audio-->
                     <span id="spn1"></span>
                     <span id="spn2"></span>
                     <span id="spn3"></span>
@@ -18,11 +20,11 @@
                 <p>Filtros</p>
             </div>
             <div class="cart">
-                <img src="../../assets/img/carritoIcono.png" alt="Carrito" class="iconoFiltro">
+                <img src="../../assets/img/carritoIcono.png" alt="CarritoCompra" class="iconoFiltro">
                 <span>Carrito</span>
             </div>
             <div class="user">
-                <img src="../../assets/img/iconoUser.png" alt="Usuario" class="iconoFiltro">
+                <img src="../../assets/img/iconoUser.png" alt="UsuarioID" class="iconoFiltro">
                 <span>Usuario</span>
             </div>
         </nav>
