@@ -20,24 +20,22 @@ body {
 }
 
 .header {
-    height: 75px;
+    height: 90px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #ffffff;
     padding: 0 20px;
 }
-
+.navbar{
+    width: 100%;
+    max-width: 1200px;
+}
 .fixed {
-    height: 75px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 0 20px;
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1000;
 }
 
 .logo img {
