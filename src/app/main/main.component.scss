@@ -7,7 +7,11 @@ de esta manera:
 global.$nVariable
 
 */
-
+.main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .discoteca{
     width: 1230px;

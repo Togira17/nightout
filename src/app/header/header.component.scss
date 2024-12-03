@@ -7,3 +7,60 @@ de esta manera:
 global.$nVariable
 
 */
+$medidaIcono:40px;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+  
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff; /* Cambia el color según sea necesario */
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 167px;
+    height: 270px;
+    border-radius: 10px 0 0 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 140px; /* Espacio de 100px entre los iconos */
+
+    
+}
+.nav :nth-of-type(2){
+height: $medidaIcono;
+width: $medidaIcono;
+}
+.filters {
+    width:$medidaIcono;
+    height: $medidaIcono;
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+
+   
+}
+
+.cart img {
+    width: $medidaIcono;
+    height: $medidaIcono;
+}
+
+.user img {
+    width: $medidaIcono;
+    height: $medidaIcono;
+    
+}
