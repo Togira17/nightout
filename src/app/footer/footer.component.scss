@@ -14,18 +14,18 @@ global.$morado
 global.$fucsia
 global.$gris-oscuro
 global.$gris-claro
-
-
 */
 
-footer {
-
-    background-color: #343a40; 
-    color: white;             
-    text-align: center;      
-    padding: 20px 0;          
-    position: relative;
-    bottom: 0;                 
-    width: 100%;               
-    margin-top: auto;          
+footer{
+  align-items: center;
+  background-color: global.$color-negro; 
+  bottom: 0;              
+  color: global.$color-blanco;   
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 20px 0;          
+  position: relative;
+  text-align: center;    
+  width: 100%;               
   }
