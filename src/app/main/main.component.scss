@@ -1,0 +1,28 @@
+@use '../../styles.scss' as global;
+
+/*
+Puedes acceder a las variables globales del proyecto
+de esta manera:
+
+global.$nVariable
+
+*/
+
+
+.discoteca{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 20px
+}
+
+.discoteca__nombre{
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+}
+
+.discoteca__img{
+    grid-column: 1 / 3;
+    grid-row: 2 / 4;
+}
+

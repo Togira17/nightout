@@ -1,5 +1,9 @@
 @use '../../styles.scss' as global;
 
-div{
-    background-color: global.$morado;
-}
+/*
+Puedes acceder a las variables globales del proyecto
+de esta manera:
+
+global.$nVariable
+
+*/
