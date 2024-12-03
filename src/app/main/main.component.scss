@@ -9,7 +9,9 @@ global.$nVariable
 */
 
 .main{
+    padding-top: 5%;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: global.$gris-oscuro;
@@ -21,7 +23,8 @@ global.$nVariable
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(7, auto);
     gap: 10px;
-    background-color: lightcoral;
+    
+    margin-bottom: 6%;
 }
 
 .discoteca__nombre{
