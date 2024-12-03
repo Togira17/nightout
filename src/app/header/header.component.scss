@@ -35,13 +35,15 @@ body {
     display: flex;
     align-items: center;
     gap: 140px; /* Espacio de 100px entre los iconos */
-
+    
     
 }
-.nav :nth-of-type(2){
+.iconoFiltro{
 height: $medidaIcono;
 width: $medidaIcono;
 }
+
+
 .filters {
     width:$medidaIcono;
     height: $medidaIcono;
