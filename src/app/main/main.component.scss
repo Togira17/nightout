@@ -7,10 +7,12 @@ de esta manera:
 global.$nVariable
 
 */
+
 .main{
     display:flex;
     justify-content: center;
     align-items: center;
+    background-color: global.$gris-oscuro;
 }
 
 .discoteca{
@@ -18,7 +20,7 @@ global.$nVariable
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(7, auto);
-    gap: 20px;
+    gap: 10px;
     background-color: lightcoral;
 }
 
@@ -28,6 +30,9 @@ global.$nVariable
 }
 
 .discoteca__img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-column:1/2;
     grid-row:2/6;
 }

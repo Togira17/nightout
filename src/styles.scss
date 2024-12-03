@@ -6,6 +6,7 @@
     list-style: none;
 }
 
+@import url('');
 
 //Variables globales
 $color-morado: #5f3fc3;
@@ -14,6 +15,9 @@ $color-fucsia:#f90461;
 $gris-oscuro:#505050;
 $gris-claro:#f6f6f6;
 $color-blanco: #ffff;
+$fuente-titulos: "Belanosima", serif;
+$fuente-parrafos: "DM Sans", serif;
+$fuente-botones: "Noto Sans JP", serif;
 
 body{
     background-color: $gris-oscuro;
