@@ -18,33 +18,29 @@ global.$nVariable
     background-size: cover;
     position: relative; /* Necesario para el posicionamiento relativo del contenido */
   }
-  
-  .titulo {
-    font-family: Roboto, sans-serif;
-    color: #F6F6F6;
-    font-weight: 700;
-    font-size: 96px;
+
+/* Clase base del título */
+.titulo {
+  font-family: Roboto, sans-serif;
+  color: #F6F6F6;
+  font-weight: 700;
+  font-size: 96px;
+  background-color: rgba(80, 80, 80, 0.7);
+  border-radius: 0.5rem;
+  text-align: center;
+  transform: translateY(300px); 
+  animation: fadeInUp 2s forwards; 
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+
+@keyframes fadeInUp {
+  0% {
     opacity: 0;
-    animation: fadeInUp 2s forwards;
-    background-color: rgba(80, 80, 80, 0.7); /* Ajusta el color */
-    padding: 1rem 2rem; /* Ajusta espacio alrededor del texto */
-    border-radius: 0.5rem; /* Opcional: bordes redondeados */
-    text-align: center; /* Opcional: centra el texto dentro del título */
+    transform: translateY(300px);
   }
-  
-
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(-300px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .titulo.visible {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
+}
