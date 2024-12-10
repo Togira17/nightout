@@ -1,24 +1,19 @@
 <header #header [class.fixed]="isFixed" class="header">
     <div class="navbar">
+        <div class="filter">
+            <input type="checkbox" id="btn-menu">
+            <label for="btn-menu" class="lbl-menu" aria-label="Abrir menú"> <!--Con aria label proporcionamos una descripicion de texto para audio-->
+                <span id="spn1"></span>
+                <span id="spn2"></span>
+                <span id="spn3"></span>
+            </label>  
+        </div>
         <div class="logo">
-            <!--<a  href="../main/main.component.html">-->
+            <a  href="index.html">
                 <img src="../../assets/img/logotipo.png"  alt="NightoutLogo">
-            <!--</a>-->
+            </a>
         </div>
         <nav class="nav">
-            <div class="filter">
-                <input type="checkbox" id="btn-menu">
-                <label for="btn-menu" class="lbl-menu" aria-label="Abrir menú"> <!--Con aria label proporcionamos una descripicion de texto para audio-->
-                    <span id="spn1"></span>
-                    <span id="spn2"></span>
-                    <span id="spn3"></span>
-                </label>  
-               
-                
-            </div>
-            <div class="textoFiltro">
-                <p>Filtros</p>
-            </div>
             <div class="cart">
                 <img src="../../assets/img/carritoIcono.png" alt="CarritoCompra" class="iconoFiltro">
                 <span>Carrito</span>
