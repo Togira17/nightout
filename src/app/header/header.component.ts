@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,21 +6,32 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  //inicializamos variables
   isFixed = false;
-  headerInitialOffset = 0; 
+  isVisible = false;
+  headerInitialOffset = 0;
+  isVisibleSet = false;
+  
+  @Output() fixedChanged = new EventEmitter<boolean>();
+  @Output() visibleChanged = new EventEmitter<boolean>();
 
   ngOnInit(): void {
-    // inicializamos constantes
     const header = document.querySelector('.header') as HTMLElement;
-    this.headerInitialOffset = header.offsetTop; 
+    this.headerInitialOffset = header.offsetTop;
   }
 
   @HostListener('window:scroll', [])
-  //funcion se realiza al hacer scroll y calcula
   onWindowScroll() {
-    const scrollPosition = window.scrollY
-    this.isFixed = scrollPosition > this.headerInitialOffset;
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > this.headerInitialOffset && !this.isFixed) {
+      this.isFixed = true;
+      this.fixedChanged.emit(this.isFixed);  // Emitir evento al padre
+    }
+
+    if (!this.isVisibleSet && scrollPosition > this.headerInitialOffset) {
+      this.isVisible = true;
+      this.visibleChanged.emit(this.isVisible);  // Emitir evento al padre
+      this.isVisibleSet = true;
+    }
   }
 }
-

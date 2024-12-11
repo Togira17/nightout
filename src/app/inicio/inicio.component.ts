@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component , Input} from '@angular/core';
 
 @Component({
   selector: 'app-inicio',
@@ -6,4 +6,8 @@ import { Component} from '@angular/core';
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent {
+  @Input() isFixed: boolean = false;
+  @Input() isVisible: boolean = false;
 }
+
+
