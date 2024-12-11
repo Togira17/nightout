@@ -6,8 +6,6 @@ import { Component , Input} from '@angular/core';
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent {
-  @Input() isFixed: boolean = false;
-  @Input() isVisible: boolean = false;
 }
 
 
