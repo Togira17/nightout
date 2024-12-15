@@ -4,12 +4,10 @@ import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
-
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'header', component: HeaderComponent},
-  { path: 'footer', component: FooterComponent}
-
+  { path: 'footer', component: FooterComponent},
 ];
 
 @NgModule({
