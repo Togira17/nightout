@@ -1,42 +1,82 @@
 <!-- modal login -->
 <div class=" modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-sesion modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-      <div class="modal-content contenido-sesion w-100 h-100">
+      <div class="modal-content contenido-sesion w-100 ">
 
-        <div class="titulo-modal">
-          
+        <div class="centrar-contenedor  pt-5">
+          <h3 class="titulo-texto">INICIO DE SESION</h3>
         </div>
-        <div class="modal-body">
 
+        <div class="modal-body centrar-contenedor p-3">
+          <form >
+            <div class="form-group mt-5 ">
+              <input type="text" class="form-control formulario" id="formGroupExampleInput" placeholder="Example input">
+            </div>
+
+            <div class="form-group pt-5 mb-5">
+              <input type="text" class="form-control formulario" id="formGroupExampleInput2" placeholder="Another input">
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-5 w-100 boton-submit rounded-4">iniciar</button>
+          </form>
         </div>
-        <div class="modal-footer">
+        <p class="ps-5 m-2 pt-2 m-0 pb-2">No tienes cuenta?<a  class="p-2" data-bs-toggle="modal" data-bs-target="#registro">REGISTRATE</a></p>
+                <!-- <div class="modal-footer border-0">
           <button type="button" data-bs-toggle="modal" data-bs-target="#registro" class="btn btn-secondary">resgistrase</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
           
-        </div>
+        </div> -->
       </div>
     </div>
 </div>
 
 <!-- modal registro -->
 <div class=" modal fade" id="registro" tabindex="-1" role="dialog" aria-labelledby="registroLabel" aria-hidden="true">
-    <div class="modal-sesion modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-      <div class="modal-content contenido-sesion w-100 h-100">
-        <div class="modal-header">
-          <h5 class="modal-title" id="registroLabel">Registro</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+  <div class="modal-sesion modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content contenido-sesion ">
+      
+      <div class="centrar-contenedor  pt-5">
+        <h3 class="titulo-texto">CREAR CUENTA </h3>
       </div>
+
+      <div class="modal-body centrar-contenedor p-3">
+        <form >
+          <div class="form-group mt-4 ">
+            <input type="text" class="form-control formulario" id="formGroupExampleInput" placeholder="Example input">
+          </div>
+
+          <div class="form-group pt-3">
+            <input type="text" class="form-control formulario" id="formGroupExampleInput2" placeholder="Another input">
+          </div>
+          <div class="form-group mt-3 ">
+            <input type="text" class="form-control formulario" id="formGroupExampleInput" placeholder="Example input">
+          </div>
+
+          <div class="form-group pt-3">
+            <input type="text" class="form-control formulario" id="formGroupExampleInput2" placeholder="Another input">
+          </div>
+          <div class="form-group mt-3 ">
+            <input type="text" class="form-control formulario" id="formGroupExampleInput" placeholder="Example input">
+          </div>
+
+          <div class="form-group pt-3">
+            <input type="text" class="form-control formulario" id="formGroupExampleInput2" placeholder="Another input">
+          </div>
+          
+
+          <button type="submit" class="btn btn-primary mt-4 w-100 boton-submit rounded-4">Registrarse</button>
+        </form>
+      </div>
+      <p class="ps-5 m-2 pt-2 m-0 pb-2">Ya tienes cuenta?<a  class="p-2" data-bs-toggle="modal" data-bs-target="#login">INICIA SESION</a></p>
+              <!-- <div class="modal-footer border-0">
+        <button type="button" data-bs-toggle="modal" data-bs-target="#registro" class="btn btn-secondary">resgistrase</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        
+      </div> -->
+    </div>
+  </div>
     </div>
 
-</div>
+
