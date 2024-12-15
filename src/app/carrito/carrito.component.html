@@ -1,21 +1,44 @@
-<!-- modal login -->
-<div class=" modal fade" id="carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class=" modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-      <div class="modal-content contenido-sesion w-100 h-100">
-
-        <div class="titulo-modal">
+<!-- Modal Carrito -->
+<div class="modal fade" id="carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content contenido-sesion">
+      <div class="titulo-modal">
+        <h5>Carrito de la compra</h5>
+        <!-- Contador de unidades -->
+        
+        <div class="modal-body d-flex w-100">
           
-        </div>
-        <div class="modal-body">
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" data-bs-toggle="modal" data-bs-target="#registro" class="btn btn-secondary">resgistrase</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-          
+          <!-- Aquí puedes agregar el contenido del carrito -->
+          <p>Holiday</p>
+          <div class="contador w-100">
+         
+            <span class="unidades-texto">Unidades:</span>
+            <span class="unidades-numero" id="contador">0</span>
+            <button class="btn-quitar" onclick="quitarCantidad()">-</button>
+            <button class="btn-anadir" onclick="anadirCantidad()">+</button>
+          </div>
         </div>
       </div>
+      
     </div>
+  </div>
 </div>
 
+<!-- Script para añadir y quitar unidades -->
+<script>
+  let cantidad = 0;
+
+  // Función para añadir unidades
+  function anadirCantidad() {
+    cantidad++;
+    document.getElementById("contador").innerText = cantidad;
+  }
+
+  // Función para quitar unidades
+  function quitarCantidad() {
+    if (cantidad > 0) {
+      cantidad--;
+      document.getElementById("contador").innerText = cantidad;
+    }
+  }
+</script>
