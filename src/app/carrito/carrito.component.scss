@@ -20,17 +20,24 @@ $border_radius: 25px;
 .body {
     background-color: global.$gris-oscuro;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
+
 }
 
 .body__wrapper {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     padding: 0 2rem;
     gap: 5px;
     padding: 5%;
+}
+
+@media(max-width: 768px) {  
+    .body__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
 
 //Estilos de la columna central
