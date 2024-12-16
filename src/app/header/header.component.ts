@@ -9,8 +9,11 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   // Variable para saber si el header debe estar fijo
   isFixed = false;
-  headerInitialOffset: number = 0;
-
+  headerInitialOffset = 0;
+  cerrarSesion(): void {
+    alert('Sesión cerrada');
+  
+  }
   ngOnInit(): void {
     // Inicializamos la constante con el valor de la posición del header
     const header = document.querySelector('.header') as HTMLElement;
