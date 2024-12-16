@@ -21,13 +21,22 @@ $fuente-botones: "Noto Sans JP", serif;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     padding: 0 2rem;
+    gap: 1%;
+    
 }
 .body__principal {
     grid-column: 2 / 3;
     background-color: global.$gris-claro;
+    width: 100%;
+    margin-top: 1rem;
+    border-radius: 5%;
+    
+    
     
 }
 .body__h1 {
+    text-transform: uppercase;
+    letter-spacing: .5rem;
 }
 .body__producto {
 }
@@ -49,6 +58,7 @@ $fuente-botones: "Noto Sans JP", serif;
 }
 .body__totales {
     grid-column: 3 / -1;
+    background-color: global.$gris-claro;
 }
 .body__totales--resumen {
 }
