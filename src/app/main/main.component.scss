@@ -44,9 +44,6 @@ global.$nVariable
     width: 499px;
     position:relative;
     display: flex;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
 
     img{
         width: 100%;
@@ -54,27 +51,19 @@ global.$nVariable
         position: sticky;
         object-fit: cover;
         border-radius: 5px;
-        scroll-snap-align: center;
+
     }
 }
 
-.slider::-webkit-scrollbar {
-    height: 8px; /* Ajusta la altura de la barra horizontal */
-    width: 0;    /* Oculta la barra vertical */
-}
+.carousel {
 
-.slider::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color de la barra horizontal */
-    border-radius: 4px; /* Bordes redondeados */
-}
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    object-fit: cover;
+    height: 370px;
+    width: 499px;
 
-.slider::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Color de la barra horizontal al pasar el mouse */
-}
-
-.slider::-webkit-scrollbar-track {
-    background: #f0f0f0; /* Color de fondo de la barra */
-    border-radius: 4px;
 }
 .discoteca__listaServicios {
     grid-column: 2 / -1;
