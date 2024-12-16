@@ -158,3 +158,23 @@ body {
     transform: rotate(-140deg);
     top: 10px;
 }
+
+
+.dropdown-menu {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0;
+  }
+  
+  .dropdown-item {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #dbd6d6; /* Color de fondo al pasar el mouse */
+  }
+  
