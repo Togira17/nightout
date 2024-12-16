@@ -5,6 +5,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
   // Variable para saber si el header debe estar fijo
   isFixed = false;
