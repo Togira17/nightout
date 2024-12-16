@@ -1,5 +1,5 @@
 <!-- modal login -->
-<div class=" modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class=" modal fade" id="login" tabindex="-1" role="dialog" aria-label="exampleModalLabel" aria-hidden="true">
     <div class="modal-sesion modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
       <div class="modal-content contenido-sesion w-100 ">
 
@@ -10,11 +10,11 @@
         <div class="modal-body centrar-contenedor p-3">
           <form >
             <div class="form-group mt-5 ">
-              <input type="text" class="form-control formulario" id="formGroupUsuario" placeholder="Usuario">
+              <input type="text" class="form-control formulario" id="formGroupUsuario" aria-label="Recuadro usuario"placeholder="Usuario">
             </div>
 
             <div class="form-group pt-5 mb-5">
-              <input type="text" class="form-control formulario" id="formGroupContraseña" placeholder="Contraseña">
+              <input type="text" class="form-control formulario" id="formGroupContraseña" aria-label="Recuadro contraseña" placeholder="Contraseña">
             </div>
 
             <button type="submit" class="btn btn-primary mt-5 w-100 boton-submit rounded-4">Inicia sesión</button>
@@ -29,7 +29,7 @@
 </div>
 
 <!-- modal registro -->
-<div class=" modal fade" id="registro" tabindex="-1" role="dialog" aria-labelledby="registroLabel" aria-hidden="true">
+<div class=" modal fade" id="registro" tabindex="-1" role="dialog" aria-label="registroLabel" aria-hidden="true">
   <div class="modal-sesion modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
     <div class="modal-content contenido-sesion ">
       
@@ -40,35 +40,37 @@
       <div class="modal-body centrar-contenedor p-3">
         <form >
           <div class="form-group mt-4 ">
-            <input type="text" class="form-control formulario" id="formGroupNombre" placeholder="Nombre">
+            <input type="text" class="form-control formulario" id="formGroupNombre" aria-label="Cuadro nombre" placeholder="Nombre">
           </div>
 
           <div class="form-group pt-3">
-            <input type="text" class="form-control formulario" id="formGroupApellidos" placeholder="Apellidos">
+            <input type="text" class="form-control formulario" id="formGroupApellidos" aria-label="Cuadro apellidos" placeholder="Apellidos">
           </div>
           <div class="form-group mt-3 ">
-            <input type="text" class="form-control formulario" id="formGroupDNI" placeholder="DNI">
+            <input type="text" class="form-control formulario" id="formGroupDNI" aria-label="Cuadro DNI" placeholder="DNI">
           </div>
 
           <div class="form-group pt-3">
-            <input type="text" class="form-control formulario" id="formGroupCorreo" placeholder="Correo Electronico">
+            <input type="text" class="form-control formulario" id="formGroupCorreo" aria-label="Cuadro Correo Electronico" placeholder="Correo Electronico">
           </div>
           <div class="form-group mt-3 ">
-            <input type="text" class="form-control formulario" id="formGroupUsuario" placeholder="Nombre de usuario">
+            <input type="text" class="form-control formulario" id="formGroupUsuario" aria-label="Cuadro nombre de usuario" placeholder="Nombre de usuario">
           </div>
 
           <div class="form-group pt-3">
-            <input type="text" class="form-control formulario" id="formGroupContraseña" placeholder="Contraseña">
+            <input type="text" class="form-control formulario" id="formGroupContraseña" aria-label="Cuadro Contraseña" placeholder="Contraseña">
           </div>
           
 
+
           <button type="submit" class="btn btn-primary mt-4 w-100 boton-submit rounded-4">Registrarse</button>
+          <p class="ps-5 m-2 pt-2 m-0 pb-2">Ya tienes cuenta?<a  class="p-2" data-bs-toggle="modal" data-bs-target="#login">INICIA SESION</a></p>
           <div class="modal-footer border-0">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
           </div>
         </form>
       </div>
-      <p class="ps-5 m-2 pt-2 m-0 pb-2">Ya tienes cuenta?<a  class="p-2" data-bs-toggle="modal" data-bs-target="#login">INICIA SESION</a></p>
+
               <!-- <div class="modal-footer border-0">
         <button type="button" data-bs-toggle="modal" data-bs-target="#registro" class="btn btn-secondary">resgistrase</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
