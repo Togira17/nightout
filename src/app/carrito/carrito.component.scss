@@ -20,10 +20,11 @@ $border_radius: 25px;
 .body {
     background-color: global.$gris-oscuro;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .body__wrapper {
-    width: 100vw;
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: auto;
