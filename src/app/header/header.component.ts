@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
     // inicializamos constantes
     const header = document.querySelector('.header') as HTMLElement;
     this.headerInitialOffset = header.offsetTop; 
+
+    
   }
 
   @HostListener('window:scroll', [])

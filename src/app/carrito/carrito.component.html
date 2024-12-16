@@ -1,0 +1,123 @@
+
+<body class="body">
+  <div class="body__principal">
+    <h1 class="body__h1">Carrito de la compra</h1>
+    
+    <!-- Estructura para 1 producto-->
+    <div class="body__producto">
+      <p class="body__nombreProducto">Holiday</p>
+      <p class="body__tipoEntrada">Entrada inidividual</p>
+      <p class="body__precio">10€</p>
+      <div class="unidades">unidades
+        Unidades: 
+        <div class="body__cantidad">
+          <div class="body__selectorCantidad" aria-valuenow="1"
+          aria-valuemin="1">
+            <!-- aria-label es una etiqueta de accesibilidad que proporciona una descripción accesible que no es visible en el código-->
+            <button class="body__botonCantidad" aria-label="Disminuir cantidad">-</button>
+
+            <!-- alia-live:polite es una etiqueta de accesibilidad que sirve para que los lectores de pantalla anuncien el cambio dinámico en el contenido del elemento -->
+            <span class="body__valorCantidad" aria-live="polite">1</span>
+
+            <button class="body__botonCantidad" aria-label="Incrementar cantidad">+</button>
+          </div>          
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Estructura para los totales-->
+  <div class="body__totales">
+    <h1 class="body__totales--resumen">Resumen</h1>
+    <div class="body__totales--informacion"></div>
+    <div class="body__totales--informacion"></div>
+    <div class="body__totales--informacion"></div>
+    <div class="body__totales--informacion"></div>
+    <div class="body__comprar">
+      <input type="button" value="COMPRAR">
+    </div>
+  </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+Modal Carrito
+<div class="modal fade" id="carrito" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content contenido-sesion">
+      <div class="titulo-modal">
+        <h5>Carrito de la compra</h5>
+        Contador de unidades 
+        
+        <div class="modal-body d-flex w-100">
+          
+          Aquí puedes agregar el contenido del carrito
+          <p>Holiday</p>
+          <div class="contador w-100">
+         
+            <span class="unidades-texto">Unidades:</span>
+            <span class="unidades-numero" id="contador">0</span>
+            <button class="btn-quitar" onclick="quitarCantidad()">-</button>
+            <button class="btn-anadir" onclick="anadirCantidad()">+</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+Script para añadir y quitar unidades
+ <script>
+  let cantidad = 0;
+
+  // Función para añadir unidades
+  function anadirCantidad() {
+    cantidad++;
+    document.getElementById("contador").innerText = cantidad;
+  }
+
+  // Función para quitar unidades
+  function quitarCantidad() {
+    if (cantidad > 0) {
+      cantidad--;
+      document.getElementById("contador").innerText = cantidad;
+    }
+  }
+</script>
+-->
