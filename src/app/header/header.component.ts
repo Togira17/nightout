@@ -6,22 +6,20 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  //inicializamos variables
+  // Variable para saber si el header debe estar fijo
   isFixed = false;
-  headerInitialOffset = 0; 
+  headerInitialOffset: number = 0;
 
   ngOnInit(): void {
-    // inicializamos constantes
+    // Inicializamos la constante con el valor de la posición del header
     const header = document.querySelector('.header') as HTMLElement;
-    this.headerInitialOffset = header.offsetTop; 
-
-    
+    this.headerInitialOffset = header.offsetTop; // Almacenamos la posición inicial
   }
 
   @HostListener('window:scroll', [])
-  //funcion se realiza al hacer scroll y calcula
+  // Función que se ejecuta cada vez que se hace scroll
   onWindowScroll() {
-    const scrollPosition = window.scrollY
-    this.isFixed = scrollPosition > this.headerInitialOffset;
+    const scrollPosition = window.scrollY; // Obtenemos la posición del scroll
+    this.isFixed = scrollPosition > this.headerInitialOffset; // Cambiamos el estado de 'isFixed'
   }
 }
