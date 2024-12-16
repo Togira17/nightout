@@ -1,27 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
+@use './../../styles.scss' as global;
+
+/**
+
+$color-morado: #5f3fc3;
+$color-amarillo:#fde815;
+$color-fucsia:#f90461;
+$color-negro: #000000;
+$gris-oscuro:#505050;
+$gris-claro:#f6f6f6;
+$color-blanco: #ffff;
+$fuente-titulos: "Belanosima", serif;
+$fuente-parrafos: "DM Sans", serif;
+$fuente-botones: "Noto Sans JP", serif;
+
+*/
+
+.body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+.body__principal {
+}
+.body__h1 {
+}
+.body__producto {
+}
+.body__nombreProducto {
+}
+.body__tipoEntrada {
+}
+.body__precio {
+}
+.unidades {
+}
+.body__cantidad {
+}
+.body__selectorCantidad {
+}
+.body__botonCantidad {
+}
+.body__valorCantidad {
+}
+.body__totales {
+}
+.body__totales--resumen {
+}
+.body__totales--informacion {
+}
+.body__comprar {
+}
+
+
+
+
+
+
+/**
+@import url('https:fonts.googleapis.com/css2?family=Belanosima&display=swap');
 
 .titulo-modal {
-    font-family: 'Belanosima', sans-serif; // Cambia el estilo de la fuente
+    font-family: 'Belanosima', sans-serif; Cambia el estilo de la fuente
     padding: 50px;
     font-size: 3rem;
     font-weight: bold;
-    text-align: left; // Alinea el título a la izquierda
+    text-align: left; Alinea el título a la izquierda
     display: flex;
-    flex-direction: column; // Coloca los elementos en una columna
-    align-items: flex-start; // Alinea el título a la izquierda
+    flex-direction: column;  Coloca los elementos en una columna
+    align-items: flex-start;  Alinea el título a la izquierda
 }
 
 .modal-dialog {
-    max-width: 800px; // Cambia el ancho
-    height: 640px; // Cambia la altura
+    max-width: 800px;  Cambia el ancho
+    height: 640px;  Cambia la altura
     
     display: flex;
     align-items: center;
     justify-content: center;
 
     .modal-content {
-        width: 100%; // Asegura que el contenido ocupe el ancho completo
-        height: 100%; // Ajusta la altura al diálogo
+        width: 100%;  Asegura que el contenido ocupe el ancho completo
+        height: 100%;  Ajusta la altura al diálogo
     }
 
     .h5, h5 {
@@ -29,15 +89,15 @@
     }
 
     .modal-body {
-        text-align: left; // Alineación del texto a la izquierda
+        text-align: left;  Alineación del texto a la izquierda
         font-size: 1rem;
     }
 }
 
 .contador {
     font-family: 'Belanosima', sans-serif;
-    color: #555; // Color del texto
-    text-align: right; // Alinea el contador a la derecha
+    color: #555;  Color del texto
+    text-align: right;  Alinea el contador a la derecha
     justify-content: end;
     font-size: 1rem;
     
@@ -47,3 +107,7 @@
     text-align: left;
     font-size: 1rem;
 }
+
+
+
+*/
