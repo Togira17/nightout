@@ -1,8 +1,8 @@
 <header id="header" #header [class.fixed]="isFixed" class="header">
     <div class="navbar">
-        <div class="filter">
+        <div class="filter" type="button" role="button" >
             <input type="checkbox" id="btn-menu">
-            <label for="btn-menu" class="lbl-menu" aria-label="Abrir menú"> <!--Con aria label proporcionamos una descripicion de texto para audio-->
+            <label for="btn-menu" class="lbl-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasExample"> <!--Con aria label proporcionamos una descripicion de texto para audio-->
                 <span id="spn1"></span>
                 <span id="spn2"></span>
                 <span id="spn3"></span>
