@@ -1,9 +1,86 @@
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" style="top: 90px;">
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
-    </div>
-    <div class="offcanvas-body">
-      <p>Try scrolling the rest of the page to see this option in action.</p>
+  <!-- Header del Offcanvas -->
+  <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Filtros de Entradas</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <!-- Contenido del Offcanvas -->
+  <div class="offcanvas-body">
+      <!-- Slider de Rango Dual -->
+      <div class="mb-4">
+          <h6>Rango de Precio</h6>
+          <div class="range-slider position-relative">
+              <!-- Dos controles de rango -->
+              <input type="range" id="rangeMin" class="form-range slider-min" min="0" max="500" value="50" step="1" oninput="updateRange()">
+              <input type="range" id="rangeMax" class="form-range slider-max" min="0" max="500" value="450" step="1" oninput="updateRange()">
+              
+              <!-- Barra visual de rango -->
+              <div class="slider-track"></div>
+          </div>
+          <!-- Valores mostrados -->
+          <div class="d-flex justify-content-between mt-2">
+              <span>Mín: €<span id="minValue">50</span></span>
+              <span>Máx: €<span id="maxValue">450</span></span>
+          </div>
+      </div>
+
+      <!-- Filtros Adicionales con Checkbox -->
+      <div class="mt-4">
+          <h6>Filtros Adicionales</h6>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="guardarropa">
+              <label class="form-check-label" for="guardarropa">
+                  Con Guardarropa
+              </label>
+          </div>
+          <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="parking">
+              <label class="form-check-label" for="parking">
+                  Con Parking
+              </label>
+          </div>
+      </div>
+      <div class="mt-4 text-center">
+        <button class="btn btn-primary" id="applyFilters" onclick="applyFilters()">
+            Aplicar Filtros
+        </button>
     </div>
   </div>
+</div>
+
+
+<!-- Script -->
+<script>
+const rangeMin = document.getElementById("rangeMin");
+const rangeMax = document.getElementById("rangeMax");
+const minValue = document.getElementById("minValue");
+const maxValue = document.getElementById("maxValue");
+const sliderTrack = document.querySelector(".slider-track");
+
+function updateRange() {
+  let min = parseInt(rangeMin.value);
+  let max = parseInt(rangeMax.value);
+
+  if (min > max) {
+    let temp = min;
+    min = max;
+    max = temp;
+  }
+
+  rangeMin.value = min;
+  rangeMax.value = max;
+
+  minValue.textContent = min;
+  maxValue.textContent = max;
+
+  const minPercent = (min / rangeMin.max) * 100;
+  const maxPercent = (max / rangeMax.max) * 100;
+
+  sliderTrack.style.left = minPercent + "%";
+  sliderTrack.style.width = (maxPercent - minPercent) + "%";
+}
+
+updateRange();
+</script>
 
