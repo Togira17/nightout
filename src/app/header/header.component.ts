@@ -27,4 +27,6 @@ export class HeaderComponent implements OnInit {
     const scrollPosition = window.scrollY; // Obtenemos la posición del scroll
     this.isFixed = scrollPosition > this.headerInitialOffset; // Cambiamos el estado de 'isFixed'
   }
+
+  
 }
