@@ -10,6 +10,8 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { CarritoComponent } from './carrito/carrito.component';
 import { FiltrosComponent } from './filtros/filtros.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FiltrosComponent } from './filtros/filtros.component';
     MainComponent,
     LoginComponent,
     CarritoComponent,
-    FiltrosComponent
+    FiltrosComponent,
+    AboutUsComponent,
+    PoliticaPrivacidadComponent
   ],
   imports: [
     BrowserModule,
