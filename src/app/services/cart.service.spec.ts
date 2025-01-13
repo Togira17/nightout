@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { EscuchaHeaderService } from './escucha-header.service';
+import { CartService } from './cart.service';
 
-describe('EscuchaHeaderService', () => {
-  let service: EscuchaHeaderService;
+describe('CartService', () => {
+  let service: CartService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(EscuchaHeaderService);
+    service = TestBed.inject(CartService);
   });
 
   it('should be created', () => {

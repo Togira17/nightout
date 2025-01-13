@@ -1,5 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
+// Importación del servicio del carrito
+import { CartService } from '../services/cart.service';
+
 
 @Component({
   selector: 'app-header',
@@ -13,13 +16,16 @@ export class HeaderComponent implements OnInit {
   // Variable para controlar si el bloque superior debe desaparecer
   isTopBlockHidden = false;
   headerInitialOffset = 0;
+
+  //Variable para realizar la cuenta de productos
+  cartCount = 0; // Inicializamos en 0
   
   title = 'nightout';
 
   // Variable para controlar la visibilidad del inicio
   showInicio: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private cartService: CartService) {}
 
   cerrarSesion(): void {
     alert('Sesión cerrada');
@@ -42,6 +48,17 @@ export class HeaderComponent implements OnInit {
         this.updateShowInicio(event.url);
       }
     });
+
+
+
+    /**------------------------------------------------------------------------- */
+    //Lógica para el contador del carrito
+
+    // Suscríbete a los cambios del contador
+    this.cartService.cartItemsCount$.subscribe((count) => {
+      this.cartCount = count;
+    });
+
   }
 
   @HostListener('window:scroll', [])
