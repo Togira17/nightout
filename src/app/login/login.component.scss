@@ -34,6 +34,11 @@
     color: black;
 }
 
+.input-reducido {
+    width: 48%; /* Reduce el ancho para que entren ambos */
+    font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+    padding: 0.4rem; /* Reduce el espacio interno */
+  }
 /*************************************************************************************************/
 /** Media query para móviles*/
 
