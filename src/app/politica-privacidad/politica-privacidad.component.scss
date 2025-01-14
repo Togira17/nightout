@@ -6,20 +6,10 @@ $color-texto: hwb(0 100% 0%);        /* Texto blanco */
 $color-blanco: #505050;       /* Blanco */
 $color-negro: #111;        /* Negro */
 
-/* Reset de estilos básicos */
-* {
-    margin-top: 8;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 /* Estilos generales */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: $color-gris; /* Fondo gris oscuro */
-    color: $color-texto;
-    line-height: 1.6;
-}
+
 
 /* Sección "Política de Privacidad" */
 .privacy-policy-section {
@@ -81,15 +71,3 @@ body {
     }
 }
 
-/* Footer */
-footer {
-    background-color: $color-negro;
-    color: $color-blanco;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra al pie de página */
-}
-
-footer p {
-    margin-bottom: 10px;
-}
