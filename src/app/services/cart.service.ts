@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class CartService {
 
   private cartItemsCount = new BehaviorSubject<number>(0); //Inicializa el contador a 0
+  
   cartItemsCount$ = this.cartItemsCount.asObservable(); // Exponemos el observable
 
   constructor() { }
