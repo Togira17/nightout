@@ -1,17 +1,23 @@
 <div *ngIf="showInicio" >
-    <div [class.ocultar]="isTopBlockHidden" class="portada" alt="Sevilla-noche" title="Imagen de Sevilla.  Fuente: Stock LTD. Obtenida de ImageStock.com" style="background-image: url(./../../assets/img/portada_final_nightoutSevilla.webp);">
+    <div  class="portada" alt="Sevilla-noche" title="Imagen de Sevilla.  Fuente: Stock LTD. Obtenida de ImageStock.com" style="background-image: url(./../../assets/img/portada_final_nightoutSevilla.webp);">
         <h1 class="titulo p-4 rounded-3">NIGHTOUT SEVILLA</h1>
     </div>    
 </div>
 <header id="header" #header [class.fixed]="isTopBlockHidden" class="header">
     <div class="navbar">
-        <div class="filter" type="button" role="button" >
-            <input type="checkbox" id="btn-menu">
-            <label for="btn-menu" class="lbl-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasExample" title="Filtrar búsqueda"> <!--Con aria label proporcionamos una descripicion de texto para audio-->
-                <span id="spn1"></span>
-                <span id="spn2"></span>
-                <span id="spn3"></span>
-            </label>  
+        
+            
+        <div *ngIf="!showInicio" ></div>
+        <div *ngIf="showInicio">
+            <div [class.ocultar]="isTopBlockHidden"></div>
+            <div [class.mostrar]="isTopBlockHidden" class="filter" type="button" role="button" >
+                <input type="checkbox" id="btn-menu">
+                <label for="btn-menu" class="lbl-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasExample" title="Filtrar búsqueda"> <!--Con aria label proporcionamos una descripicion de texto para audio-->
+                    <span id="spn1"></span>
+                    <span id="spn2"></span>
+                    <span id="spn3"></span>
+                </label>  
+            </div>
         </div>
         <div class="logo">
             <a  href="index.html">

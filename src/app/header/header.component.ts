@@ -64,14 +64,12 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:scroll', [])
   // Función que se ejecuta cada vez que se hace scroll
   onWindowScroll() {
-    const scrollPosition = window.scrollY; // Obtenemos la posición del scroll
-    this.isFixed = scrollPosition > this.headerInitialOffset; // Cambiamos el estado de 'isFixed'
+    const scrollPosition = window.scrollY; 
+    this.isFixed = scrollPosition > this.headerInitialOffset; 
 
-    // Solo ocultamos el bloque superior una vez que el header se ha fijado y no lo cambiamos después
+
     if (this.isFixed && !this.isTopBlockHidden) {
-      window.scrollTo(0, 0);  // Reiniciamos el scroll a la posición 0
-      this.isTopBlockHidden = true;  // Ocultamos el bloque superior de forma permanente
-     
+      this.isTopBlockHidden = true;
     }
   }
 
