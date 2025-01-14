@@ -150,7 +150,12 @@ body {
     /* Color inicial del texto */
     font-weight: bold;
 }
-
+.filter{
+    display: none;
+}
+.mostrar{
+    display: block;
+}
 .lbl-menu {
     width: 40px;
     height: 30px;
