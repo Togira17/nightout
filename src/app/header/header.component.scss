@@ -202,12 +202,21 @@ body {
     top: 10px;
 }
 
+//A ver si pouedes hacer que el desplegable no se salga de la pantalla del móvil
+
+/* .dropdown{
+    width: auto;
+    position: relative;
+} */
 
 .dropdown-menu {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0;
+   /*  position: absolute;
+    top: 880;
+    right: 10; */
 }
 
 .dropdown-item {
@@ -301,4 +310,6 @@ body {
     .titulo {
         font-size: 60px;
     }
+
+    
 }

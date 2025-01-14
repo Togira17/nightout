@@ -38,5 +38,31 @@
 /** Media query para móviles*/
 
 @media (max-width: 430px) {
+    /* Ajusta el ancho del modal */
+    .modal-dialog {
+        max-width: 90%; /* Mantén un margen respecto al borde */
+        margin: 0 auto;
+    }
+
+    /* Ajusta el contenido del formulario */
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .form-control {
+        width: 100%; /* Asegura que los inputs se ajusten al contenedor */
+    }
+
+    /* Botón de envío responsivo */
+    .boton-submit {
+        width: 100%; /* Ajusta el ancho del botón al contenedor */
+    }
+
+    /* Asegúrate de que los textos tengan un tamaño adecuado */
+    .titulo-texto {
+        font-size: 1.2rem; /* Reduce el tamaño del título si es necesario */
+        text-align: center; /* Centrar el texto */
+    }
+
     
 }
