@@ -270,3 +270,35 @@ body {
 .ocultar {
     display: none;
 }
+
+/*************************************************************************************************/
+/**Media query para móviles*/
+
+@media (max-width: 431px){
+
+    .logo{
+        display: none;
+        grid-area: logo;
+    }
+
+    .filter{
+        grid-area: filtro;
+    }
+
+    .cart-wrapper{
+        grid-area: carrito;
+    }
+
+    .dropdown{
+        grid-area: sesion;
+    }
+    
+    .nav{
+        gap: 40px;
+        margin-left: 35px;
+    }
+
+    .titulo {
+        font-size: 60px;
+    }
+}
