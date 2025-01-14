@@ -28,12 +28,14 @@ global.$nVariable
 }
 
 .discoteca__nombre {
+    grid-area: nombre;
     grid-column: 1/-1;
     grid-row: 1/2;
     text-transform: uppercase;
 }
 
 .discoteca__img {
+    grid-area: img;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,6 +69,7 @@ global.$nVariable
 
 }
 .discoteca__listaServicios {
+    grid-area: listaServicios;
     grid-column: 2 / -1;
     grid-row: 2 / 3;
     padding-left: 5%;
@@ -81,6 +84,7 @@ global.$nVariable
 }
 
 .discoteca__precios {
+    grid-area: precios;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -110,6 +114,7 @@ global.$nVariable
 }
 
 .discoteca__btn-entrada {
+    grid-area: entrada;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,6 +123,7 @@ global.$nVariable
 }
 
 .discoteca__btn-reservado {
+    grid-area: reservado;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,16 +132,20 @@ global.$nVariable
 }
 
 .discoteca__ambiente {
+    grid-area: ambiente;
     grid-column: 1 / -1;
     grid-row: 6 / 7;
 }
 
 .discoteca__descripcion {
+    grid-area: descripcion;
     grid-column: 1 / -1;
     grid-row: -2 / -1;
 }
 
 @media  (max-width: 932px){
-    
+    .discoteca{
+        grid-template: 
+    }
     
 }
