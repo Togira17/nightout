@@ -207,3 +207,27 @@ $border_radius: 25px;
     color: global.$color-blanco;
     background-color: global.$color-morado;
 }
+
+.modal.fade .modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+  
+  .modal-custom {
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px; /* Tamaño máximo del modal */
+  }
+  
+  .modal-body {
+    margin-top: 15px;
+    font-size: 1.2rem;
+  }
+  
+  .modal-footer {
+    justify-content: center;
+  }
+  

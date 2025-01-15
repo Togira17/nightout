@@ -1,53 +1,63 @@
 <body class="body">
-
   <div class="body__wrapper">
     <div class="body__principal">
-
-      <!-- titulo de la seccion-->
+      <!-- Titulo de la seccion -->
       <h1 class="body__h1">Carrito de la compra</h1>
-      <!-- Estructura para 1 producto-->
+      <!-- Estructura para 1 producto -->
       <div class="body__producto-wraper">
         <div class="body__producto">
           <div class="body__info">
             <p class="body__nombreProducto">Rosso</p>
-            <p class="body__tipoEntrada">Entrada inidividual</p>
+            <p class="body__tipoEntrada">Entrada individual</p>
             <p class="body__precio">10€</p>
           </div>
-
           <div class="body__unidades">
             Unidades:
             <div class="body__cantidad">
               <div class="body__selectorCantidad" aria-valuenow="1" aria-valuemin="1">
-                <!-- aria-label es una etiqueta de accesibilidad que proporciona una descripción accesible que no es visible en el código-->
                 <button class="body__botonCantidad" aria-label="Disminuir cantidad" title="Disminuir cantidad">-</button>
-
-                <!-- alia-live:polite es una etiqueta de accesibilidad que sirve para que los lectores de pantalla anuncien el cambio dinámico en el contenido del elemento -->
                 <span class="body__valorCantidad" aria-live="polite">1</span>
-
                 <button class="body__botonCantidad" aria-label="Incrementar cantidad" title="Aumentar cantidad">+</button>
               </div>
             </div>
           </div>
         </div>
-
         <hr class="body__separador">
-
       </div>
-
-
     </div>
 
-    <!-- Estructura para los totales-->
+    <!-- Estructura para los totales -->
     <div class="body__totales">
       <h1 class="body__totales--h1">Resumen</h1>
       <div class="body__totales--info"><span>Subtotal: </span><span>10€</span></div>
       <div class="body__totales--info"><span>Gastos de servicio</span><span>3€</span></div>
       <div class="body__totales--info total"><span>Total a pagar:</span><span>13€</span></div>
       <div class="body__btnComprar">
-        <input type="button" value="COMPRAR" onclick="window.location.href='https://www.paypal.com';">
+        <!-- Botón que abre el modal -->
+        <input type="button" value="COMPRAR" data-bs-toggle="modal" data-bs-target="#compraConfirmada">
       </div>
     </div>
   </div>
 
-
+  <!-- Modal de confirmación -->
+  <div class="modal fade" id="compraConfirmada" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" style="padding: 30px; border-radius: 12px; text-align: center;">
+        <div class="modal-header">
+          <h5 class="modal-title" style="margin: auto; font-size: 1.5rem;">Compra Confirmada</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body" style="margin-top: 15px;">
+          <p style="font-size: 1.2rem;">
+            Gracias por tu compra. Tus entradas estarán disponibles en tu correo electrónico.
+          </p>
+        </div>
+        <div class="modal-footer" style="justify-content: center;">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
