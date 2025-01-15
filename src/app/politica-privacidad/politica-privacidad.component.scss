@@ -1,73 +1,52 @@
 /* Variables de colores */
-$color-morado: #8d22da;   /* Morado oscuro */
-$color-amarillo: #ffdd00;  /* Amarillo brillante */
-$color-gris: #505050;      /* Gris oscuro */
-$color-texto: hwb(0 100% 0%);        /* Texto blanco */
-$color-blanco: #505050;       /* Blanco */
-$color-negro: #111;        /* Negro */
-
-
-
-/* Estilos generales */
-
+$color-morado: #8d22da;
+$color-gris: #505050;
+$color-texto: hwb(0 0% 100%);
+$color-negro: #111;
+$gris-claro: #f6f6f6;
 
 /* Sección "Política de Privacidad" */
-.privacy-policy-section {
-    padding: 60px 20px;
-    background-color: $color-blanco; /* Fondo blanco para la sección */
-    color: $color-texto;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra al contenedor para destacarlo */
-
-    h2 {
-        font-size: 2.5rem;
-        color: $color-morado;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 5px $color-negro; /* Sombra al texto del título */
-    }
-
-    p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        line-height: 1.5;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Sombra suave al texto */
-    }
-
-    h3 {
-        font-size: 1.8rem;
-        color: $color-morado;
-        margin-top: 30px;
-        text-shadow: 2px 2px 5px $color-negro; /* Sombra al subtítulo */
-    }
-
-    ul {
-        list-style-type: none;
-        margin-top: 20px;
-        font-size: 1.1rem;
-        color: $color-texto;
-        padding-left: 0;
-
-        li {
-            margin: 10px 0;
-            position: relative;
-            padding-left: 20px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra suave en los ítems de la lista */
-
-        }
-    }
-
-    strong {
-        color: $color-amarillo;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra para el texto fuerte */
-    }
-
-    .container {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.main-section {
+  background-color: $color-gris;
+  padding: 3% 0;
+  text-align: center;
 }
 
+.privacy-policy-section {
+  max-width: 1200px;
+  margin-top: 7;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: $gris-claro;
+  color: $color-texto;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
+
+  h2, h3 {
+    color: $color-morado;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+  }
+
+  p {
+    font-size: 1.2rem;
+   
+    max-width: 800px;
+    margin: 0 auto 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  
+
+  strong {
+    color: $color-texto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
