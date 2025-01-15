@@ -1,0 +1,54 @@
+/* Variables de colores */
+$color-morado: #8d22da;
+$color-gris: #505050;
+$color-texto: hwb(0 0% 100%);
+$color-negro: #111;
+$gris-claro: #f6f6f6;
+
+/* Sección "Política de Privacidad" */
+.main-section {
+  background-color: $color-gris;
+  margin-top: 5%;
+  padding-top: 7%;
+  padding: 3% 0;
+  text-align: center;
+}
+
+.privacy-policy-section {
+  max-width: 1200px;
+  margin-top: 7;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: $gris-claro;
+  color: $color-texto;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
+
+  h2, h3 {
+    color: $color-morado;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+  }
+
+  p {
+    font-size: 1.2rem;
+   
+    max-width: 800px;
+    margin: 0 auto 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  
+
+  strong {
+    color: $color-texto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}

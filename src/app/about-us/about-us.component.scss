@@ -1,213 +1,62 @@
-/* Reset de estilos básicos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Variables de colores */
-  $color-morado: #6a0dad; // Morado oscuro
-  $color-amarillo: #ffdd00; // Amarillo brillante
-  $color-gris: #e6e2e2; // Gris claro
-  $color-texto: #333; // Texto general
-  $color-blanco: #e2cece;
-  $color-negro: #111;
-  
-  /* Estilos generales */
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: $color-gris;
-    color: $color-texto;
-    line-height: 1.6;
-  }
-  
-  a {
-    text-decoration: none;
+/* Variables de colores */
+$color-morado: #8d22da;
+$color-gris: #505050;
+$color-texto: hwb(0 0% 100%);
+$color-negro: #111;
+$gris-claro:#f6f6f6;
+
+/* Sección "About Us" */
+.main-section {
+  background-color: $color-gris;
+  margin-top: 5%;
+  padding-top: 7%;
+  padding: 3% 0;
+  text-align: center;
+}
+
+.about-us-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: $gris-claro;
+  color: $color-texto;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.7);
+
+  h2, h3 {
     color: $color-morado;
-  
-    &:hover {
-      color: $color-amarillo;
-    }
+
   }
-  
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
   ul {
     list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: $color-texto;
   }
-  
-  h1, h2 {
-    font-weight: 600;
-    color: $color-morado;
+
+  strong {
+    color: $color-texto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
-  
-  /* Header */
-  .navbar {
-    background-color: $color-morado;
-    color: $color-blanco;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-    h1 {
-      font-size: 2rem;
-      color: $color-amarillo; /* Título principal en amarillo */
-    }
-  
-    nav ul {
-      display: flex;
-  
-      li {
-        margin-left: 20px;
-  
-        a {
-          color: $color-blanco;
-  
-          &:hover {
-            color: $color-amarillo;
-          }
-        }
-      }
-    }
-  }
-  
-  /* Hero Section */
-  .hero {
-    background: linear-gradient(135deg, $color-morado, $color-amarillo);
-    color: $color-blanco;
-    padding: 50px 0;
-    text-align: center;
-  
-    h2 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 5px $color-negro;
-      color: $color-amarillo; /* Título destacado en amarillo */
-    }
-  
-    p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-      color: $color-blanco;
-    }
-  
-    .cta-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: $color-amarillo;
-      color: $color-morado;
-      border: none;
-      border-radius: 5px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-  
-      &:hover {
-        background-color: darken($color-amarillo, 10%);
-      }
-    }
-  }
-  
-  /* Política de la Empresa */
-  .policy-section {
-    background-color: $color-blanco;
-    padding: 40px;
-    text-align: center;
-  
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: $color-morado;
-      border-bottom: 2px solid $color-amarillo; /* Línea decorativa en amarillo */
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-  
-    p, ul {
-      font-size: 1.1rem;
-      margin: 20px auto;
-      max-width: 800px;
-    }
-  
-    ul {
-      padding-left: 20px;
-  
-      li {
-        margin: 10px 0;
-        color: $color-texto;
-  
-        &:before {
-          content: '✔';
-          color: $color-amarillo; /* Icono en amarillo */
-          margin-right: 10px;
-        }
-      }
-    }
-  }
-  
-  /* Sección de contacto */
-  .contact-section {
-    background-color: $color-gris;
-    padding: 40px;
-    text-align: center;
-  
-    p {
-      font-size: 1.2rem;
-      color: $color-texto;
-    }
-  
-    .contact-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: $color-amarillo;
-      color: $color-morado;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-  
-      &:hover {
-        background-color: darken($color-amarillo, 10%);
-      }
-    }
-  }
-  
-  /* Footer */
-  footer {
-    background-color: $color-negro;
-    color: $color-blanco;
-    text-align: center;
-    padding: 20px;
-  
-    p {
-      margin-bottom: 10px;
-  
-      span {
-        color: $color-amarillo; /* Año en amarillo */
-      }
-    }
-  
-    ul {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-  
-      li {
-        margin: 0 10px;
-  
-        a {
-          color: $color-blanco;
-  
-          &:hover {
-            color: $color-amarillo;
-          }
-        }
-      }
-    }
-  }
-  
+}
+
+

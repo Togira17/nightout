@@ -21,24 +21,35 @@ global.$nVariable
 .discoteca {
     max-width: 1200px;
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(7, auto);
+    //grid-template-columns: repeat(3, auto);
+    //grid-template-rows: repeat(7, auto);
     gap: 20px;
     margin-bottom: 6%;
+    grid-template:
+    "nombre nombre nombre" auto
+    "img listaServicios listaServicios" auto 
+    "img precios precios" auto 
+    "img entrada entrada" auto
+    "img reservado reservado" auto
+    "ambiente ambiente ambiente" auto 
+    "descripcion descripcion descripcion" auto / auto auto auto;
+
 }
 
 .discoteca__nombre {
-    grid-column: 1/-1;
-    grid-row: 1/2;
+    grid-area: nombre;
+    //grid-column: 1/-1;
+    //grid-row: 1/2;
     text-transform: uppercase;
 }
 
 .discoteca__img {
+    grid-area: img;
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-column: 1/2;
-    grid-row: 2/6;
+    /* grid-column: 1/2;
+    grid-row: 2/6; */
 }
 .slider{
     width: 499px;
@@ -67,8 +78,9 @@ global.$nVariable
 
 }
 .discoteca__listaServicios {
-    grid-column: 2 / -1;
-    grid-row: 2 / 3;
+    grid-area: listaServicios;
+    /* grid-column: 2 / -1;
+    grid-row: 2 / 3; */
     padding-left: 5%;
     .servicio {
         font-weight: 800;
@@ -76,17 +88,18 @@ global.$nVariable
 
     ul,
     li {
-        list-style-type: disc;
+        list-style-type: none;
     }
 }
 
 .discoteca__precios {
+    grid-area: precios;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    grid-column: 2 / -1;
-    grid-row: 3 / 4;
+    /* grid-column: 2 / -1;
+    grid-row: 3 / 4; */
     font-size: 24px;
 }
 
@@ -110,27 +123,133 @@ global.$nVariable
 }
 
 .discoteca__btn-entrada {
+    grid-area: entrada;
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-column: 2 / -1;
-    grid-row: 4 / 5;
+    /* grid-column: 2 / -1;
+    grid-row: 4 / 5; */
 }
 
 .discoteca__btn-reservado {
+    grid-area: reservado;
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-column: 2 / -1;
-    grid-row: 5 / 6;
+    /* grid-column: 2 / -1;
+    grid-row: 5 / 6; */
 }
 
 .discoteca__ambiente {
-    grid-column: 1 / -1;
-    grid-row: 6 / 7;
+    grid-area: ambiente;
+    /* grid-column: 1 / -1;
+    grid-row: 6 / 7; */
 }
 
 .discoteca__descripcion {
-    grid-column: 1 / -1;
-    grid-row: -2 / -1;
+    grid-area: descripcion;
+    /* grid-column: 1 / -1;
+    grid-row: -2 / -1; */
+}/*************************************************************************************************/
+/** Media Query para pantallas pequeñas */
+@media  (max-width: 431px){
+    .main {
+        padding-top: 13%;
+    }
+
+
+    .discoteca {
+        place-content: center;
+        width: 400px;
+        display: grid;
+        //grid-template-columns: repeat(3, auto);
+        //grid-template-rows: repeat(7, auto);
+        margin-bottom: 10rem;
+        grid-template:
+        "nombre "
+        "img "
+        "precios"
+        "entrada"
+        "reservado"
+        "listaServicios"
+        "ambiente" 
+        "descripcion";
+    
+    }
+
+    .discoteca__nombre {
+        width: 400px;
+        grid-area: nombre;
+        //grid-column: 1/-1;
+        //grid-row: 1/2;
+        text-transform: uppercase;
+        padding-left: 5%;
+
+    }
+    
+    .discoteca__img {
+        grid-area: img;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* grid-column: 1/2;
+        grid-row: 2/6; */
+    }
+
+    .slider{
+        width: 350px;
+        img{
+            height: 259.5px;
+        }
+    }
+
+    .carousel {
+        height: 259.5px;
+        width: 350px;
+    
+    }
+
+    .discoteca__listaServicios {
+        grid-area: listaServicios;
+        padding-left: 5%;
+    }
+    
+    .discoteca__precios {
+        grid-area: precios;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 5%;
+        /* grid-column: 2 / -1;
+        grid-row: 3 / 4; */
+        font-size: 24px;
+    }
+
+    .btn-comprar {
+        width: 370px;
+        height: 77px;
+        background-color: global.$color-amarillo;
+        color: global.$color-negro;
+        text-transform: uppercase;
+        border-radius: 20px;
+        font-family: global.$fuente-botones;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 6px;
+        transition: 0.3s ease;
+    }
+    
+.discoteca__ambiente {
+        grid-area: ambiente;
+        padding-left: 5%;
+    }
+    
+    .discoteca__descripcion {
+        grid-area: descripcion;
+        place-content: center;
+        padding: 0 5%;
+        text-align: justify;
+    }
+
+    
 }

@@ -12,6 +12,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { FiltrosComponent } from './filtros/filtros.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-priv
     CarritoComponent,
     FiltrosComponent,
     AboutUsComponent,
-    PoliticaPrivacidadComponent
+    PoliticaPrivacidadComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
