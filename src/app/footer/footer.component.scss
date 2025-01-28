@@ -16,16 +16,32 @@ global.$gris-oscuro
 global.$gris-claro
 */
 
-footer{
+.footer__div{
   align-items: center;
   background-color: global.$color-negro; 
   bottom: 0;              
   color: global.$color-blanco;   
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin-top: auto;
   padding: 20px 0;          
   position: relative;
   text-align: center;    
   width: 100%;               
   }
+
+  .container{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .social-media,
+  .footer-nav{
+    text-align: start;
+  }
+  
+a:hover{
+text-decoration: underline;
+}
+  

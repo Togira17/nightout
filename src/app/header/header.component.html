@@ -5,13 +5,12 @@
 </div>
 <header id="header" #header [class.fixed]="isTopBlockHidden" class="header">
     <div class="navbar">
-        
             
         <div class="filtro" *ngIf="!showInicio" ></div>
         <div class="filtro" *ngIf="showInicio">
             <div [class.ocultar]="isTopBlockHidden"></div>
             <div [class.mostrar]="isTopBlockHidden" class="filter" type="button" role="button" >
-                <input type="checkbox" id="btn-menu">
+                <input type="checkbox" id="btn-menu" tabindex="0">
                 <label for="btn-menu" class="lbl-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasExample" title="Filtrar búsqueda"> <!--Con aria label proporcionamos una descripicion de texto para audio-->
                     <span id="spn1"></span>
                     <span id="spn2"></span>
@@ -19,15 +18,15 @@
                 </label>  
             </div>
         </div>
-        <div class="logo">
-            <a  href="index.html">
+        <div class="logo" >
+            <a  href="index.html" tabindex="0">
                 <img src="../../assets/img/logotipo.png" title="Logo de Nightout" alt="NightoutLogo">
             </a>
         </div>
         <nav class="nav">
 
             <div class="cart-wrapper">
-                <a routerLink="/carrito" class="cart"   data-bs-target="#carrito" >
+                <a routerLink="/carrito" class="cart"  tabindex="0" data-bs-target="#carrito" >
                     <img src="../../assets/img/carritoIcono.png" alt="CarritoCompra" title="Carrito de Compra" class="iconoFiltro" >
                 </a><span class="cart-counter" id="cart-counter">{{ cartCount }}</span>
             </div>
@@ -35,7 +34,7 @@
 
 
             <div class="dropdown">
-                <a class="user dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="user dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">
                     <img src="../../assets/img/iconoUser.png" alt="UsuarioID" title="Login de Usuario" class="iconoFiltro">
                 </a>
             

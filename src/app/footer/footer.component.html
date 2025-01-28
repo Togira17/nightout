@@ -1,14 +1,29 @@
 <footer>
     <div class="footer__div">
-        <p>&copy; 2024 Nightout. Todos los derechos reservados.</p>
-        <p>Siguenos en:
-            <a href="https://www.facebook.com" class="mx-2" target="_blank">Facebook</a> |
-            <a href="https://www.instagram.com" class="mx-2" target="_blank">Instagram</a> |
-            <a href="https://x.com" class="mx-2" target="_blank" title="X (anteriormente Twitter)">X</a>
-        </p>
-        <p><a routerLink="/aboutUs" class="about-us-link">About Us</a></p>
-        <p><a routerLink="/politicaPrivacidad" class="politica-privacidad-link">Politica De Privacidad</a></p> 
-        <p><a routerLink="/contacto" class="contacto-link">Contacto</a></p> 
-
+       <div class="container">
+         <!-- Redes sociales -->
+         <section class="social-media" aria-labelledby="social-media">
+            <h2 id="social-media" class="visually-hidden">Redes Sociales</h2>
+            <p>Síguenos en:</p>
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com" class="mx-2" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li><a href="https://www.instagram.com" class="mx-2" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                <li><a href="https://x.com" class="mx-2" target="_blank" rel="noopener noreferrer" title="X (anteriormente Twitter)">X</a></li>
+            </ul>
+        </section>
+        <!-- Navegación del footer -->
+        <nav aria-labelledby="footer-nav">
+            <h2 id="footer-nav" class="visually-hidden">Navegación del sitio</h2>
+            <ul class="footer-nav">
+                <li><a routerLink="/aboutUs" class="about-us-link">About Us</a></li>
+                <li><a routerLink="/politicaPrivacidad" class="politica-privacidad-link">Política de Privacidad</a></li>
+                <li><a routerLink="/contacto" class="contacto-link">Contacto</a></li>
+            </ul>
+        </nav>
+       </div>
+        <!-- Sección de derechos de autor -->
+        <address>
+            <small>&copy; 2024 Nightout. Todos los derechos reservados.</small>
+        </address>
     </div>
 </footer>
