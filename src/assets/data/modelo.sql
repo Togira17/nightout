@@ -18,7 +18,7 @@ CREATE TABLE DISCOTECA (
     hora_apertura TIME NOT NULL,
     hora_cierre TIME NOT NULL,
     terraza BOOLEAN DEFAULT FALSE,
-    reservado BOOLEAN DEFAULT FALSE,
+    reservado BOOLEAN DEFAULT TRUE,
     parking BOOLEAN DEFAULT FALSE,
     guardarropa BOOLEAN DEFAULT FALSE,
     id_zona INT NOT NULL,
