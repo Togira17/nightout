@@ -47,7 +47,8 @@ export class MainComponent {
     imagen1: "../../assets/img/discoteca1.webp",
     imagen2: "../../assets/img/discoteca2.webp",
     imagen3: "../../assets/img/discoteca3.webp"
-  },{
+  },
+  {
     id_discoteca: 2,
     nombre: "Monasterio",
     zona: "Centro",
@@ -68,7 +69,7 @@ export class MainComponent {
   },
   {
     id_discoteca: 3,
-    nombre: "Holid_discotecaay",
+    nombre: "Holid_discoteca",
     zona: "Centro",
     direccion: "Jesús del Gran Poder, 73, Casco Antiguo, 41002 Sevilla",
     entrada: 18,

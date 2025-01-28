@@ -1,40 +1,50 @@
 <body class="main">
 
-    <body class="main" >
+    <body class="main">
 
-       <div *ngFor="let discoteca of discotecas" class="discoteca" >
+        <div *ngFor="let discoteca of discotecas" class="discoteca">
 
             <h1 class="discoteca__nombre">{{discoteca.nombre}}</h1>
             <div class="discoteca__img">
-                <div class = "slider">
+                <div class="slider">
                     <div class="col-md-6">
-                        <div id="carouselDiscotecaRosso" class="carousel slide" >
+                        <div [id]="'carouselDiscoteca' + discoteca.nombre" class="carousel slide">
                             <!-- Indicadores -->
                             <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#carouselDiscotecaRosso" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#carouselDiscotecaRosso" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#carouselDiscotecaRosso" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button *ngFor="let i of [0, 1, 2]; let index = index" type="button"
+                                    [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.nombre"
+                                    [attr.data-bs-slide-to]="index" [class.active]="index === 0"
+                                    [attr.aria-current]="index === 0 ? 'true' : null"
+                                    [attr.aria-label]="'Slide ' + (index + 1)"></button>
                             </div>
-                    
+                                        
                             <!-- Contenido del carrusel -->
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="{{discoteca.imagen1}}" class="d-block w-100" alt="Imagen de discoteca Holiday 1" title="Imagen de discoteca Rosso. Fuente: Stock LTD. Obtenida de ImageStock.com" >
+                                    <img src="{{discoteca.imagen1}}" class="d-block w-100"
+                                        alt="Imagen de discoteca {{discoteca.nombre}}"
+                                        title="Imagen de discoteca {{discoteca.nombre}}. Fuente: Stock LTD. Obtenida de ImageStock.com">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="{{discoteca.imagen2}}" class="d-block w-100" alt="Imagen de discoteca Holiday 2" title="Imagen de discoteca Rosso. Fuente: Stock LTD. Obtenida de ImageStock.com" >
+                                    <img src="{{discoteca.imagen2}}" class="d-block w-100"
+                                        alt="Imagen de discoteca {{discoteca.nombre}}"
+                                        title="Imagen de discoteca {{discoteca.nombre}}. Fuente: Stock LTD. Obtenida de ImageStock.com">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="{{discoteca.imagen3}}" class="d-block w-100" alt="Imagen de discoteca Holiday 3" title="Imagen de discoteca Rosso. Fuente: Stock LTD. Obtenida de ImageStock.com" >
+                                    <img src="{{discoteca.imagen3}}" class="d-block w-100"
+                                        alt="Imagen de discoteca {{discoteca.nombre}}"
+                                        title="Imagen de discoteca {{discoteca.nombre}}. Fuente: Stock LTD. Obtenida de ImageStock.com">
                                 </div>
                             </div>
-                    
+
                             <!-- Controles -->
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselDiscotecaRosso" data-bs-slide="prev">
+                            <button class="carousel-control-prev" type="button"
+                                [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.nombre" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Anterior</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselDiscotecaRosso" data-bs-slide="next">
+                            <button class="carousel-control-next" type="button"
+                                [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.nombre" data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Siguiente</span>
                             </button>
@@ -48,13 +58,16 @@
                         <p><span class="servicio">Dirección: </span><span>{{discoteca.direccion}}</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Horario: </span><span>{{discoteca.horario_apertura}} - {{discoteca.horario_cierre}} am</span></p>
+                        <p><span class="servicio">Horario: </span><span>{{discoteca.horario_apertura}} -
+                                {{discoteca.horario_cierre}} am</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Guardarropa: </span><span>{{ discoteca.guardarropa ? 'Sí' : 'No' }}</span></p>
+                        <p><span class="servicio">Guardarropa: </span><span>{{ discoteca.guardarropa ? 'Sí' : 'No'
+                                }}</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Parking cerca: </span> <span>{{ discoteca.parking ? 'Sí' : 'No' }}</span></p>
+                        <p><span class="servicio">Parking cerca: </span> <span>{{ discoteca.parking ? 'Sí' : 'No'
+                                }}</span></p>
                     </li>
                     <li>
                         <p><span class="servicio">Etiqueta: </span><span>{{discoteca.etiqueta}}</span></p>
@@ -65,21 +78,22 @@
                 <h2><span>Entrada:</span><span> {{discoteca.entrada}}€</span></h2>
                 <h2><span>Reservado: </span><span>{{discoteca.reservados}}€</span></h2>
             </div>
-            <div class="discoteca__btn-entrada"><input (click)="addToCart()" class="btn-comprar" type="button" value="Añadir Entrada"></div>
-            <div class="discoteca__btn-reservado"><input (click)="addToCart()" class="btn-comprar" type="button" value="Añadir Reservado"></div>
-    
+            <div class="discoteca__btn-entrada"><input (click)="addToCart()" class="btn-comprar" type="button"
+                    value="Añadir Entrada"></div>
+            <div class="discoteca__btn-reservado"><input (click)="addToCart()" class="btn-comprar" type="button"
+                    value="Añadir Reservado"></div>
+
             <div class="discoteca__ambiente">
                 <p><span>Ambiente: </span><span>{{discoteca.ambiente}}</span></p>
             </div>
-    
+
             <div class="discoteca__descripcion">
                 <p><span>Descripción: </span><span>{{discoteca.descripcion}}</span>
                 </p>
             </div>
-    
-        </div>
-    
 
-        
+        </div>
+
+
+
     </body>
-    
