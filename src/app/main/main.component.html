@@ -2,8 +2,9 @@
 
     <body class="main" >
 
-       <div class="discoteca">
-            <h1 class="discoteca__nombre">Rosso</h1>
+       <div *ngFor="let discoteca of discotecas" class="discoteca" >
+
+            <h1 class="discoteca__nombre">{{discoteca.nombre}}</h1>
             <div class="discoteca__img">
                 <div class = "slider">
                     <div class="col-md-6">
@@ -18,13 +19,13 @@
                             <!-- Contenido del carrusel -->
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="../../assets/img/discoteca1.webp" class="d-block w-100" alt="Imagen de discoteca Holiday 1" title="Imagen de discoteca Rosso. Fuente: Stock LTD. Obtenida de ImageStock.com" >
+                                    <img src="{{discoteca.imagen1}}" class="d-block w-100" alt="Imagen de discoteca Holiday 1" title="Imagen de discoteca Rosso. Fuente: Stock LTD. Obtenida de ImageStock.com" >
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../../assets/img/discoteca2.webp" class="d-block w-100" alt="Imagen de discoteca Holiday 2" title="Imagen de discoteca Rosso. Fuente: Stock LTD. Obtenida de ImageStock.com" >
+                                    <img src="{{discoteca.imagen2}}" class="d-block w-100" alt="Imagen de discoteca Holiday 2" title="Imagen de discoteca Rosso. Fuente: Stock LTD. Obtenida de ImageStock.com" >
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="../../assets/img/discoteca3.webp" class="d-block w-100" alt="Imagen de discoteca Holiday 3" title="Imagen de discoteca Rosso. Fuente: Stock LTD. Obtenida de ImageStock.com" >
+                                    <img src="{{discoteca.imagen3}}" class="d-block w-100" alt="Imagen de discoteca Holiday 3" title="Imagen de discoteca Rosso. Fuente: Stock LTD. Obtenida de ImageStock.com" >
                                 </div>
                             </div>
                     
@@ -44,41 +45,35 @@
             <div class="discoteca__listaServicios">
                 <ul>
                     <li>
-                        <p><span class="servicio">Dirección: </span><span>C. Matemáticos Rey Pastor y Castro, 41092
-                                Sevilla</span></p>
+                        <p><span class="servicio">Dirección: </span><span>{{discoteca.direccion}}</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Horario: </span><span>00:00 - 6:00 am</span></p>
+                        <p><span class="servicio">Horario: </span><span>{{discoteca.horario_apertura}} - {{discoteca.horario_cierre}} am</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Guardarropa: </span><span>Si</span></p>
+                        <p><span class="servicio">Guardarropa: </span><span>{{ discoteca.guardarropa ? 'Sí' : 'No' }}</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Parking cerca: </span> <span>Si</span></p>
+                        <p><span class="servicio">Parking cerca: </span> <span>{{ discoteca.parking ? 'Sí' : 'No' }}</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Etiqueta: </span><span>Prohibido usar zapatillas de deporte. Se recomienda
-                                asistir en polo o camisa.</span></p>
+                        <p><span class="servicio">Etiqueta: </span><span>{{discoteca.etiqueta}}</span></p>
                     </li>
                 </ul>
             </div>
             <div class="discoteca__precios">
-                <h2><span>Entrada:</span><span> 20€</span></h2>
-                <h2><span>Reservado: </span><span>160€</span></h2>
+                <h2><span>Entrada:</span><span> {{discoteca.entrada}}€</span></h2>
+                <h2><span>Reservado: </span><span>{{discoteca.reservados}}€</span></h2>
             </div>
             <div class="discoteca__btn-entrada"><input (click)="addToCart()" class="btn-comprar" type="button" value="Añadir Entrada"></div>
             <div class="discoteca__btn-reservado"><input (click)="addToCart()" class="btn-comprar" type="button" value="Añadir Reservado"></div>
     
             <div class="discoteca__ambiente">
-                <p><span>Ambiente: </span><span>+18 Público variado</span></p>
+                <p><span>Ambiente: </span><span>{{discoteca.ambiente}}</span></p>
             </div>
     
             <div class="discoteca__descripcion">
-                <p><span>Descripción: </span><span>Situado sobre los pilares del antiguo Pabellón Olímpico en la pasada
-                        exposición del 92, este
-                        espacio cuenta con 2500 metros cuadrados y un gran equipo tecnológico y musical, consiguiendo así
-                        ser todo
-                        un referente del mundo de la diversión nocturna en la capital hispalense.</span>
+                <p><span>Descripción: </span><span>{{discoteca.descripcion}}</span>
                 </p>
             </div>
     
