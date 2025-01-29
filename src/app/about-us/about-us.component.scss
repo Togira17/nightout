@@ -1,7 +1,7 @@
 /* Variables de colores */
 $color-morado: #8d22da;
 $color-gris: #505050;
-$color-texto: hwb(0 0% 100%);
+$color-texto: #222;
 $color-negro: #111;
 $gris-claro: #f6f6f6;
 
@@ -50,11 +50,12 @@ $gris-claro: #f6f6f6;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    
   }
 
   ul {
-    list-style: none;
+    list-style: disc;
     padding-left: 0;
     margin-top: 20px;
     font-size: 1.1rem;
@@ -69,6 +70,5 @@ $gris-claro: #f6f6f6;
 
   strong {
     color: $color-texto;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   }
 }

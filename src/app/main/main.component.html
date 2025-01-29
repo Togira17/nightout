@@ -2,22 +2,26 @@
 
     <body class="main">
 
-        <div *ngFor="let discoteca of discotecas" class="discoteca">
+        <article *ngFor="let discoteca of discotecas" class="discoteca">
 
-            <h1 class="discoteca__nombre">{{discoteca.nombre}}</h1>
-            <div class="discoteca__img">
+            <header>
+                <h1 class="discoteca__nombre">{{discoteca.nombre}}</h1>
+            </header>
+
+            <!-- Carrusel de imágenes -->
+            <figure class="discoteca__img">
                 <div class="slider">
                     <div class="col-md-6">
-                        <div [id]="'carouselDiscoteca' + discoteca.nombre" class="carousel slide">
+                        <div [id]="'carouselDiscoteca' + discoteca.id_discoteca" class="carousel slide">
                             <!-- Indicadores -->
                             <div class="carousel-indicators">
                                 <button *ngFor="let i of [0, 1, 2]; let index = index" type="button"
-                                    [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.nombre"
+                                    [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.id_discoteca"
                                     [attr.data-bs-slide-to]="index" [class.active]="index === 0"
                                     [attr.aria-current]="index === 0 ? 'true' : null"
                                     [attr.aria-label]="'Slide ' + (index + 1)"></button>
                             </div>
-                                        
+
                             <!-- Contenido del carrusel -->
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -39,20 +43,24 @@
 
                             <!-- Controles -->
                             <button class="carousel-control-prev" type="button"
-                                [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.nombre" data-bs-slide="prev">
+                                [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.id_discoteca"
+                                data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Anterior</span>
                             </button>
                             <button class="carousel-control-next" type="button"
-                                [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.nombre" data-bs-slide="next">
+                                [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.id_discoteca"
+                                data-bs-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Siguiente</span>
                             </button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="discoteca__listaServicios">
+            </figure>
+
+            <!-- Lista de servicios -->
+            <section class="discoteca__listaServicios">
                 <ul>
                     <li>
                         <p><span class="servicio">Dirección: </span><span>{{discoteca.direccion}}</span></p>
@@ -73,27 +81,36 @@
                         <p><span class="servicio">Etiqueta: </span><span>{{discoteca.etiqueta}}</span></p>
                     </li>
                 </ul>
-            </div>
-            <div class="discoteca__precios">
+            </section>
+
+            <!-- Lista de precios -->
+            <section class="discoteca__precios">
                 <h2><span>Entrada:</span><span> {{discoteca.entrada}}€</span></h2>
                 <h2><span>Reservado: </span><span>{{discoteca.reservados}}€</span></h2>
-            </div>
+            </section>
+
+            <!-- Botones de compra -->
+            <section>
+                
+            </section>
             <div class="discoteca__btn-entrada"><input (click)="addToCart()" class="btn-comprar" type="button"
-                    value="Añadir Entrada"></div>
+                    value="Añadir Entrada">
+            </div>
             <div class="discoteca__btn-reservado"><input (click)="addToCart()" class="btn-comprar" type="button"
-                    value="Añadir Reservado"></div>
-
-            <div class="discoteca__ambiente">
-                <p><span>Ambiente: </span><span>{{discoteca.ambiente}}</span></p>
+                    value="Añadir Reservado">
             </div>
 
-            <div class="discoteca__descripcion">
+            <!-- Ambiente -->
+            <section class="discoteca__ambiente">
+                <p><span>Ambiente: </span><span>{{discoteca.ambiente}}</span></p>
+            </section>
+
+            <!-- Descripcion -->
+            <section class="discoteca__descripcion">
                 <p><span>Descripción: </span><span>{{discoteca.descripcion}}</span>
                 </p>
-            </div>
+            </section>
 
-        </div>
-
-
+        </article>
 
     </body>
