@@ -12,6 +12,7 @@ import { FiltrosComponent } from './filtros/filtros.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ContactoComponent } from './contacto/contacto.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers:  [],
   bootstrap: [AppComponent]

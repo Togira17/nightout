@@ -8,6 +8,8 @@ interface Discoteca {
   zona: string;
   direccion: string;
   entrada: number;
+  fecha: string[];
+  fechaSeleccionada?: string;
   reservados: number;
   horario_apertura: string;
   horario_cierre: string;
@@ -35,6 +37,7 @@ export class MainComponent {
     zona: "Cartuja",
     direccion: "C. Matemáticos Rey Pastor y Castro, 41092 Sevilla",
     entrada: 20,
+    fecha: ["jueves", "viernes", "sabado"],
     reservados: 160,
     horario_apertura: "22:00",
     horario_cierre: "05:00",
@@ -54,6 +57,7 @@ export class MainComponent {
     zona: "Centro",
     direccion: "C. Amor de Dios, 18, Casco Antiguo, 41002 Sevilla",
     entrada: 15,
+    fecha: ["jueves", "viernes", "sabado"],
     reservados: 100,
     horario_apertura: "22:00",
     horario_cierre: "04:00",
@@ -73,6 +77,7 @@ export class MainComponent {
     zona: "Centro",
     direccion: "Jesús del Gran Poder, 73, Casco Antiguo, 41002 Sevilla",
     entrada: 18,
+    fecha: ["jueves", "viernes", "sabado"],
     reservados: 120,
     horario_apertura: "23:00",
     horario_cierre: "05:00",
@@ -92,6 +97,7 @@ export class MainComponent {
     zona: "Centro",
     direccion: "Pl. de la Encarnación, 38, Casco Antiguo, 41003 Sevilla",
     entrada: 22,
+    fecha: ["jueves", "viernes", "sabado"],
     reservados: 140,
     horario_apertura: "22:30",
     horario_cierre: "06:00",
@@ -111,6 +117,7 @@ export class MainComponent {
     zona: "Triana-Los Remedios",
     direccion: "Av. Blas Infante, 6, 41011 Sevilla",
     entrada: 16,
+    fecha: ["jueves", "viernes", "sabado"],
     reservados: 120,
     horario_apertura: "23:00",
     horario_cierre: "06:00",
@@ -130,6 +137,7 @@ export class MainComponent {
     zona: "Parque María Luisa",
     direccion: "P.º de las Delicias, 13, 41013 Sevilla",
     entrada: 14,
+    fecha: ["jueves", "viernes", "sabado"],
     reservados: 100,
     horario_apertura: "22:00",
     horario_cierre: "03:00",

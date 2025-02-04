@@ -80,6 +80,18 @@
                     <li>
                         <p><span class="servicio">Etiqueta: </span><span>{{discoteca.etiqueta}}</span></p>
                     </li>
+                    <li>
+                        <p><span class="servicio">Numero de entradas disponibles: </span><span>{{discoteca.entrada}}</span></p>
+                    </li>
+                    <li>
+                        <p><span class="servicio">Fecha: </span>
+                            <select [(ngModel)]="discoteca.fechaSeleccionada">
+                                <option *ngFor="let fecha of discoteca.fecha" [value]="fecha">
+                                  {{ fecha }}
+                                </option>
+                            </select>
+                        </p>
+                    </li>
                 </ul>
             </section>
 
