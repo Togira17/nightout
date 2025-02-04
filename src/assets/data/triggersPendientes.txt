@@ -1,0 +1,24 @@
+
+
+TABLA horarios_discoteca: 
+1 asegurar que la hora de apertura siempre sea menor a la hora de cierre, tanto para la inserción como para la actualización
+
+TABLA usuario:
+2 validar dni con un regex al insertar un usuario.
+
+TABLA comision:
+3 validar que el porcentaje sea mayor que 0 al insertar o actualizar
+4 validar que el campo fecha_fin siempre sea > a fecha_inicio, o que sea nulo
+
+TABLA entrada: 
+5 validar que el precio siempre sea mayor que 0
+6 validar que el stock actual sea siempre menor o igual al stock inicial de la discoteca
+
+TABLA pedido:
+7 validar que el total siempre sea mayor que 0
+
+TABLA detalles_pedido:
+8 revisar que cantidad siempre sea mayor que 0
+
+TABLA discoteca
+9 cambiar el campo reservado a 1 (verdadero) si se añade un registro a la tabla entrada de tipo reservado correspondiente a esa discoteca

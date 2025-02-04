@@ -1,32 +1,19 @@
-CREATE DATABASE IF NOT EXISTS NightoutSevilla;
+DROP DATABASE nightoutsevilla;
+
+CREATE DATABASE NightoutSevilla;
 
 USE NightoutSevilla;
 
 -- Tabla ZONA
 CREATE TABLE
-    ZONA (id_zona INT PRIMARY KEY AUTO_INCREMENT, nombre VARCHAR(100) NOT NULL UNIQUE);
-
--- Tabla días de la semana
-CREATE TABLE dias_semana (
-    id_dia INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_dia ENUM('lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo') UNIQUE
-);
-
--- Tabla de horarios
-CREATE TABLE horarios_discoteca (
-    id_horario INT AUTO_INCREMENT PRIMARY KEY,
-    discoteca_id INT,
-    dia_id INT,
-    hora_apertura TIME NOT NULL,
-    hora_cierre TIME NOT NULL,
-    FOREIGN KEY (discoteca_id) REFERENCES discotecas(id_discoteca),
-    FOREIGN KEY (dia_id) REFERENCES dias_semana(id_dia)
-);
-
+    zona (
+        id_zona INT PRIMARY KEY AUTO_INCREMENT,
+        nombre VARCHAR(100) NOT NULL UNIQUE
+         );
 
 -- Tabla DISCOTECA
 CREATE TABLE
-    DISCOTECA (
+    discoteca (
         id_discoteca INT PRIMARY KEY AUTO_INCREMENT,
         nombre VARCHAR(100) NOT NULL UNIQUE,
         direccion VARCHAR(255) NOT NULL,
@@ -34,24 +21,42 @@ CREATE TABLE
         etiqueta VARCHAR(100),
         descripcion VARCHAR(500),
         terraza TINYINT (1) NOT NULL DEFAULT 0,
-        reservado TINYINT (1) NOT NULL DEFAULT 1,
+        reservado TINYINT (1) NOT NULL DEFAULT 0,
         parking TINYINT (1) NOT NULL DEFAULT 0,
         guardarropa TINYINT (1) NOT NULL DEFAULT 0,
         id_zona INT NOT NULL,
         imagen1 VARCHAR(255) NOT NULL,
         imagen2 VARCHAR(255),
         imagen3 VARCHAR(255),
-        stock_inicial INT DEFAULT 100,
+        stock_inicial INT NOT NULL,
         FOREIGN KEY (id_zona) REFERENCES ZONA (id_zona) ON DELETE CASCADE
     );
 
+-- Tabla días de la semana
+CREATE TABLE
+    dias_semana (
+        id_dia INT AUTO_INCREMENT PRIMARY KEY,
+        nombre_dia ENUM ('lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo') UNIQUE
+    );
 
+-- Tabla de horarios
+CREATE TABLE
+    horarios_discoteca (
+        id_horario INT AUTO_INCREMENT PRIMARY KEY,
+        discoteca_id INT,
+        dia_id INT,
+        hora_apertura TIME NOT NULL,
+        hora_cierre TIME NOT NULL,
+        FOREIGN KEY (discoteca_id) REFERENCES discoteca (id_discoteca),
+        FOREIGN KEY (dia_id) REFERENCES dias_semana (id_dia),
+        CONSTRAINT unique_dia_horario UNIQUE (discoteca_id, dia_id)
+    );
 
 -- Tabla USUARIO
 CREATE TABLE
-    USUARIO (
+    usuario (
         id_usuario INT PRIMARY KEY AUTO_INCREMENT,
-        dni VARCHAR(9) UNIQUE NOT NULL CHECK (dni REGEXP '^[0-9]{8}[A-Za-z]$'),
+        dni VARCHAR(9) UNIQUE NOT NULL,
         nombre_usuario VARCHAR(20) NOT NULL,
         nombre VARCHAR(100) NOT NULL,
         apellidos VARCHAR(100),
@@ -61,38 +66,33 @@ CREATE TABLE
 
 -- Tabla COMISION con restricción para evitar solapamientos
 CREATE TABLE
-    COMISION (
+    comision (
         id_comision INT PRIMARY KEY AUTO_INCREMENT,
-        porcentaje DECIMAL(5, 2) NOT NULL CHECK (porcentaje >= 0),
+        porcentaje DECIMAL(5, 2) NOT NULL,
         fecha_inicio DATE NOT NULL,
-        fecha_fin DATE NULL,
-        CONSTRAINT chk_fecha_fin CHECK (
-            fecha_inicio < fecha_fin
-            OR fecha_fin IS NULL
-        )
+        fecha_fin DATE NULL
     );
 
 -- Tabla ENTRADA con restricción para evitar precios negativos
 CREATE TABLE
-    ENTRADA (
+    entrada (
         id_entrada INT PRIMARY KEY AUTO_INCREMENT,
         tipo_entrada ENUM ('individual', 'reservado') NOT NULL,
-        precio DECIMAL(10, 2) NOT NULL CHECK (precio > 0),
+        precio DECIMAL(10, 2) NOT NULL,
         id_discoteca INT NOT NULL,
-        dia_semana_id INT,
+        dia_semana_id INT NOT NULL,
         stock_actual INT DEFAULT 0,
-        FOREIGN KEY (dia_semana_id) REFERENCES dias_semana(id_dia),
+        FOREIGN KEY (dia_semana_id) REFERENCES dias_semana (id_dia),
         FOREIGN KEY (id_discoteca) REFERENCES DISCOTECA (id_discoteca) ON DELETE CASCADE
-
     );
 
 -- Tabla PEDIDO con restricciones en total y fecha por defecto
 CREATE TABLE
-    PEDIDO (
+    pedido (
         id_pedido INT PRIMARY KEY AUTO_INCREMENT,
         id_comision INT NOT NULL,
         fecha_pedido DATE NOT NULL DEFAULT CURRENT_DATE,
-        total DECIMAL(9, 2) NOT NULL CHECK (total >= 0),
+        total DECIMAL(9, 2) NOT NULL,
         id_usuario INT NOT NULL,
         FOREIGN KEY (id_usuario) REFERENCES USUARIO (id_usuario) ON DELETE CASCADE,
         FOREIGN KEY (id_comision) REFERENCES COMISION (id_comision) ON DELETE CASCADE
@@ -100,12 +100,11 @@ CREATE TABLE
 
 -- Tabla DETALLES_PEDIDO
 CREATE TABLE
-    DETALLES_PEDIDO (
+    detalles_pedido (
         id_pedido INT NOT NULL,
         id_entrada INT NOT NULL,
-        cantidad INT NOT NULL CHECK (cantidad > 0),
+        cantidad INT NOT NULL,
         PRIMARY KEY (id_pedido, id_entrada),
         FOREIGN KEY (id_pedido) REFERENCES PEDIDO (id_pedido) ON DELETE CASCADE,
         FOREIGN KEY (id_entrada) REFERENCES ENTRADA (id_entrada) ON DELETE CASCADE
     );
-
