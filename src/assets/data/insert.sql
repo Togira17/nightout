@@ -1,5 +1,3 @@
-USE nightoutsevilla;
-
 -- DATOS DE ZONAS
 INSERT INTO
     zona (nombre)
@@ -759,3 +757,210 @@ VALUES
         1,
         0
     );
+
+-- Insert de la comision
+INSERT INTO
+    comision (porcentaje, fecha_inicio)
+VALUES
+    (3.00, '2018-01-29');
+
+-- Insert de las entradas
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 20, 1);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 160, 1);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 15, 2);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 85, 2);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 20, 3);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 120, 3);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 10, 4);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 110, 4);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 15, 5);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 140, 5);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 10, 6);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 120, 6);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 12, 7);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 100, 7);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 12, 8);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 130, 8);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 20, 9);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 180, 9);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 12, 10);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 140, 10);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 12, 11);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 150, 11);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 12, 12);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 140, 12);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 7, 13);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 100, 13);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 10, 14);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 130, 14);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 10, 15);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 100, 15);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 20, 16);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 130, 16);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 15, 17);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 100, 17);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 15, 18);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 90, 18);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 20, 19);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 100, 19);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('individual', 10, 20);
+
+INSERT INTO
+    ENTRADA (tipo_entrada, precio, id_discoteca)
+VALUES
+    ('reservado', 90, 20);
