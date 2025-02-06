@@ -84,8 +84,9 @@
                         <p><span class="servicio">Numero de entradas disponibles: </span><span>{{discoteca.entrada}}</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Fecha: </span>
+                        <p><span class="servicio">Fecha: </span>    
                             <select [(ngModel)]="discoteca.fechaSeleccionada">
+                                <option value="" disabled selected hidden>Seleccione la fecha deseada</option>
                                 <option *ngFor="let fecha of discoteca.fecha" [value]="fecha">
                                   {{ fecha }}
                                 </option>

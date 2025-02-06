@@ -14,7 +14,7 @@
       "zona": "Cartuja",
       "direccion": "C. Matemáticos Rey Pastor y Castro, 41092 Sevilla",
       "entrada": 20,
-      "fecha": ["jueves", "viernes", "sabado"],
+      "fecha": ["Lunes","Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"],,
       "reservados": 160,
       "horario_apertura": "22:00",
       "horario_cierre": "05:00",
