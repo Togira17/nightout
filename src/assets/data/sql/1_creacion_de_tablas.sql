@@ -96,3 +96,12 @@ CREATE TABLE
         FOREIGN KEY (id_pedido) REFERENCES PEDIDO (id_pedido) ON DELETE CASCADE,
         FOREIGN KEY (id_entrada) REFERENCES ENTRADA (id_entrada) ON DELETE CASCADE
     );
+
+-- Crear la vista para detalles_pedido
+CREATE OR REPLACE VIEW detalles_pedido_view AS 
+SELECT 
+    CONCAT(id_pedido, '-', id_entrada) COLLATE utf8mb4_0900_ai_ci AS id,  -- Clave primaria virtual con intercalación
+    id_pedido COLLATE utf8mb4_0900_ai_ci AS id_pedido,
+    id_entrada COLLATE utf8mb4_0900_ai_ci AS id_entrada,
+    cantidad COLLATE utf8mb4_0900_ai_ci AS cantidad
+FROM detalles_pedido;
