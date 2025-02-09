@@ -621,5 +621,5 @@ INSERT INTO pedido (id_pedido, total, id_usuario)
 VALUES (1, 24, 1);
 
 -- INSERTAR EN DETALLES_PEDIDO
-INSERT INTO detalles_pedido (id_pedido, id_entrada, cantidad) 
-VALUES (1, 45, 2);
+INSERT INTO detalles_pedido (id_detalle, id_pedido, id_entrada, cantidad) 
+VALUES (1, 1, 45, 2);

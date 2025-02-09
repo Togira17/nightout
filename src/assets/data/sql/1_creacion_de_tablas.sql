@@ -89,19 +89,11 @@ CREATE TABLE
 -- Tabla DETALLES_PEDIDO
 CREATE TABLE
     detalles_pedido (
+        id_detalle INT PRIMARY KEY AUTO_INCREMENT,
         id_pedido INT NOT NULL,
         id_entrada INT NOT NULL,
         cantidad INT NOT NULL,
-        PRIMARY KEY (id_pedido, id_entrada),
+        UNIQUE (id_pedido, id_entrada),
         FOREIGN KEY (id_pedido) REFERENCES PEDIDO (id_pedido) ON DELETE CASCADE,
         FOREIGN KEY (id_entrada) REFERENCES ENTRADA (id_entrada) ON DELETE CASCADE
     );
-
--- Crear la vista para detalles_pedido
-CREATE OR REPLACE VIEW detalles_pedido_view AS 
-SELECT 
-    CONCAT(id_pedido, '-', id_entrada) COLLATE utf8mb4_0900_ai_ci AS id,  -- Clave primaria virtual con intercalación
-    id_pedido COLLATE utf8mb4_0900_ai_ci AS id_pedido,
-    id_entrada COLLATE utf8mb4_0900_ai_ci AS id_entrada,
-    cantidad COLLATE utf8mb4_0900_ai_ci AS cantidad
-FROM detalles_pedido;
