@@ -1,5 +1,3 @@
-DROP DATABASE nightoutsevilla;
-
 CREATE DATABASE NightoutSevilla;
 
 USE NightoutSevilla;
@@ -19,11 +17,11 @@ CREATE TABLE
         direccion VARCHAR(255) NOT NULL,
         ambiente VARCHAR(100),
         etiqueta VARCHAR(100),
-        descripcion VARCHAR(500),
-        terraza TINYINT (1) NOT NULL DEFAULT 0,
-        reservado TINYINT (1) NOT NULL DEFAULT 0,
-        parking TINYINT (1) NOT NULL DEFAULT 0,
-        guardarropa TINYINT (1) NOT NULL DEFAULT 0,
+        descripcion VARCHAR(1000),
+        terraza TINYINT NOT NULL DEFAULT 0,
+        reservado TINYINT NOT NULL DEFAULT 0,
+        parking TINYINT NOT NULL DEFAULT 0,
+        guardarropa TINYINT NOT NULL DEFAULT 0,
         id_zona INT NOT NULL,
         imagen1 VARCHAR(255) NOT NULL,
         imagen2 VARCHAR(255),
@@ -64,14 +62,6 @@ CREATE TABLE
         contraseña VARCHAR(255) NOT NULL
     );
 
--- Tabla COMISION con restricción para evitar solapamientos
-CREATE TABLE
-    comision (
-        id_comision INT PRIMARY KEY AUTO_INCREMENT,
-        porcentaje DECIMAL(5, 2) NOT NULL,
-        fecha_inicio DATE NOT NULL,
-        fecha_fin DATE NULL
-    );
 
 -- Tabla ENTRADA con restricción para evitar precios negativos
 CREATE TABLE
@@ -90,12 +80,10 @@ CREATE TABLE
 CREATE TABLE
     pedido (
         id_pedido INT PRIMARY KEY AUTO_INCREMENT,
-        id_comision INT NOT NULL,
-        fecha_pedido DATE NOT NULL DEFAULT CURRENT_DATE,
+        fecha_pedido TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
         total DECIMAL(9, 2) NOT NULL,
         id_usuario INT NOT NULL,
-        FOREIGN KEY (id_usuario) REFERENCES USUARIO (id_usuario) ON DELETE CASCADE,
-        FOREIGN KEY (id_comision) REFERENCES COMISION (id_comision) ON DELETE CASCADE
+        FOREIGN KEY (id_usuario) REFERENCES USUARIO (id_usuario) ON DELETE CASCADE
     );
 
 -- Tabla DETALLES_PEDIDO
