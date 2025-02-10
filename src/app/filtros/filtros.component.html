@@ -6,24 +6,6 @@
 
   <!-- Contenido del Offcanvas -->
   <div class="offcanvas-body">
-      <!-- Slider de Rango Dual -->
-      <div class="mb-4">
-          <h6>Rango de Precio</h6>
-          <div class="range-slider position-relative">
-              <!-- Dos controles de rango -->
-              <input type="range" id="rangeMin" class="form-range slider-min" min="0" max="500" value="50" step="1" oninput="updateRange()">
-              <input type="range" id="rangeMax" class="form-range slider-max" min="0" max="500" value="450" step="1" oninput="updateRange()">
-              
-              <!-- Barra visual de rango -->
-              <div class="slider-track"></div>
-          </div>
-          <!-- Valores mostrados -->
-          <div class="d-flex justify-content-between mt-2">
-              <span>Mín: €<span id="minValue">50</span></span>
-              <span>Máx: €<span id="maxValue">450</span></span>
-          </div>
-      </div>
-
       <!-- Filtros Adicionales con Checkbox -->
       <div class="mt-4">
           <h6>Extras</h6>
@@ -61,39 +43,3 @@
       </div>
   </div>
 </div>
-
-
-<!-- Script -->
-<script>
-const rangeMin = document.getElementById("rangeMin");
-const rangeMax = document.getElementById("rangeMax");
-const minValue = document.getElementById("minValue");
-const maxValue = document.getElementById("maxValue");
-const sliderTrack = document.querySelector(".slider-track");
-
-function updateRange() {
-  let min = parseInt(rangeMin.value);
-  let max = parseInt(rangeMax.value);
-
-  if (min > max) {
-    let temp = min;
-    min = max;
-    max = temp;
-  }
-
-  rangeMin.value = min;
-  rangeMax.value = max;
-
-  minValue.textContent = min;
-  maxValue.textContent = max;
-
-  const minPercent = (min / rangeMin.max) * 100;
-  const maxPercent = (max / rangeMax.max) * 100;
-
-  sliderTrack.style.left = minPercent + "%";
-  sliderTrack.style.width = (maxPercent - minPercent) + "%";
-}
-
-updateRange();
-</script>
-
