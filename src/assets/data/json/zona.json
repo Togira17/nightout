@@ -1,8 +1,32 @@
-id_zona,nombre
-7,Bermejales
-1,Cartuja
-2,Centro
-3,"Los Remedios"
-4,"Parque María Luisa"
-5,Viapol
-6,"Zona Este"
+{
+    "data": [
+        {
+            "id_zona": 1,
+            "nombre": "Cartuja"
+        },
+        {
+            "id_zona": 2,
+            "nombre": "Centro"
+        },
+        {
+            "id_zona": 3,
+            "nombre": "Los Remedios"
+        },
+        {
+            "id_zona": 4,
+            "nombre": "Parque María Luisa"
+        },
+        {
+            "id_zona": 5,
+            "nombre": "Viapol"
+        },
+        {
+            "id_zona": 6,
+            "nombre": "Zona Este"
+        },
+        {
+            "id_zona": 7,
+            "nombre": "Bermejales"
+        }
+    ]
+}

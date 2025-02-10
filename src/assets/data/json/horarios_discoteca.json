@@ -1,506 +1,508 @@
-[
-	{
-		"id_horario" : 1,
-		"discoteca_id" : 1,
-		"dia_id" : 1,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 2,
-		"discoteca_id" : 1,
-		"dia_id" : 2,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 3,
-		"discoteca_id" : 1,
-		"dia_id" : 3,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 4,
-		"discoteca_id" : 1,
-		"dia_id" : 4,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 5,
-		"discoteca_id" : 1,
-		"dia_id" : 5,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 6,
-		"discoteca_id" : 1,
-		"dia_id" : 6,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 7,
-		"discoteca_id" : 2,
-		"dia_id" : 1,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 8,
-		"discoteca_id" : 2,
-		"dia_id" : 2,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 9,
-		"discoteca_id" : 2,
-		"dia_id" : 5,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 10,
-		"discoteca_id" : 3,
-		"dia_id" : 6,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 11,
-		"discoteca_id" : 4,
-		"dia_id" : 1,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 12,
-		"discoteca_id" : 4,
-		"dia_id" : 2,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 13,
-		"discoteca_id" : 4,
-		"dia_id" : 3,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 14,
-		"discoteca_id" : 4,
-		"dia_id" : 5,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 15,
-		"discoteca_id" : 4,
-		"dia_id" : 6,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 16,
-		"discoteca_id" : 5,
-		"dia_id" : 1,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "05:00:00"
-	},
-	{
-		"id_horario" : 17,
-		"discoteca_id" : 5,
-		"dia_id" : 6,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "05:00:00"
-	},
-	{
-		"id_horario" : 18,
-		"discoteca_id" : 5,
-		"dia_id" : 7,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "05:00:00"
-	},
-	{
-		"id_horario" : 19,
-		"discoteca_id" : 6,
-		"dia_id" : 1,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 20,
-		"discoteca_id" : 6,
-		"dia_id" : 2,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 21,
-		"discoteca_id" : 7,
-		"dia_id" : 6,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 22,
-		"discoteca_id" : 7,
-		"dia_id" : 2,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 23,
-		"discoteca_id" : 8,
-		"dia_id" : 1,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 24,
-		"discoteca_id" : 8,
-		"dia_id" : 3,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 25,
-		"discoteca_id" : 8,
-		"dia_id" : 6,
-		"hora_apertura" : "23:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 26,
-		"discoteca_id" : 9,
-		"dia_id" : 1,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 27,
-		"discoteca_id" : 9,
-		"dia_id" : 6,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 28,
-		"discoteca_id" : 10,
-		"dia_id" : 1,
-		"hora_apertura" : "01:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 29,
-		"discoteca_id" : 10,
-		"dia_id" : 2,
-		"hora_apertura" : "01:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 30,
-		"discoteca_id" : 10,
-		"dia_id" : 3,
-		"hora_apertura" : "01:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 31,
-		"discoteca_id" : 10,
-		"dia_id" : 4,
-		"hora_apertura" : "01:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 32,
-		"discoteca_id" : 11,
-		"dia_id" : 4,
-		"hora_apertura" : "01:00:00",
-		"hora_cierre" : "07:00:00"
-	},
-	{
-		"id_horario" : 33,
-		"discoteca_id" : 12,
-		"dia_id" : 3,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "05:00:00"
-	},
-	{
-		"id_horario" : 34,
-		"discoteca_id" : 12,
-		"dia_id" : 4,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "05:00:00"
-	},
-	{
-		"id_horario" : 35,
-		"discoteca_id" : 12,
-		"dia_id" : 5,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "05:00:00"
-	},
-	{
-		"id_horario" : 36,
-		"discoteca_id" : 12,
-		"dia_id" : 6,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "05:00:00"
-	},
-	{
-		"id_horario" : 37,
-		"discoteca_id" : 13,
-		"dia_id" : 2,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 38,
-		"discoteca_id" : 13,
-		"dia_id" : 3,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 39,
-		"discoteca_id" : 13,
-		"dia_id" : 4,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 40,
-		"discoteca_id" : 13,
-		"dia_id" : 5,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 41,
-		"discoteca_id" : 13,
-		"dia_id" : 6,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 42,
-		"discoteca_id" : 14,
-		"dia_id" : 7,
-		"hora_apertura" : "22:30:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 43,
-		"discoteca_id" : 14,
-		"dia_id" : 1,
-		"hora_apertura" : "22:30:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 44,
-		"discoteca_id" : 14,
-		"dia_id" : 6,
-		"hora_apertura" : "22:30:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 45,
-		"discoteca_id" : 14,
-		"dia_id" : 4,
-		"hora_apertura" : "22:30:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 46,
-		"discoteca_id" : 15,
-		"dia_id" : 1,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 47,
-		"discoteca_id" : 15,
-		"dia_id" : 6,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 48,
-		"discoteca_id" : 15,
-		"dia_id" : 4,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 49,
-		"discoteca_id" : 15,
-		"dia_id" : 7,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "06:00:00"
-	},
-	{
-		"id_horario" : 50,
-		"discoteca_id" : 16,
-		"dia_id" : 1,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 51,
-		"discoteca_id" : 16,
-		"dia_id" : 2,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 52,
-		"discoteca_id" : 16,
-		"dia_id" : 3,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 53,
-		"discoteca_id" : 16,
-		"dia_id" : 4,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 54,
-		"discoteca_id" : 16,
-		"dia_id" : 5,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 55,
-		"discoteca_id" : 16,
-		"dia_id" : 6,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 56,
-		"discoteca_id" : 16,
-		"dia_id" : 7,
-		"hora_apertura" : "22:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 57,
-		"discoteca_id" : 17,
-		"dia_id" : 1,
-		"hora_apertura" : "01:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 58,
-		"discoteca_id" : 17,
-		"dia_id" : 3,
-		"hora_apertura" : "01:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 59,
-		"discoteca_id" : 17,
-		"dia_id" : 4,
-		"hora_apertura" : "01:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 60,
-		"discoteca_id" : 17,
-		"dia_id" : 6,
-		"hora_apertura" : "01:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 61,
-		"discoteca_id" : 18,
-		"dia_id" : 2,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 62,
-		"discoteca_id" : 18,
-		"dia_id" : 3,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 63,
-		"discoteca_id" : 18,
-		"dia_id" : 4,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 64,
-		"discoteca_id" : 18,
-		"dia_id" : 5,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 65,
-		"discoteca_id" : 18,
-		"dia_id" : 6,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "09:00:00"
-	},
-	{
-		"id_horario" : 66,
-		"discoteca_id" : 19,
-		"dia_id" : 1,
-		"hora_apertura" : "20:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 67,
-		"discoteca_id" : 19,
-		"dia_id" : 2,
-		"hora_apertura" : "20:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 68,
-		"discoteca_id" : 19,
-		"dia_id" : 4,
-		"hora_apertura" : "20:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 69,
-		"discoteca_id" : 19,
-		"dia_id" : 5,
-		"hora_apertura" : "20:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 70,
-		"discoteca_id" : 19,
-		"dia_id" : 6,
-		"hora_apertura" : "20:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 71,
-		"discoteca_id" : 19,
-		"dia_id" : 3,
-		"hora_apertura" : "20:00:00",
-		"hora_cierre" : "08:00:00"
-	},
-	{
-		"id_horario" : 72,
-		"discoteca_id" : 20,
-		"dia_id" : 6,
-		"hora_apertura" : "00:00:00",
-		"hora_cierre" : "11:00:00"
-	}
-]
+{
+    "data": [
+        {
+            "dia_id": 1,
+            "discoteca_id": 1,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 1
+        },
+        {
+            "dia_id": 2,
+            "discoteca_id": 1,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 2
+        },
+        {
+            "dia_id": 3,
+            "discoteca_id": 1,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 3
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 1,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 4
+        },
+        {
+            "dia_id": 5,
+            "discoteca_id": 1,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 5
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 1,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 6
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 2,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 7
+        },
+        {
+            "dia_id": 2,
+            "discoteca_id": 2,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 8
+        },
+        {
+            "dia_id": 5,
+            "discoteca_id": 2,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 9
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 3,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 10
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 4,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 11
+        },
+        {
+            "dia_id": 2,
+            "discoteca_id": 4,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 12
+        },
+        {
+            "dia_id": 3,
+            "discoteca_id": 4,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 13
+        },
+        {
+            "dia_id": 5,
+            "discoteca_id": 4,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 14
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 4,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 15
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 5,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "05:00:00",
+            "id_horario": 16
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 5,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "05:00:00",
+            "id_horario": 17
+        },
+        {
+            "dia_id": 7,
+            "discoteca_id": 5,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "05:00:00",
+            "id_horario": 18
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 6,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 19
+        },
+        {
+            "dia_id": 2,
+            "discoteca_id": 6,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 20
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 7,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 21
+        },
+        {
+            "dia_id": 2,
+            "discoteca_id": 7,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 22
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 8,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 23
+        },
+        {
+            "dia_id": 3,
+            "discoteca_id": 8,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 24
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 8,
+            "hora_apertura": "23:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 25
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 9,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 26
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 9,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 27
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 10,
+            "hora_apertura": "01:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 28
+        },
+        {
+            "dia_id": 2,
+            "discoteca_id": 10,
+            "hora_apertura": "01:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 29
+        },
+        {
+            "dia_id": 3,
+            "discoteca_id": 10,
+            "hora_apertura": "01:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 30
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 10,
+            "hora_apertura": "01:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 31
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 11,
+            "hora_apertura": "01:00:00",
+            "hora_cierre": "07:00:00",
+            "id_horario": 32
+        },
+        {
+            "dia_id": 3,
+            "discoteca_id": 12,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "05:00:00",
+            "id_horario": 33
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 12,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "05:00:00",
+            "id_horario": 34
+        },
+        {
+            "dia_id": 5,
+            "discoteca_id": 12,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "05:00:00",
+            "id_horario": 35
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 12,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "05:00:00",
+            "id_horario": 36
+        },
+        {
+            "dia_id": 2,
+            "discoteca_id": 13,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 37
+        },
+        {
+            "dia_id": 3,
+            "discoteca_id": 13,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 38
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 13,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 39
+        },
+        {
+            "dia_id": 5,
+            "discoteca_id": 13,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 40
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 13,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 41
+        },
+        {
+            "dia_id": 7,
+            "discoteca_id": 14,
+            "hora_apertura": "22:30:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 42
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 14,
+            "hora_apertura": "22:30:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 43
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 14,
+            "hora_apertura": "22:30:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 44
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 14,
+            "hora_apertura": "22:30:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 45
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 15,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 46
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 15,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 47
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 15,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 48
+        },
+        {
+            "dia_id": 7,
+            "discoteca_id": 15,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "06:00:00",
+            "id_horario": 49
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 16,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 50
+        },
+        {
+            "dia_id": 2,
+            "discoteca_id": 16,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 51
+        },
+        {
+            "dia_id": 3,
+            "discoteca_id": 16,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 52
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 16,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 53
+        },
+        {
+            "dia_id": 5,
+            "discoteca_id": 16,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 54
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 16,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 55
+        },
+        {
+            "dia_id": 7,
+            "discoteca_id": 16,
+            "hora_apertura": "22:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 56
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 17,
+            "hora_apertura": "01:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 57
+        },
+        {
+            "dia_id": 3,
+            "discoteca_id": 17,
+            "hora_apertura": "01:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 58
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 17,
+            "hora_apertura": "01:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 59
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 17,
+            "hora_apertura": "01:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 60
+        },
+        {
+            "dia_id": 2,
+            "discoteca_id": 18,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 61
+        },
+        {
+            "dia_id": 3,
+            "discoteca_id": 18,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 62
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 18,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 63
+        },
+        {
+            "dia_id": 5,
+            "discoteca_id": 18,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 64
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 18,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "09:00:00",
+            "id_horario": 65
+        },
+        {
+            "dia_id": 1,
+            "discoteca_id": 19,
+            "hora_apertura": "20:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 66
+        },
+        {
+            "dia_id": 2,
+            "discoteca_id": 19,
+            "hora_apertura": "20:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 67
+        },
+        {
+            "dia_id": 4,
+            "discoteca_id": 19,
+            "hora_apertura": "20:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 68
+        },
+        {
+            "dia_id": 5,
+            "discoteca_id": 19,
+            "hora_apertura": "20:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 69
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 19,
+            "hora_apertura": "20:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 70
+        },
+        {
+            "dia_id": 3,
+            "discoteca_id": 19,
+            "hora_apertura": "20:00:00",
+            "hora_cierre": "08:00:00",
+            "id_horario": 71
+        },
+        {
+            "dia_id": 6,
+            "discoteca_id": 20,
+            "hora_apertura": "00:00:00",
+            "hora_cierre": "11:00:00",
+            "id_horario": 72
+        }
+    ]
+}

@@ -1,1154 +1,804 @@
-[
-	{
-		"id_entrada" : 1,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 2,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 3,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 4,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 5,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 6,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 7,
-		"tipo_entrada" : "reservado",
-		"precio" : 160.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 8,
-		"tipo_entrada" : "reservado",
-		"precio" : 160.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 9,
-		"tipo_entrada" : "reservado",
-		"precio" : 160.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 10,
-		"tipo_entrada" : "reservado",
-		"precio" : 160.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 11,
-		"tipo_entrada" : "reservado",
-		"precio" : 160.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 12,
-		"tipo_entrada" : "reservado",
-		"precio" : 160.00,
-		"id_discoteca" : 1,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 13,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 2,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 14,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 2,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 15,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 2,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 16,
-		"tipo_entrada" : "reservado",
-		"precio" : 85.00,
-		"id_discoteca" : 2,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 17,
-		"tipo_entrada" : "reservado",
-		"precio" : 85.00,
-		"id_discoteca" : 2,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 18,
-		"tipo_entrada" : "reservado",
-		"precio" : 85.00,
-		"id_discoteca" : 2,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 19,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 3,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 20,
-		"tipo_entrada" : "reservado",
-		"precio" : 120.00,
-		"id_discoteca" : 3,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 21,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 4,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 22,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 4,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 23,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 4,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 24,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 4,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 25,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 4,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 26,
-		"tipo_entrada" : "reservado",
-		"precio" : 110.00,
-		"id_discoteca" : 4,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 27,
-		"tipo_entrada" : "reservado",
-		"precio" : 110.00,
-		"id_discoteca" : 4,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 28,
-		"tipo_entrada" : "reservado",
-		"precio" : 110.00,
-		"id_discoteca" : 4,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 29,
-		"tipo_entrada" : "reservado",
-		"precio" : 110.00,
-		"id_discoteca" : 4,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 30,
-		"tipo_entrada" : "reservado",
-		"precio" : 110.00,
-		"id_discoteca" : 4,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 31,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 5,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 32,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 5,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 33,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 5,
-		"dia_semana_id" : 7,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 34,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 5,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 35,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 5,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 36,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 5,
-		"dia_semana_id" : 7,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 37,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 6,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 38,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 6,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 39,
-		"tipo_entrada" : "reservado",
-		"precio" : 120.00,
-		"id_discoteca" : 6,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 40,
-		"tipo_entrada" : "reservado",
-		"precio" : 120.00,
-		"id_discoteca" : 6,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 41,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 7,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 42,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 7,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 43,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 7,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 44,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 7,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 45,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 8,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 46,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 8,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 47,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 8,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 48,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 8,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 49,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 8,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 50,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 8,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 51,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 9,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 52,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 9,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 53,
-		"tipo_entrada" : "reservado",
-		"precio" : 180.00,
-		"id_discoteca" : 9,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 54,
-		"tipo_entrada" : "reservado",
-		"precio" : 180.00,
-		"id_discoteca" : 9,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 55,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 10,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 56,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 10,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 57,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 10,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 58,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 10,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 59,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 10,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 60,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 10,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 61,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 10,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 62,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 10,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 63,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 11,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 64,
-		"tipo_entrada" : "reservado",
-		"precio" : 150.00,
-		"id_discoteca" : 11,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 65,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 12,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 66,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 12,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 67,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 12,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 68,
-		"tipo_entrada" : "individual",
-		"precio" : 12.00,
-		"id_discoteca" : 12,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 69,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 12,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 70,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 12,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 71,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 12,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 72,
-		"tipo_entrada" : "reservado",
-		"precio" : 140.00,
-		"id_discoteca" : 12,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 73,
-		"tipo_entrada" : "individual",
-		"precio" : 7.00,
-		"id_discoteca" : 13,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 74,
-		"tipo_entrada" : "individual",
-		"precio" : 7.00,
-		"id_discoteca" : 13,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 75,
-		"tipo_entrada" : "individual",
-		"precio" : 7.00,
-		"id_discoteca" : 13,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 76,
-		"tipo_entrada" : "individual",
-		"precio" : 7.00,
-		"id_discoteca" : 13,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 77,
-		"tipo_entrada" : "individual",
-		"precio" : 7.00,
-		"id_discoteca" : 13,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 78,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 13,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 79,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 13,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 80,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 13,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 81,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 13,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 82,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 13,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 83,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 14,
-		"dia_semana_id" : 7,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 84,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 14,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 85,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 14,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 86,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 14,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 87,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 14,
-		"dia_semana_id" : 7,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 88,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 14,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 89,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 14,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 90,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 14,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 91,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 15,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 92,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 15,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 93,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 15,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 94,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 15,
-		"dia_semana_id" : 7,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 95,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 15,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 96,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 15,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 97,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 15,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 98,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 15,
-		"dia_semana_id" : 7,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 99,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 100,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 101,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 102,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 103,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 104,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 105,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 7,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 106,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 107,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 108,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 109,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 110,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 111,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 112,
-		"tipo_entrada" : "reservado",
-		"precio" : 130.00,
-		"id_discoteca" : 16,
-		"dia_semana_id" : 7,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 113,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 17,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 114,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 17,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 115,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 17,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 116,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 17,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 117,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 17,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 118,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 17,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 119,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 17,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 120,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 17,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 121,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 18,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 122,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 18,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 123,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 18,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 124,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 18,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 125,
-		"tipo_entrada" : "individual",
-		"precio" : 15.00,
-		"id_discoteca" : 18,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 126,
-		"tipo_entrada" : "reservado",
-		"precio" : 90.00,
-		"id_discoteca" : 18,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 127,
-		"tipo_entrada" : "reservado",
-		"precio" : 90.00,
-		"id_discoteca" : 18,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 128,
-		"tipo_entrada" : "reservado",
-		"precio" : 90.00,
-		"id_discoteca" : 18,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 129,
-		"tipo_entrada" : "reservado",
-		"precio" : 90.00,
-		"id_discoteca" : 18,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 130,
-		"tipo_entrada" : "reservado",
-		"precio" : 90.00,
-		"id_discoteca" : 18,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 131,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 132,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 133,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 134,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 135,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 136,
-		"tipo_entrada" : "individual",
-		"precio" : 20.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 137,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 1,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 138,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 2,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 139,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 4,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 140,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 5,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 141,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 142,
-		"tipo_entrada" : "reservado",
-		"precio" : 100.00,
-		"id_discoteca" : 19,
-		"dia_semana_id" : 3,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 143,
-		"tipo_entrada" : "individual",
-		"precio" : 10.00,
-		"id_discoteca" : 20,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	},
-	{
-		"id_entrada" : 144,
-		"tipo_entrada" : "reservado",
-		"precio" : 90.00,
-		"id_discoteca" : 20,
-		"dia_semana_id" : 6,
-		"stock_actual" : 100
-	}
-]
+{
+    "data": [
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 1,
+            "id_entrada": 1,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 1,
+            "id_entrada": 2,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 1,
+            "id_entrada": 3,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 1,
+            "id_entrada": 4,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 5,
+            "id_discoteca": 1,
+            "id_entrada": 5,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 1,
+            "id_entrada": 6,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 1,
+            "id_entrada": 7,
+            "precio": "160.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 1,
+            "id_entrada": 8,
+            "precio": "160.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 1,
+            "id_entrada": 9,
+            "precio": "160.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 1,
+            "id_entrada": 10,
+            "precio": "160.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 5,
+            "id_discoteca": 1,
+            "id_entrada": 11,
+            "precio": "160.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 1,
+            "id_entrada": 12,
+            "precio": "160.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 2,
+            "id_entrada": 13,
+            "precio": "15.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 2,
+            "id_entrada": 14,
+            "precio": "15.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 5,
+            "id_discoteca": 2,
+            "id_entrada": 15,
+            "precio": "15.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 2,
+            "id_entrada": 16,
+            "precio": "85.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 2,
+            "id_entrada": 17,
+            "precio": "85.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 5,
+            "id_discoteca": 2,
+            "id_entrada": 18,
+            "precio": "85.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 3,
+            "id_entrada": 19,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 3,
+            "id_entrada": 20,
+            "precio": "120.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 4,
+            "id_entrada": 21,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 4,
+            "id_entrada": 22,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 4,
+            "id_entrada": 23,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 5,
+            "id_discoteca": 4,
+            "id_entrada": 24,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 4,
+            "id_entrada": 25,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 4,
+            "id_entrada": 26,
+            "precio": "110.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 4,
+            "id_entrada": 27,
+            "precio": "110.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 4,
+            "id_entrada": 28,
+            "precio": "110.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 5,
+            "id_discoteca": 4,
+            "id_entrada": 29,
+            "precio": "110.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 4,
+            "id_entrada": 30,
+            "precio": "110.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 5,
+            "id_entrada": 31,
+            "precio": "15.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 5,
+            "id_entrada": 32,
+            "precio": "15.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 7,
+            "id_discoteca": 5,
+            "id_entrada": 33,
+            "precio": "15.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 5,
+            "id_entrada": 34,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 5,
+            "id_entrada": 35,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 7,
+            "id_discoteca": 5,
+            "id_entrada": 36,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 6,
+            "id_entrada": 37,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 6,
+            "id_entrada": 38,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 6,
+            "id_entrada": 39,
+            "precio": "120.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 6,
+            "id_entrada": 40,
+            "precio": "120.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 7,
+            "id_entrada": 41,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 7,
+            "id_entrada": 42,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 7,
+            "id_entrada": 43,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 7,
+            "id_entrada": 44,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 8,
+            "id_entrada": 45,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 8,
+            "id_entrada": 46,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 8,
+            "id_entrada": 47,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 8,
+            "id_entrada": 48,
+            "precio": "130.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 8,
+            "id_entrada": 49,
+            "precio": "130.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 8,
+            "id_entrada": 50,
+            "precio": "130.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 9,
+            "id_entrada": 51,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 9,
+            "id_entrada": 52,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 9,
+            "id_entrada": 53,
+            "precio": "180.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 9,
+            "id_entrada": 54,
+            "precio": "180.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 10,
+            "id_entrada": 55,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 10,
+            "id_entrada": 56,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 10,
+            "id_entrada": 57,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 10,
+            "id_entrada": 58,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 10,
+            "id_entrada": 59,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 10,
+            "id_entrada": 60,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 10,
+            "id_entrada": 61,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 10,
+            "id_entrada": 62,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 11,
+            "id_entrada": 63,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 11,
+            "id_entrada": 64,
+            "precio": "150.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 12,
+            "id_entrada": 65,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 12,
+            "id_entrada": 66,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 5,
+            "id_discoteca": 12,
+            "id_entrada": 67,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 12,
+            "id_entrada": 68,
+            "precio": "12.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 12,
+            "id_entrada": 69,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 12,
+            "id_entrada": 70,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 5,
+            "id_discoteca": 12,
+            "id_entrada": 71,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 12,
+            "id_entrada": 72,
+            "precio": "140.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 13,
+            "id_entrada": 73,
+            "precio": "7.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 13,
+            "id_entrada": 74,
+            "precio": "7.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 13,
+            "id_entrada": 75,
+            "precio": "7.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 5,
+            "id_discoteca": 13,
+            "id_entrada": 76,
+            "precio": "7.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 13,
+            "id_entrada": 77,
+            "precio": "7.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 13,
+            "id_entrada": 78,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 3,
+            "id_discoteca": 13,
+            "id_entrada": 79,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 13,
+            "id_entrada": 80,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 5,
+            "id_discoteca": 13,
+            "id_entrada": 81,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 13,
+            "id_entrada": 82,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 7,
+            "id_discoteca": 14,
+            "id_entrada": 83,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 14,
+            "id_entrada": 84,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 14,
+            "id_entrada": 85,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 14,
+            "id_entrada": 86,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 7,
+            "id_discoteca": 14,
+            "id_entrada": 87,
+            "precio": "130.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 14,
+            "id_entrada": 88,
+            "precio": "130.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 14,
+            "id_entrada": 89,
+            "precio": "130.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 14,
+            "id_entrada": 90,
+            "precio": "130.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 15,
+            "id_entrada": 91,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 15,
+            "id_entrada": 92,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 15,
+            "id_entrada": 93,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 7,
+            "id_discoteca": 15,
+            "id_entrada": 94,
+            "precio": "10.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 15,
+            "id_entrada": 95,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 6,
+            "id_discoteca": 15,
+            "id_entrada": 96,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 4,
+            "id_discoteca": 15,
+            "id_entrada": 97,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 7,
+            "id_discoteca": 15,
+            "id_entrada": 98,
+            "precio": "100.00",
+            "stock_actual": 100,
+            "tipo_entrada": "reservado"
+        },
+        {
+            "dia_semana_id": 1,
+            "id_discoteca": 16,
+            "id_entrada": 99,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 16,
+            "id_entrada": 100,
+            "precio": "20.00",
+            "stock_actual": 100,
+            "tipo_entrada": "individual"
+        }
+    ]
+}
