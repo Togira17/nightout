@@ -1,8 +1,32 @@
-id_dia,nombre_dia
-1,lunes
-2,martes
-3,miércoles
-4,jueves
-5,viernes
-6,sábado
-7,domingo
+{
+    "data": [
+        {
+            "id_dia": 1,
+            "nombre_dia": "lunes"
+        },
+        {
+            "id_dia": 2,
+            "nombre_dia": "martes"
+        },
+        {
+            "id_dia": 3,
+            "nombre_dia": "miércoles"
+        },
+        {
+            "id_dia": 4,
+            "nombre_dia": "jueves"
+        },
+        {
+            "id_dia": 5,
+            "nombre_dia": "viernes"
+        },
+        {
+            "id_dia": 6,
+            "nombre_dia": "sábado"
+        },
+        {
+            "id_dia": 7,
+            "nombre_dia": "domingo"
+        }
+    ]
+}
