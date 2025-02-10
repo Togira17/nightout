@@ -13,6 +13,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { FormsModule } from '@angular/forms';
+import { AvisoLegalComponent } from './aviso-legal/aviso-legal.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     FiltrosComponent,
     AboutUsComponent,
     PoliticaPrivacidadComponent,
-    ContactoComponent
+    ContactoComponent,
+    AvisoLegalComponent
   ],
   imports: [
     BrowserModule,

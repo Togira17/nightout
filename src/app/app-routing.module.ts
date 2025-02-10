@@ -7,6 +7,7 @@ import { CarritoComponent } from './carrito/carrito.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
 import { ContactoComponent } from './contacto/contacto.component';
+import{ AvisoLegalComponent} from './aviso-legal/aviso-legal.component';
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'header', component: HeaderComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'carrito', component: CarritoComponent},
   { path: 'aboutUs', component:AboutUsComponent },
   { path: 'politicaPrivacidad', component:PoliticaPrivacidadComponent },
-  { path: 'contacto', component:ContactoComponent }
+  { path: 'contacto', component:ContactoComponent },
+  {path: 'avisoLegal',component:AvisoLegalComponent}
 ];
 
 @NgModule({
