@@ -1,0 +1,19 @@
+[
+    {
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "email": "juanblanco.23@campuscamara.es",
+        "password": "12345",
+        "nombre_usuario": "LemanSachs29",
+        "titular_tarjeta": "Juan Blanco Moyano",
+        "numero_tarjeta_credito": "1111111111111111",
+        "cvc": "123",
+        "dni": "41750503",
+        "first_name": "Juan",
+        "last_name": "Blanco Moyano"
+      }
+    }
+  ]
+  
