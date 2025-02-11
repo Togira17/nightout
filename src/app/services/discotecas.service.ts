@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 interface DiaSemana {
   id_dia: number;
@@ -9,17 +9,17 @@ interface DiaSemana {
 }
 
 interface Discoteca {
+  id_discoteca: number;
+  nombre: string;
+  direccion: string;
   ambiente: string;
   descripcion: string;
-  direccion: string;
   etiqueta: string;
   guardarropa: number;
-  id_discoteca: number;
   id_zona: number;
   imagen1: string;
   imagen2: string;
   imagen3: string;
-  nombre: string;
   parking: number;
   reservado: number;
   stock_inicial: number;
@@ -35,7 +35,7 @@ interface Entrada {
   tipo_entrada: string;
 }
 
-interface HorarioDiscoteca {
+interface Horario {
   dia_id: number;
   discoteca_id: number;
   hora_apertura: string;
@@ -48,6 +48,11 @@ interface Zona {
   nombre: string;
 }
 
+interface DiaCompleto extends DiaSemana {
+  entradas: Entrada[];
+  horarios: Horario[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -56,63 +61,42 @@ export class DiscotecasService {
   constructor(private http: HttpClient) { }
 
   getDiscotecasCompletos(): Observable<any[]> {
-    return forkJoin([
-      this.http.get<DiaSemana[]>('/assets/data/json/dias_semana.json'),
-      this.http.get<Discoteca[]>('/assets/data/json/discoteca.json'),
-      this.http.get<Entrada[]>('/assets/data/json/entrada.json'),
-      this.http.get<HorarioDiscoteca[]>('/assets/data/json/horarios_discoteca.json'),
-      this.http.get<Zona[]>('/assets/data/json/zona.json'),
-    ]).pipe(
-      map(([productos, modelos]) => {
-        return productos.map((producto: Producto) => ({
-          ...producto,
-          modelos: modelos.filter((modelo: Modelo) => modelo.productoId === producto.id),
-        }));
-      })
-    );
-  }
-}
-
- 
-  getDiscotecasCompletas(diaId: number): Observable<any[]> {
     return forkJoin({
-      discotecas: this.getDiscotecas(),
-      entradas: this.getEntradas(),
-      horarios: this.getHorarios(),
-      dias: this.getDiasSemana(),
-      zonas: this.getZonas()
+      dias: this.http.get<{data: DiaSemana[]}>('/assets/data/json/dias_semana.json').pipe(map(res => res.data)),
+      discotecas: this.http.get<{data: Discoteca[]}>('/assets/data/json/discoteca.json').pipe(map(res => res.data)),
+      entradas: this.http.get<{data: Entrada[]}>('/assets/data/json/entrada.json').pipe(map(res => res.data)),
+      horarios: this.http.get<{data: Horario[]}>('/assets/data/json/horarios_discoteca.json').pipe(map(res => res.data)),
+      zonas: this.http.get<{data: Zona[]}>('/assets/data/json/zona.json').pipe(map(res => res.data)),
     }).pipe(
-      map(({ discotecas, entradas, horarios, dias, zonas }) => {
+      map(({dias, discotecas, entradas, horarios, zonas}) => {
+        if (!Array.isArray(discotecas)) {
+          throw new Error('Formato de discotecas inválido');
+        }
+
         return discotecas.map(discoteca => {
-          const entrada = entradas.find(e => 
-            e.id_discoteca === discoteca.id_discoteca && 
-            e.dia_semana_id === diaId
-          );
+          const zona = zonas.find(z => z.id_zona === discoteca.id_zona) || { id_zona: 0, nombre: 'Desconocida' };
           
-          const horario = horarios.find(h => 
-            h.discoteca_id === discoteca.id_discoteca && 
-            h.dia_id === diaId
-          );
-          
-          const zona = zonas.find(z => z.id_zona === discoteca.id_zona);
-          const diasDisponibles = this.getDiasDisponibles(discoteca.id_discoteca, entradas, dias);
+          const diasConInfo: DiaCompleto[] = dias.map(dia => {
+            const diaEntradas = entradas.filter(e => 
+              e.id_discoteca === discoteca.id_discoteca &&
+              e.dia_semana_id === dia.id_dia
+            );
+
+            const diaHorarios = horarios.filter(h => 
+              h.discoteca_id === discoteca.id_discoteca &&
+              h.dia_id === dia.id_dia
+            );
+
+            return { ...dia, entradas: diaEntradas, horarios: diaHorarios };
+          }).filter(d => d.entradas.length > 0 || d.horarios.length > 0);
 
           return {
             ...discoteca,
-            entrada,
-            horario,
             zona,
-            diasDisponibles
+            dias: diasConInfo
           };
-        }).filter(d => d.entrada); // Solo discotecas con entradas para el día seleccionado
+        });
       })
     );
-  }
-
-  private getDiasDisponibles(discotecaId: number, entradas: Entrada[], dias: DiaSemana[]): string[] {
-    return entradas
-      .filter(e => e.id_discoteca === discotecaId)
-      .map(e => dias.find(d => d.id_dia === e.dia_semana_id)?.nombre_dia || '')
-      .filter(Boolean);
   }
 }

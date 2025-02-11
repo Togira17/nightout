@@ -5,6 +5,14 @@
             "id_discoteca": 1,
             "id_entrada": 1,
             "precio": "20.00",
+            "stock_actual": 10,
+            "tipo_entrada": "individual"
+        },
+        {
+            "dia_semana_id": 2,
+            "id_discoteca": 1,
+            "id_entrada": 1,
+            "precio": "200.00",
             "stock_actual": 100,
             "tipo_entrada": "individual"
         },
