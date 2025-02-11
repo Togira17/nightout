@@ -14,6 +14,7 @@ import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-priv
 import { ContactoComponent } from './contacto/contacto.component';
 import { FormsModule } from '@angular/forms';
 import { AvisoLegalComponent } from './aviso-legal/aviso-legal.component';
+import { HttpClientModule } from '@angular/common/http';  // Asegúrate de que está importado
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AvisoLegalComponent } from './aviso-legal/aviso-legal.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule  
   ],
   providers:  [],
   bootstrap: [AppComponent]

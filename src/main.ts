@@ -1,5 +1,5 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
+import '@angular/compiler'; // Añade esta línea
 import { AppModule } from './app/app.module';
 
 

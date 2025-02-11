@@ -28,7 +28,7 @@
             "dia_semana_id": 4,
             "id_discoteca": 1,
             "id_entrada": 4,
-            "precio": "20.00",
+            "precio": "50.00",
             "stock_actual": 100,
             "tipo_entrada": "individual"
         },
