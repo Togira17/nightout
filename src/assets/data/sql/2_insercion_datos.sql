@@ -1,3 +1,5 @@
+USE nightoutSevilla;
+
 INSERT INTO
     zona (id_zona, nombre)
 VALUES
@@ -613,13 +615,13 @@ VALUES
 
 
     -- INSERTAR EN USUARIO
-INSERT INTO usuario (id_usuario, dni, nombre_usuario, nombre, apellidos, correo_electronico, contraseña) 
-VALUES (1, '41750503Y', 'Leman29', 'Juan', 'Blanco Moyano', 'juanblancomoyano@gmail.com', 'admin');
+--INSERT INTO usuario (id_usuario, dni, nombre_usuario, nombre, apellidos, correo_electronico, contraseña) 
+--VALUES (1, '41750503Y', 'Leman29', 'Juan', 'Blanco Moyano', 'juanblancomoyano@gmail.com', 'admin');
 
 -- INSERTAR EN PEDIDO
-INSERT INTO pedido (id_pedido, total, id_usuario) 
-VALUES (1, 24, 1);
+--INSERT INTO pedido (id_pedido, total, id_usuario) 
+--VALUES (1, 24, 1);
 
 -- INSERTAR EN DETALLES_PEDIDO
-INSERT INTO detalles_pedido (id_detalle, id_pedido, id_entrada, cantidad) 
-VALUES (1, 1, 45, 2);
+--INSERT INTO detalles_pedido (id_detalle, id_pedido, id_entrada, cantidad) 
+--VALUES (1, 1, 45, 2);
