@@ -10,11 +10,11 @@
         <div class="modal-body centrar-contenedor p-3">
           <form >
             <div class="form-group mt-5 ">
-              <input type="text" class="form-control formulario" id="formGroupUsuario" aria-label="Recuadro usuario"placeholder="Usuario">
+              <input type="text" class="form-control formulario" name="first_name" [(ngModel)]="" id="formGroupUsuarioLogin" aria-label="Recuadro usuario"placeholder="Usuario">
             </div>
 
             <div class="form-group pt-5 mb-5">
-              <input type="text" class="form-control formulario" id="formGroupContraseña" aria-label="Recuadro contraseña" placeholder="Contraseña">
+              <input type="text" class="form-control formulario" id="formGroupContraseñaLogin" aria-label="Recuadro contraseña" placeholder="Contraseña">
             </div>
 
             <button type="submit" class="btn btn-primary mt-5 w-100 boton-submit rounded-4">Inicia sesión</button>
@@ -38,37 +38,37 @@
       </div>
 
       <div class="modal-body centrar-contenedor p-3">
-        <form >
+        <form (submit)="register()" >
           <div class="form-group mt-4 ">
-            <input type="text" class="form-control formulario" id="formGroupNombre" aria-label="Cuadro nombre" placeholder="Nombre">
+            <input type="text" class="form-control formulario" id="formGroupNombre" name="first_name" [(ngModel)]="user.first_name" aria-label="Cuadro nombre" placeholder="Nombre">
           </div>
 
           <div class="form-group pt-3">
-            <input type="text" class="form-control formulario" id="formGroupApellidos" aria-label="Cuadro apellidos" placeholder="Apellidos">
+            <input type="text" class="form-control formulario" id="formGroupApellidos" name="last_name" [(ngModel)]="user.last_name"  aria-label="Cuadro apellidos" placeholder="Apellidos">
           </div>
           <div class="form-group mt-3 ">
-            <input type="text" class="form-control formulario" id="formGroupDNI" aria-label="Cuadro DNI" placeholder="DNI">
+            <input type="text" class="form-control formulario" id="formGroupDNI" name="dni" [(ngModel)]="user.dni" aria-label="Cuadro DNI" placeholder="DNI">
           </div>
 
           <div class="form-group pt-3">
-            <input type="text" class="form-control formulario" id="formGroupCorreo" aria-label="Cuadro Correo Electronico" placeholder="Correo Electronico">
+            <input type="text" class="form-control formulario" id="formGroupCorreo" name="email" [(ngModel)]="user.email" aria-label="Cuadro Correo Electronico" placeholder="Correo Electronico">
           </div>
           <div class="form-group mt-3 ">
-            <input type="text" class="form-control formulario" id="formGroupUsuario" aria-label="Cuadro nombre de usuario" placeholder="Nombre de usuario">
+            <input type="text" class="form-control formulario" id="formGroupUsuarioRegistro" name="nombre_usuario" [(ngModel)]="user.nombre_usuario" aria-label="Cuadro nombre de usuario" placeholder="Nombre de usuario">
           </div>
 
           <div class="form-group mt-3 ">
-            <input type="text" class="form-control formulario" id="formGroupTitularTarjetaDeCredito" aria-label="Titular de la tarjeta de credito" placeholder="Titular de la tarjeta de credito">
+            <input type="text" class="form-control formulario" id="formGroupTitularTarjetaDeCredito" name="titular_tarjeta" [(ngModel)]="user.titular_tarjeta" aria-label="Titular de la tarjeta de credito" placeholder="Titular de la tarjeta de credito">
           </div>
 
           <div class="form-group mt-3 d-flex justify-content-between">
-            <input type="text" class="form-control formulario input-reducido" id="formGroupNumeroDeTarjetaDeCredito" aria-label="Número de su tarjeta de crédito" placeholder="Número de su tarjeta de crédito">
-            <input type="text" class="form-control formulario input-reducido ms-2" id="formGroupCVCDeTarjetaDeCredito" aria-label="CVC de su tarjeta de crédito" placeholder="CVC">
+            <input type="text" class="form-control formulario input-reducido" id="formGroupNumeroDeTarjetaDeCredito" name="numero_tarjeta_credito" [(ngModel)]="user.numero_tarjeta_credito" aria-label="Número de su tarjeta de crédito" placeholder="Número de su tarjeta de crédito">
+            <input type="text" class="form-control formulario input-reducido ms-2" id="formGroupCVCDeTarjetaDeCredito" name="cvc" [(ngModel)]="user.cvc" aria-label="CVC de su tarjeta de crédito" placeholder="CVC">
           </div>
           
           
           <div class="form-group pt-3">
-            <input type="text" class="form-control formulario" id="formGroupContraseña" aria-label="Cuadro Contraseña" placeholder="Contraseña">
+            <input type="text" class="form-control formulario" id="formGroupContraseñaRegistro" name="password" [(ngModel)]="user.password" aria-label="Cuadro Contraseña" placeholder="Contraseña">
           </div>
           
 
