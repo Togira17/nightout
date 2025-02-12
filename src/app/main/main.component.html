@@ -81,14 +81,16 @@
                         <p><span class="servicio">Etiqueta: </span><span>{{discoteca.etiqueta}}</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Numero de entradas disponibles: </span><span>{{discoteca.stock_inicial}}</span></p>
+                        <p><span class="servicio">Numero de entradas disponibles:
+                            </span><span>{{discoteca.stock_inicial}}</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Fecha: </span>    
-                            <select [(ngModel)]="discoteca.fechaSeleccionada">
+                        <p><span class="servicio">Fecha: </span>
+                            <select [(ngModel)]="discoteca.fechaSeleccionada"
+                                (change)="actualizarPreciosYHorarios(discoteca)">
                                 <option value="" disabled selected hidden>Seleccione la fecha deseada</option>
                                 <option *ngFor="let fecha of discoteca.fecha" [value]="fecha">
-                                  {{ fecha }}
+                                    {{ fecha }}
                                 </option>
                             </select>
                         </p>
@@ -104,7 +106,7 @@
 
             <!-- Botones de compra -->
             <section>
-                
+
             </section>
             <div class="discoteca__btn-entrada"><input (click)="agregarAlCarrito()" class="btn-comprar" type="button"
                     value="Añadir Entrada">

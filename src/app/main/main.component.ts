@@ -44,8 +44,8 @@ class DiscotecaModel {
   dias!: Dia[];
 
   fecha: string[] = [];
-  entrada: string = '0';
-  reservados: string = '0';
+  entrada: string = 'no disponible';
+  reservados: string = 'no disponible';
   horario_apertura: string = '--:--';
   horario_cierre: string = '--:--';
   fechaSeleccionada: string = '';
@@ -62,10 +62,10 @@ class DiscotecaModel {
     if (!diaSeleccionado) return;
 
     const entrada = diaSeleccionado.entradas.find((e) => e.tipo_entrada === 'individual');
-    this.entrada = entrada ? entrada.precio : '0';
+    this.entrada = entrada ? entrada.precio : 'no disponible';
 
     const reservado = diaSeleccionado.entradas.find((e) => e.tipo_entrada === 'reservado');
-    this.reservados = reservado ? reservado.precio : '0';
+    this.reservados = reservado ? reservado.precio : 'no disponible';
 
     const horario = diaSeleccionado.horarios[0];
     this.horario_apertura = horario?.hora_apertura?.substring(0, 5) || '--:--';
@@ -84,7 +84,7 @@ export class MainComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private discotecasService: DiscotecasService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.cargarDiscotecas();
@@ -107,9 +107,9 @@ export class MainComponent implements OnInit {
     });
   }
 
-  cambiarDia(event: Event, discoteca: DiscotecaModel): void {
-    const select = event.target as HTMLSelectElement;
-    discoteca.fechaSeleccionada = select.value;
+  // Llamar a actualizarPreciosYHorarios cuando cambia la fecha seleccionada
+  actualizarPreciosYHorarios(discoteca: DiscotecaModel): void {
+    // Actualiza precios y horarios basados en la fecha seleccionada
     discoteca.actualizarPreciosYHorarios();
   }
 
