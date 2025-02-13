@@ -8,13 +8,13 @@
         </div>
 
         <div class="modal-body centrar-contenedor p-3">
-          <form >
+          <form (submit)="login()">
             <div class="form-group mt-5 ">
-              <input type="text" class="form-control formulario" name="first_name" [(ngModel)]="" id="formGroupUsuarioLogin" aria-label="Recuadro usuario"placeholder="Usuario">
+              <input type="text" class="form-control formulario" name="email" [(ngModel)]="credentials.email" id="formGroupUsuarioLogin" aria-label="Recuadro usuario"placeholder="Usuario">
             </div>
 
             <div class="form-group pt-5 mb-5">
-              <input type="text" class="form-control formulario" id="formGroupContraseñaLogin" aria-label="Recuadro contraseña" placeholder="Contraseña">
+              <input type="password" class="form-control formulario" name="password" [(ngModel)]="credentials.password" id="formGroupContraseñaLogin" aria-label="Recuadro contraseña" placeholder="Contraseña">
             </div>
 
             <button type="submit" class="btn btn-primary mt-5 w-100 boton-submit rounded-4">Inicia sesión</button>
@@ -68,7 +68,7 @@
           
           
           <div class="form-group pt-3">
-            <input type="text" class="form-control formulario" id="formGroupContraseñaRegistro" name="password" [(ngModel)]="user.password" aria-label="Cuadro Contraseña" placeholder="Contraseña">
+            <input type="password" class="form-control formulario" id="formGroupContraseñaRegistro" name="password" [(ngModel)]="user.password" aria-label="Cuadro Contraseña" placeholder="Contraseña">
           </div>
           
 
