@@ -12,9 +12,9 @@ import { FiltrosComponent } from './filtros/filtros.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-privacidad.component';
 import { ContactoComponent } from './contacto/contacto.component';
-import { FormsModule } from '@angular/forms';
 import { AvisoLegalComponent } from './aviso-legal/aviso-legal.component';
-import { HttpClientModule } from '@angular/common/http';  // Asegúrate de que está importado
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,13 +29,14 @@ import { HttpClientModule } from '@angular/common/http';  // Asegúrate de que e
     AboutUsComponent,
     PoliticaPrivacidadComponent,
     ContactoComponent,
-    AvisoLegalComponent
+    AvisoLegalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule  
+    HttpClientModule,
+    FormsModule
   ],
   providers:  [],
   bootstrap: [AppComponent]

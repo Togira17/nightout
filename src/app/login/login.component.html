@@ -1,93 +1,161 @@
 <!-- modal login -->
 <div class=" modal fade" id="login" tabindex="-1" role="dialog" aria-label="exampleModalLabel" aria-hidden="true">
-    <div class="modal-sesion modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
-      <div class="modal-content contenido-sesion w-100 ">
+  <div class="modal-sesion modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+    <div class="modal-content contenido-sesion w-100 ">
 
-        <div class="centrar-contenedor  pt-5">
-          <h3 class="titulo-texto">INICIO DE SESION</h3>
-        </div>
+      <div class="centrar-contenedor  pt-5">
+        <h3 class="titulo-texto">INICIO DE SESION</h3>
+      </div>
 
-        <div class="modal-body centrar-contenedor p-3">
-          <form (submit)="login()">
-            <div class="form-group mt-5 ">
-              <input type="text" class="form-control formulario" name="email" [(ngModel)]="credentials.email" id="formGroupUsuarioLogin" aria-label="Recuadro usuario"placeholder="Usuario">
-            </div>
+      <div class="modal-body centrar-contenedor p-3">
+        <form (submit)="login()" #regForm="ngForm">
+          <div class="form-group mt-5 ">
+            <input type="text" class="form-control formulario" name="email" [(ngModel)]="credentials.email"
+              id="formGroupUsuarioLogin" aria-label="Recuadro usuario" placeholder="Usuario" required
+              #username="ngModel">
 
-            <div class="form-group pt-5 mb-5">
-              <input type="password" class="form-control formulario" name="password" [(ngModel)]="credentials.password" id="formGroupContraseñaLogin" aria-label="Recuadro contraseña" placeholder="Contraseña">
-            </div>
-
-            <button type="submit" class="btn btn-primary mt-5 w-100 boton-submit rounded-4">Inicia sesión</button>
-          </form>
-        </div>
-        <p class="ps-5 m-2 pt-2 m-0 pb-2">¿No tienes cuenta?<a  class="p-2" data-bs-toggle="modal" data-bs-target="#registro">REGISTRATE</a></p>
-              <div class="modal-footer border-0">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <div *ngIf="username.invalid && username.touched">
+                <span *ngIf="username.errors?.['required']">El nombre de usuario es obligatorio</span>
               </div>
+          </div>
+
+          <div class="form-group pt-5 mb-5">
+            <input type="password" class="form-control formulario" name="password" [(ngModel)]="credentials.password"
+              id="formGroupContraseñaLogin" aria-label="Recuadro contraseña" placeholder="Contraseña" required
+              #pass="ngModel">
+
+            <div *ngIf="pass.invalid && email.touched" class="text-danger">
+              <span *ngIf="email.errors?.['required']">La contraseña es obligatoria</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary mt-5 w-100 boton-submit rounded-4" [disabled]="regForm.invalid">Inicia sesión</button>
+
+          <div *ngIf="registerErrorMessage" class="alert alert-danger text-center mt-3">
+            {{ registerErrorMessage }}
+          </div>          
+        </form>
+      </div>
+      <p class="ps-5 m-2 pt-2 m-0 pb-2">¿No tienes cuenta?<a class="p-2" data-bs-toggle="modal"
+          data-bs-target="#registro">REGISTRATE</a></p>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Close</button>
       </div>
     </div>
+  </div>
 </div>
 
 <!-- modal registro -->
 <div class=" modal fade" id="registro" tabindex="-1" role="dialog" aria-label="registroLabel" aria-hidden="true">
   <div class="modal-sesion modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
     <div class="modal-content contenido-sesion ">
-      
+
       <div class="centrar-contenedor  pt-5">
         <h3 class="titulo-texto">CREAR CUENTA </h3>
       </div>
 
       <div class="modal-body centrar-contenedor p-3">
-        <form (submit)="register()" >
+        <form (submit)="register()" #regForm="ngForm">
           <div class="form-group mt-4 ">
-            <input type="text" class="form-control formulario" id="formGroupNombre" name="first_name" [(ngModel)]="user.first_name" aria-label="Cuadro nombre" placeholder="Nombre">
+            <input type="text" class="form-control formulario" id="formGroupNombre" name="first_name"
+              [(ngModel)]="user.first_name" aria-label="Cuadro nombre" placeholder="Nombre" required>
           </div>
 
           <div class="form-group pt-3">
-            <input type="text" class="form-control formulario" id="formGroupApellidos" name="last_name" [(ngModel)]="user.last_name"  aria-label="Cuadro apellidos" placeholder="Apellidos">
+            <input type="text" class="form-control formulario" id="formGroupApellidos" name="last_name"
+              [(ngModel)]="user.last_name" aria-label="Cuadro apellidos" placeholder="Apellidos" required>
           </div>
           <div class="form-group mt-3 ">
-            <input type="text" class="form-control formulario" id="formGroupDNI" name="dni" [(ngModel)]="user.dni" aria-label="Cuadro DNI" placeholder="DNI">
+
+            <input type="text" class="form-control formulario" id="formGroupDNI" name="dni" [(ngModel)]="user.dni"
+              aria-label="Cuadro DNI" placeholder="DNI (Ej: 12345678a)" required pattern="^[0-9]{8}[A-Za-z]$"
+              #dni="ngModel">
+
+            <div *ngIf="dni.invalid && dni.touched" class="text-danger">
+              <span *ngIf="dni.errors?.['required']">El DNI es obligatorio.</span>
+              <span *ngIf="dni.errors?.['pattern']">Formato incorrecto (Ej: 12345678A).</span>
+            </div>
+
+
           </div>
 
           <div class="form-group pt-3">
-            <input type="text" class="form-control formulario" id="formGroupCorreo" name="email" [(ngModel)]="user.email" aria-label="Cuadro Correo Electronico" placeholder="Correo Electronico">
+            <input type="email" class="form-control formulario" id="formGroupCorreo" name="email"
+              [(ngModel)]="user.email" aria-label="Cuadro Correo Electrónico" placeholder="Correo Electrónico" required
+              email #email="ngModel">
+
+
+            <div *ngIf="email.invalid && email.touched" class="text-danger">
+              <span *ngIf="email.errors?.['required']">El correo es obligatorio.</span>
+              <span *ngIf="email.errors?.['email']">Introduce un correo válido.</span>
+            </div>
+
           </div>
           <div class="form-group mt-3 ">
-            <input type="text" class="form-control formulario" id="formGroupUsuarioRegistro" name="nombre_usuario" [(ngModel)]="user.nombre_usuario" aria-label="Cuadro nombre de usuario" placeholder="Nombre de usuario">
+            <input type="text" class="form-control formulario" id="formGroupUsuarioRegistro" name="nombre_usuario"
+              [(ngModel)]="user.nombre_usuario" aria-label="Cuadro nombre de usuario" placeholder="Nombre de usuario"
+              required>
           </div>
 
           <div class="form-group mt-3 ">
-            <input type="text" class="form-control formulario" id="formGroupTitularTarjetaDeCredito" name="titular_tarjeta" [(ngModel)]="user.titular_tarjeta" aria-label="Titular de la tarjeta de credito" placeholder="Titular de la tarjeta de credito">
+            <input type="text" class="form-control formulario" id="formGroupTitularTarjetaDeCredito"
+              name="titular_tarjeta" [(ngModel)]="user.titular_tarjeta" aria-label="Titular de la tarjeta de credito"
+              placeholder="Titular de la tarjeta de credito" required>
           </div>
 
           <div class="form-group mt-3 d-flex justify-content-between">
-            <input type="text" class="form-control formulario input-reducido" id="formGroupNumeroDeTarjetaDeCredito" name="numero_tarjeta_credito" [(ngModel)]="user.numero_tarjeta_credito" aria-label="Número de su tarjeta de crédito" placeholder="Número de su tarjeta de crédito">
-            <input type="text" class="form-control formulario input-reducido ms-2" id="formGroupCVCDeTarjetaDeCredito" name="cvc" [(ngModel)]="user.cvc" aria-label="CVC de su tarjeta de crédito" placeholder="CVC">
+            <input type="text" class="form-control formulario input-reducido" id="formGroupNumeroDeTarjetaDeCredito"
+              name="numero_tarjeta_credito" [(ngModel)]="user.numero_tarjeta_credito"
+              aria-label="Número de su tarjeta de crédito" placeholder="Número de tarjeta (16 dígitos)" required
+              pattern="^[0-9]{16}$" #numeroTarjeta="ngModel" required>
+
+            <div *ngIf="numeroTarjeta.invalid && numeroTarjeta.touched" class="text-danger">
+              <span *ngIf="numeroTarjeta.errors?.['required']">El número de tarjeta es obligatorio.</span>
+              <span *ngIf="numeroTarjeta.errors?.['pattern']">Debe contener exactamente 16 dígitos.</span>
+            </div>
+
+
+            <input type="text" class="form-control formulario input-reducido ms-2" id="formGroupCVCDeTarjetaDeCredito"
+              name="cvc" [(ngModel)]="user.cvc" aria-label="CVC de su tarjeta de crédito" placeholder="CVC (3 dígitos)"
+              #cvc="ngModel" required pattern="^[0-9]{3}$">
+
+            <div *ngIf="cvc.invalid && cvc.touched" class="text-danger">
+              <span *ngIf="cvc.errors?.['required']">El CVC es obligatorio</span>
+              <span *ngIf="cvc.errors?.['pattern']">El CVC debe tener exactamente 3 dígitos</span>
+            </div>
+
           </div>
-          
-          
+
+
           <div class="form-group pt-3">
-            <input type="password" class="form-control formulario" id="formGroupContraseñaRegistro" name="password" [(ngModel)]="user.password" aria-label="Cuadro Contraseña" placeholder="Contraseña">
+            <input type="password" class="form-control formulario" id="formGroupContraseñaRegistro" name="password"
+              [(ngModel)]="user.password" aria-label="Cuadro Contraseña" placeholder="Contraseña" required
+              pattern="^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$" #password="ngModel">
+
+
+            <div *ngIf="password.invalid && password.touched" class="text-danger">
+              <span *ngIf="password.errors?.['required']">La contraseña es obligatoria.</span>
+              <span *ngIf="password.errors?.['pattern']">
+                La contraseña debe tener al menos 8 caracteres, una letra mayúscula y un número.
+              </span>
+            </div>
           </div>
-          
 
+          <button type="submit" class="btn btn-primary mt-4 w-100 boton-submit rounded-4" [disabled]="regForm.invalid">Registrarse</button>
 
-          <button type="submit" class="btn btn-primary mt-4 w-100 boton-submit rounded-4">Registrarse</button>
-          <p class="ps-5 m-2 pt-2 m-0 pb-2">¿Ya tienes cuenta?<a  class="p-2" data-bs-toggle="modal" data-bs-target="#login">INICIA SESION</a></p>
+          <p class="ps-5 m-2 pt-2 m-0 pb-2">¿Ya tienes cuenta?<a class="p-2" data-bs-toggle="modal"
+              data-bs-target="#login">INICIA SESION</a></p>
+
           <div class="modal-footer border-0">
-            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-close btn-danger" data-bs-dismiss="modal">Close</button>
           </div>
+
+          <div *ngIf="registerErrorMessage" class="alert alert-danger text-center mt-3">
+            {{ registerErrorMessage }}
+          </div>          
+
         </form>
       </div>
-
-              <!-- <div class="modal-footer border-0">
-        <button type="button" data-bs-toggle="modal" data-bs-target="#registro" class="btn btn-secondary">resgistrase</button>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-              </div> -->
     </div>
   </div>
-    </div>
-
-
+</div>
