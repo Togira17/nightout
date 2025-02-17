@@ -40,7 +40,6 @@ export class LoginComponent {
 
     this.authService.register(this.user).subscribe({
       next: (response) => {
-        console.log('Registro exitoso', response);
 
         //limpiar campos del formulario
         this.user = {
@@ -138,7 +137,6 @@ export class LoginComponent {
   handleLoginSuccess(response: any) {
     if (response.data && response.data.access_token) {
       localStorage.setItem('token', response.data.access_token);
-      console.log('Token guardado en localStorage:', response.data.access_token);
     } else {
       console.error('Error: No se encontró el access_token en la respuesta de la API');
     }
