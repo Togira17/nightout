@@ -126,7 +126,7 @@ export class LoginComponent {
   }
 
 
-
+  //Función para cerrar las ventanas modales
   closeModal(modalId: string) {
     const closeButton = document.querySelector(`#${modalId} .btn-close`) as HTMLElement;
     if (closeButton) {
@@ -134,7 +134,7 @@ export class LoginComponent {
     }
   }
 
-
+  //Función para guardar el token de acceso en localstorage
   handleLoginSuccess(response: any) {
     if (response.data && response.data.access_token) {
       localStorage.setItem('token', response.data.access_token);

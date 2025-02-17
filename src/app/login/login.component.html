@@ -15,9 +15,9 @@
               id="formGroupUsuarioLogin" aria-label="Recuadro usuario" placeholder="Usuario" required
               #username="ngModel">
 
-              <div *ngIf="username.invalid && username.touched">
-                <span *ngIf="username.errors?.['required']">El nombre de usuario es obligatorio</span>
-              </div>
+            <div *ngIf="username.invalid && username.touched">
+              <span *ngIf="username.errors?.['required']">El nombre de usuario es obligatorio</span>
+            </div>
           </div>
 
           <div class="form-group pt-5 mb-5">
@@ -30,17 +30,18 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary mt-5 w-100 boton-submit rounded-4" [disabled]="logForm.invalid">Inicia sesión</button>
+          <button type="submit" class="btn btn-primary mt-5 w-100 boton-submit rounded-4"
+            [disabled]="logForm.invalid">Inicia sesión</button>
 
           <div *ngIf="loginErrorMessage" class="alert alert-danger text-center mt-3">
             {{ loginErrorMessage }}
-          </div>          
+          </div>
         </form>
       </div>
       <p class="ps-5 m-2 pt-2 m-0 pb-2">¿No tienes cuenta?<a class="p-2" data-bs-toggle="modal"
           data-bs-target="#login">REGISTRATE</a></p>
       <div class="modal-footer border-0">
-        <button type="button" class="btn btn-close btn-danger" data-bs-dismiss="modal" >Close</button>
+        <button type="button" class="btn btn-close btn-danger" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -59,12 +60,23 @@
         <form (submit)="register(regForm)" #regForm="ngForm">
           <div class="form-group mt-4 ">
             <input type="text" class="form-control formulario" id="formGroupNombre" name="first_name"
-              [(ngModel)]="user.first_name" aria-label="Cuadro nombre" placeholder="Nombre" required>
+              [(ngModel)]="user.first_name" aria-label="Cuadro nombre" placeholder="Nombre" required
+              #first_name="ngModel">
+
+
+            <div *ngIf="first_name.invalid && first_name.touched" class="text-danger">
+              <span *ngIf="email.errors?.['required']">El nombre es obligatorio</span>
+            </div>
           </div>
 
           <div class="form-group pt-3">
             <input type="text" class="form-control formulario" id="formGroupApellidos" name="last_name"
-              [(ngModel)]="user.last_name" aria-label="Cuadro apellidos" placeholder="Apellidos" required>
+              [(ngModel)]="user.last_name" aria-label="Cuadro apellidos" placeholder="Apellidos" required
+              #last_name="ngModel">
+
+            <div *ngIf="last_name.invalid && last_name.touched" class="text-danger">
+              <span *ngIf="last_name.errors?.['required']">Los apellidos son obligatorio</span>
+            </div>
           </div>
           <div class="form-group mt-3 ">
 
@@ -83,7 +95,7 @@
           <div class="form-group pt-3">
             <input type="email" class="form-control formulario" id="formGroupCorreo" name="email"
               [(ngModel)]="user.email" aria-label="Cuadro Correo Electrónico" placeholder="Correo Electrónico" required
-              email #email="ngModel">
+              #email="ngModel">
 
 
             <div *ngIf="email.invalid && email.touched" class="text-danger">
@@ -92,16 +104,26 @@
             </div>
 
           </div>
-          <div class="form-group mt-3 ">
+          <div class="form-group mt-3">
             <input type="text" class="form-control formulario" id="formGroupUsuarioRegistro" name="nombre_usuario"
               [(ngModel)]="user.nombre_usuario" aria-label="Cuadro nombre de usuario" placeholder="Nombre de usuario"
-              required>
+              required #username="ngModel" (blur)="username.control.markAsTouched()">
+
+            <div *ngIf="username.invalid && username.touched" class="text-danger">
+              <span *ngIf="username.errors?.['required']">El correo es obligatorio.</span>
+            </div>
           </div>
+
 
           <div class="form-group mt-3 ">
             <input type="text" class="form-control formulario" id="formGroupTitularTarjetaDeCredito"
               name="titular_tarjeta" [(ngModel)]="user.titular_tarjeta" aria-label="Titular de la tarjeta de credito"
-              placeholder="Titular de la tarjeta de credito" required>
+              placeholder="Titular de la tarjeta de credito" required #titular_tarjeta="ngModel">
+
+
+            <div *ngIf="titular_tarjeta.invalid && titular_tarjeta.touched" class="text-danger">
+              <span *ngIf="username.errors?.['required']">El titular de la tarjeta es obligatorio</span>
+            </div>
           </div>
 
           <div class="form-group mt-3 d-flex justify-content-between">
@@ -142,7 +164,8 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary mt-4 w-100 boton-submit rounded-4" [disabled]="regForm.invalid">Registrarse</button>
+          <button type="submit" class="btn btn-primary mt-4 w-100 boton-submit rounded-4"
+            [disabled]="regForm.invalid">Registrarse</button>
 
           <p class="ps-5 m-2 pt-2 m-0 pb-2">¿Ya tienes cuenta?<a class="p-2" data-bs-toggle="modal"
               data-bs-target="#login">INICIA SESION</a></p>
@@ -153,7 +176,7 @@
 
           <div *ngIf="registerErrorMessage" class="alert alert-danger text-center mt-3">
             {{ registerErrorMessage }}
-          </div>          
+          </div>
 
         </form>
       </div>
