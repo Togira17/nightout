@@ -8,8 +8,9 @@
       </div>
 
       <div class="modal-body centrar-contenedor p-3">
-        <form (submit)="login()" #regForm="ngForm">
+        <form (submit)="login(logForm)" #logForm="ngForm">
           <div class="form-group mt-5 ">
+
             <input type="text" class="form-control formulario" name="email" [(ngModel)]="credentials.email"
               id="formGroupUsuarioLogin" aria-label="Recuadro usuario" placeholder="Usuario" required
               #username="ngModel">
@@ -29,17 +30,17 @@
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary mt-5 w-100 boton-submit rounded-4" [disabled]="regForm.invalid">Inicia sesión</button>
+          <button type="submit" class="btn btn-primary mt-5 w-100 boton-submit rounded-4" [disabled]="logForm.invalid">Inicia sesión</button>
 
-          <div *ngIf="registerErrorMessage" class="alert alert-danger text-center mt-3">
-            {{ registerErrorMessage }}
+          <div *ngIf="loginErrorMessage" class="alert alert-danger text-center mt-3">
+            {{ loginErrorMessage }}
           </div>          
         </form>
       </div>
       <p class="ps-5 m-2 pt-2 m-0 pb-2">¿No tienes cuenta?<a class="p-2" data-bs-toggle="modal"
-          data-bs-target="#registro">REGISTRATE</a></p>
+          data-bs-target="#login">REGISTRATE</a></p>
       <div class="modal-footer border-0">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" >Close</button>
+        <button type="button" class="btn btn-close btn-danger" data-bs-dismiss="modal" >Close</button>
       </div>
     </div>
   </div>
@@ -55,7 +56,7 @@
       </div>
 
       <div class="modal-body centrar-contenedor p-3">
-        <form (submit)="register()" #regForm="ngForm">
+        <form (submit)="register(regForm)" #regForm="ngForm">
           <div class="form-group mt-4 ">
             <input type="text" class="form-control formulario" id="formGroupNombre" name="first_name"
               [(ngModel)]="user.first_name" aria-label="Cuadro nombre" placeholder="Nombre" required>
