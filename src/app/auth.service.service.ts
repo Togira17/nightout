@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,4 +21,27 @@ export class AuthServiceService {
   login(credentials: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/auth/login`, credentials);
   }
+
+  getToken(): string | null {
+    return localStorage.getItem('token');
+  }
+
+  isAuthenticated(): boolean {
+    return !!this.getToken();
+  }
+
+  getUserData(): Observable<any> {
+    const token = this.getToken();
+
+    if(!token) return new Observable();
+
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this.http.get(`${this.apiUrl}/users/me`, { headers });
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
+  }
+
 }

@@ -12,7 +12,7 @@
           <div class="form-group mt-5 ">
 
             <input type="text" class="form-control formulario" name="email" [(ngModel)]="credentials.email"
-              id="formGroupUsuarioLogin" aria-label="Recuadro usuario" placeholder="Usuario" required
+              id="formGroupUsuarioLogin" aria-label="Recuadro correo" placeholder="Tu correo" required
               #username="ngModel">
 
             <div *ngIf="username.invalid && username.touched">
@@ -39,9 +39,12 @@
         </form>
       </div>
       <p class="ps-5 m-2 pt-2 m-0 pb-2">¿No tienes cuenta?<a class="p-2" data-bs-toggle="modal"
-          data-bs-target="#login">REGISTRATE</a></p>
+          data-bs-target="#registro">REGISTRATE</a></p>
       <div class="modal-footer border-0">
-        <button type="button" class="btn btn-close btn-danger" data-bs-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> -->
+        <button type="button" class="btn btn-danger text-white rounded-3 px-3 py-2" data-bs-dismiss="modal">
+          Close
+        </button>
       </div>
     </div>
   </div>
@@ -175,7 +178,12 @@
               data-bs-target="#login">INICIA SESION</a></p>
 
           <div class="modal-footer border-0">
-            <button type="button" class="btn btn-close btn-danger" data-bs-dismiss="modal">Close</button>
+
+            <!-- <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button> -->
+
+            <button type="button" class="btn btn-danger text-white rounded-3 px-3 py-2" data-bs-dismiss="modal">
+              Close
+            </button>
           </div>
 
           <div *ngIf="registerErrorMessage" class="alert alert-danger text-center mt-3">

@@ -39,6 +39,18 @@
     font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
     padding: 0.4rem; /* Reduce el espacio interno */
   }
+
+  p {
+    color: white;
+  }
+
+  a {
+    color: rgb(0, 140, 255);
+  }
+
+  a:hover {
+    color: default;
+  }
 /*************************************************************************************************/
 /** Media query para móviles*/
 

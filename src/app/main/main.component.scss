@@ -17,7 +17,7 @@
   height: 530px;
   width: 1200px;
   max-width: 1200px;
-  margin-bottom: 12%;
+  margin-bottom: 25rem;
   display: grid;
   gap: 20px;
   grid-template:
@@ -123,10 +123,12 @@
 }
 
 .discoteca__ambiente {
+  font-size: 18px;
   grid-area: ambiente;
 }
 
 .discoteca__descripcion {
+  font-size: 18px;
   grid-area: descripcion;
 }
 

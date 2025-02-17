@@ -34,18 +34,33 @@
 
 
             <div class="dropdown">
-                <!-- <a class="user dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0"> -->
-
-                <a href="#" role ="button" class="user dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="../../assets/img/iconoUser.png" alt="UsuarioID" title="Login de Usuario" class="iconoFiltro">
-                </a>
+              <a href="#" role="button" class="user dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="../../assets/img/iconoUser.png" alt="UsuarioID" title="Login de Usuario" class="iconoFiltro">
+              </a>
             
-                <ul class="dropdown-menu " aria-label="opcionesSesion">
-                    <li class="dropdown-item rounded-1"><a data-bs-toggle="modal" data-bs-target="#login">Iniciar Sesion</a></li>
-                    <li class="dropdown-item rounded-1"><a data-bs-toggle="modal" data-bs-target="#registro">Registrarse</a></li>
-                    <li class="dropdown-item rounded-1"><a (click)="cerrarSesion()">Cerrar Sesion</a></li>
-                </ul>
+              <ul class="dropdown-menu" aria-label="opcionesSesion">
+                <!-- Si el usuario NO ha iniciado sesión -->
+                <ng-container *ngIf="!isLoggedIn">
+                  <li class="dropdown-item rounded-1" data-bs-toggle="modal" data-bs-target="#login">
+                    <a href="#" class="d-block">Iniciar Sesión</a>
+                  </li>
+                  <li class="dropdown-item rounded-1" data-bs-toggle="modal" data-bs-target="#registro">
+                    <a href="#" class="d-block">Registrarse</a>
+                  </li>
+                </ng-container>
+            
+                <!-- Si el usuario SÍ ha iniciado sesión -->
+                <ng-container *ngIf="isLoggedIn">
+                  <li class="dropdown-item rounded-1">
+                    <span class="dropdown-text">Hola, {{ userName }}</span>
+                  </li>
+                  <li class="dropdown-item rounded-1" (click)="cerrarSesion()">
+                    <a href="#" class="d-block">Cerrar Sesión</a>
+                  </li>
+                </ng-container>
+              </ul>
             </div>
+              
             
             
         </nav>

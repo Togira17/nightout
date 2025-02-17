@@ -100,7 +100,11 @@ export class LoginComponent {
         this.loginErrorMessage = '';
         
         //Cerrar la modal
-        this.closeModal("login")
+        this.closeModal("login");
+
+        //Recargar la página:
+        window.location.reload();
+
       },
       error: (error) => {
         console.error('Error en el login:', error);
@@ -127,7 +131,7 @@ export class LoginComponent {
 
   //Función para cerrar las ventanas modales
   closeModal(modalId: string) {
-    const closeButton = document.querySelector(`#${modalId} .btn-close`) as HTMLElement;
+    const closeButton = document.querySelector(`#${modalId} .btn-danger`) as HTMLElement;
     if (closeButton) {
       closeButton.click();
     }

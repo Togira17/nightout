@@ -1,6 +1,6 @@
+import { AuthServiceService } from '../auth.service.service';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
-// Importación del servicio del carrito
 import { CartService } from '../services/cart.service';
 
 
@@ -22,13 +22,20 @@ export class HeaderComponent implements OnInit {
   
   title = 'nightout';
 
+  //Variables para el dropdown dinámico del usuario
+  isLoggedIn: boolean = false;
+  userName: string | null = null;
+
   // Variable para controlar la visibilidad del inicio
   showInicio: boolean = false;
 
-  constructor(private router: Router, private cartService: CartService) {}
+  constructor(private router: Router, private cartService: CartService, private AuthServiceService: AuthServiceService) {}
 
   cerrarSesion(): void {
     alert('Sesión cerrada');
+     this.AuthServiceService.logout();
+     this.isLoggedIn = false;
+     this.userName = null;
   }
 
   ngOnInit(): void {
@@ -49,7 +56,7 @@ export class HeaderComponent implements OnInit {
       }
     });
 
-
+    this.checkAuthStatus();
 
     /**------------------------------------------------------------------------- */
     //Lógica para el contador del carrito
@@ -78,4 +85,26 @@ export class HeaderComponent implements OnInit {
     // 'showInicio' solo será true cuando la ruta sea '/'
     this.showInicio = url === '/';
   }
+
+
+  checkAuthStatus(): void {
+    console.log("entra en la función")
+    this.isLoggedIn = this.AuthServiceService.isAuthenticated();
+
+    if (this.isLoggedIn) {
+      this.AuthServiceService.getUserData().subscribe(
+        (user) => {
+          console.log('Datos del usuario:', user); // Para verificar en consola
+          this.userName = user.data?.nombre_usuario ?? 'Usuario';
+          localStorage.setItem('usuario', JSON.stringify(user.data)); // Guardar solo `data`
+        },
+        (error) => {
+          console.error('Error al obtener datos del usuario:', error);
+          this.cerrarSesion(); // Si hay error, forzar logout
+        }
+      );
+    }
+  }
+
+
 }
