@@ -1,0 +1,50 @@
+.offcanvas {
+    width: 100%; /* Asegura que el modal no sea más ancho que la pantalla */
+    max-width: 300px; /* Ancho máximo aún más pequeño */
+    height: auto;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .offcanvas {
+      width: 100%; /* Para pantallas más pequeñas, el modal tendrá el 100% del ancho */
+      max-width: 280px; /* Reduce aún más el ancho en pantallas pequeñas */
+      height: auto; /* Se ajusta a la altura del contenido */
+      padding: 15px; /* Algo de padding para que no esté pegado a los bordes */
+      overflow-y: auto; /* Si el contenido es largo, se puede desplazar */
+    }
+  
+    .offcanvas-header h5 {
+      font-size: 16px; /* Reduce el tamaño del texto del título para que no ocupe mucho espacio */
+    }
+  
+    .offcanvas-body {
+      padding: 10px; /* Ajusta el padding para un mejor espaciado */
+    }
+  
+    .btn {
+      width: 100%; /* El botón ocupará el 100% del ancho en pantallas pequeñas */
+      font-size: 14px; /* Reducción del tamaño de la fuente para que encaje bien */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .offcanvas {
+      max-width: 240px; /* Ancho aún más pequeño para pantallas muy pequeñas */
+      height: auto;
+      padding: 10px; /* Ajuste del padding */
+    }
+  
+    .offcanvas-header h5 {
+      font-size: 14px; /* Reduce aún más el tamaño del texto del título */
+    }
+  
+    .offcanvas-body {
+      padding: 8px; /* Ajuste del padding en pantallas aún más pequeñas */
+    }
+  
+    .btn {
+      font-size: 12px; /* Tamaño de fuente más pequeño para el botón */
+    }
+  }
+  

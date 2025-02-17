@@ -1,18 +1,16 @@
 @use './../../styles.scss' as global;
 
-/**
-
+/** 
 $color-morado: #5f3fc3;
-$color-amarillo:#fde815;
-$color-fucsia:#f90461;
+$color-amarillo: #fde815;
+$color-fucsia: #f90461;
 $color-negro: #000000;
-$gris-oscuro:#505050;
-$gris-claro:#f6f6f6;
+$gris-oscuro: #505050;
+$gris-claro: #f6f6f6;
 $color-blanco: #ffff;
 $fuente-titulos: "Belanosima", serif;
 $fuente-parrafos: "DM Sans", serif;
 $fuente-botones: "Noto Sans JP", serif;
-
 */
 
 $border_radius: 25px;
@@ -20,7 +18,6 @@ $border_radius: 25px;
 .body {
     background-color: global.$gris-oscuro;
     min-height: 80vh;
-
 }
 
 .body__wrapper {
@@ -32,25 +29,60 @@ $border_radius: 25px;
     padding: 5%;
 }
 
+/* Responsividad para pantallas pequeñas */
 @media(max-width: 768px) {  
     .body__wrapper {
         display: flex;
         flex-direction: column;
+        padding: 2%;
     }
 
+    /* Ajuste de tamaños de fuentes */
+    .body__h1 {
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem;
+    }
+
+    .body__producto {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .body__totales {
+        grid-column: 1 / -1;
+        margin-top: 2rem;
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    /* Ajuste de tamaño de las columnas */
+    .body__principal {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    /* Ajuste de botones */
+    .body__btnComprar input {
+        width: 100%;
+        height: 50px;
+    }
+
+    /* Ajuste de separadores */
+    .body__separador {
+        margin: 1rem 0;
+    }
 }
 
-//Estilos de la columna central
+/* Estilos de la columna central */
 .body__principal {
     grid-column: 2 / 3;
     max-width: 640px;
     min-height: 640px;
     border-radius: $border_radius;
     background-color: global.$gris-claro;
-
 }
 
-//Estilos del letrero carrito de la compra
+/* Estilos del letrero carrito de la compra */
 .body__h1 {
     text-transform: uppercase;
     letter-spacing: .2rem;
@@ -59,18 +91,15 @@ $border_radius: 25px;
     margin-top: 2rem;
 }
 
-
-//Estilos para el producto
+/* Estilos para el producto */
 .body__producto-wraper {
     margin: 1rem;
 }
-
 
 .body__producto {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
 }
 
 .body__nombreProducto {
@@ -87,7 +116,7 @@ $border_radius: 25px;
     font-weight: 900;
 }
 
-//Contenedor de unidades + selector de cantidad
+/* Contenedor de unidades + selector de cantidad */
 .body__unidades {
     display: flex;
     align-items: center;
@@ -97,11 +126,9 @@ $border_radius: 25px;
 .body__cantidad {
     display: flex;
     justify-content: space-between;
-
-
 }
 
-//Contendedor del selector de cantidad
+/* Contenedor del selector de cantidad */
 .body__selectorCantidad {
     display: flex;
     gap: 10px;
@@ -117,13 +144,13 @@ $border_radius: 25px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-//Sombra para al hacer focus
+/* Sombra para al hacer focus */
 .body__botonCantidad:focus {
     outline: none;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
-//Animación para indicar que el boton ha sido pulsado
+/* Animación para indicar que el botón ha sido pulsado */
 .body__botonCantidad:active {
     animation: bounce 0.2s ease-in-out;
 }
@@ -142,7 +169,7 @@ $border_radius: 25px;
     }
 }
 
-//Separador de productos
+/* Separador de productos */
 .body__separador {
     align-self: flex-end;
     border: none;
@@ -152,11 +179,9 @@ $border_radius: 25px;
     opacity: 1;
 }
 
-
-//Estilos de la segunda columna
+/* Estilos de la segunda columna */
 .body__totales {
     margin-top: 5rem;
-    ;
     height: 20rem;
     grid-column: 3 / -1;
     background-color: global.$gris-claro;
@@ -165,14 +190,12 @@ $border_radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .body__totales--h1 {
     align-self: start;
     font-size: 1.5rem;
     margin-bottom: 2rem;
-
 }
 
 .body__totales--info {
@@ -185,11 +208,13 @@ $border_radius: 25px;
 .body__totales--info.total {
     font-weight: 750;
 }
-.body__btnComprar{
+
+.body__btnComprar {
     margin-top: 2rem;
 }
+
 .body__btnComprar input {
-    border:none;
+    border: none;
     width: 184px;
     height: 53px;
     background-color: global.$color-amarillo;
@@ -214,20 +239,19 @@ $border_radius: 25px;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
-  }
-  
-  .modal-custom {
+}
+
+.modal-custom {
     padding: 30px;
     border-radius: 12px;
     max-width: 500px; /* Tamaño máximo del modal */
-  }
-  
-  .modal-body {
+}
+
+.modal-body {
     margin-top: 15px;
     font-size: 1.2rem;
-  }
-  
-  .modal-footer {
+}
+
+.modal-footer {
     justify-content: center;
-  }
-  
+}

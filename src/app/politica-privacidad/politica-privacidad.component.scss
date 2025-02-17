@@ -13,19 +13,19 @@ $gris-claro: #f6f6f6;
   padding: 3% 0;
   text-align: center;
 }
-li{
+
+li {
   margin-left: 10rem;
   list-style-type: disc;
   text-align: start;
 }
+
 .privacy-policy-section {
   max-width: 1200px;
-  margin-top: 7;
   margin: 0 auto;
   padding: 60px 20px;
   background-color: $gris-claro;
   color: $color-texto;
-
 
   h2, h3 {
     color: $color-morado;
@@ -43,14 +43,61 @@ li{
 
   p {
     font-size: 1.2rem;
-   text-align: start;
+    text-align: start;
     max-width: 800px;
     margin: 0 auto 20px;
   }
 
-  
-
   strong {
     color: $color-texto;
+  }
+}
+
+/* Responsividad para pantallas medianas */
+@media (max-width: 768px) {
+  .privacy-policy-section {
+    padding: 40px 15px;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1rem;
+      max-width: 100%;
+      margin-bottom: 15px;
+    }
+
+    li {
+      margin-left: 2rem;
+    }
+  }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 480px) {
+  .privacy-policy-section {
+    padding: 30px 10px;
+
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    li {
+      margin-left: 1rem;
+    }
   }
 }

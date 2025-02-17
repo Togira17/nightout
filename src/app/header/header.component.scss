@@ -1,23 +1,10 @@
 @use '../../styles.scss' as global;
 
-/*
-Puedes acceder a las variables globales del proyecto
-de esta manera:
-
-global.$nVariable
-*/
-
 $medidaIcono: 40px;
 $medidaIconoHover: 50px;
-/* Tamaño cuando se pasa el cursor */
 $colorHover: #3d80f5;
-/* Color de texto al pasar el cursor */
 $glowEffect: 0px 0px 10px rgba(61, 128, 245, 0.8);
-/* Efecto de resplandor */
 $easingEffect: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-/* Efecto de "rebote" */
-
-
 
 body {
     margin: 0;
@@ -32,15 +19,14 @@ body {
     align-items: center;
     background-color: #ffffff;
     padding: 0 20px;
+    position: relative;
 }
 
 .navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* Asegura que los elementos estén distribuidos a ambos lados */
     align-items: center;
-    /* Alinea los elementos verticalmente */
     max-width: 1200px;
 }
 
@@ -53,28 +39,25 @@ body {
 
 .logo {
     position: absolute;
-    /* Permite centrar el logo sin afectar el espacio de otros elementos */
-    left: 50%;
+    left: 45%;
     transform: translateX(-50%);
-    /* Centra el logo horizontalmente */
 }
 
 .logo img {
-    width: 187px;
-    height: 210px;
+    width: 150px;
+    height: auto;
     border-radius: 10px 0 0 0;
+    transition: width 0.3s ease;
 }
 
-//Este contenedor es necesario para situar el cart-counter respecto al icono del carrito
 .cart-wrapper {
-    position: relative; 
-    height: 48px; //Misma altura que el icono
-    width: 48px; //Misma anchura que el icono
+    position: relative;
+    height: 48px;
+    width: 48px;
 }
-
 
 .cart-counter {
-    position: absolute; //Para situar el contador, su padre (.cart-wrapper) debe tener position relative
+    position: absolute;
     top: -5px;
     right: -10px;
     background-color: #af0e4c;
@@ -91,39 +74,29 @@ body {
 .nav {
     display: flex;
     align-items: center;
-    gap: 100px;
-    /* Espacio entre los iconos */
+    gap: 60px;
 }
 
-/* Estilo común para los íconos */
 .iconoFiltro {
     height: $medidaIcono;
     width: $medidaIcono;
     transition: all 0.4s $easingEffect;
-    /* Transición suave con efecto de rebote */
     will-change: transform, filter;
 }
 
-/* Animación de pulso con efecto de desplazamiento y resplandor */
 .nav .filter:hover .iconoFiltro,
 .nav .cart:hover .iconoFiltro,
 .nav .user:hover .iconoFiltro {
     transform: scale(1.2) translateY(-5px);
-    /*filter: drop-shadow(0px 0px 8px $colorHover); 
-    box-shadow: $glowEffect;*/
 }
 
-/* Animación de texto con color al pasar el ratón */
 .nav .filter:hover span,
 .nav .cart:hover span,
 .nav .user:hover span {
     color: $colorHover;
-    /* Cambia el color del texto */
     transition: color 0.3s ease;
-    /* Transición suave para el color del texto */
 }
 
-/* Estilos de los filtros, carrito y usuario */
 .filters {
     width: $medidaIcono;
     height: $medidaIcono;
@@ -134,28 +107,28 @@ body {
     cursor: pointer;
 }
 
-/* Estilos para los íconos en el carrito y usuario */
 .cart img,
 .user img {
     width: $medidaIcono;
     height: $medidaIcono;
 }
 
-/* Estilos para los textos */
 .filter span,
 .cart span,
 .user span {
     font-size: 16px;
     color: rgb(94, 94, 94);
-    /* Color inicial del texto */
     font-weight: bold;
 }
-.filter{
+
+.filter {
     display: none;
 }
-.mostrar{
+
+.mostrar {
     display: block;
 }
+
 .lbl-menu {
     width: 40px;
     height: 30px;
@@ -164,11 +137,8 @@ body {
     transform: scale(1.2);
 }
 
-.lbl-menu #spn1,
-#spn2,
-#spn3 {
+.lbl-menu span {
     position: absolute;
-    content: '';
     background: #837f7f;
     width: 40px;
     height: 5px;
@@ -176,11 +146,11 @@ body {
     transition: all 400ms ease;
 }
 
-#spn2 {
+.lbl-menu span:nth-child(2) {
     top: 12px;
 }
 
-#spn3 {
+.lbl-menu span:nth-child(3) {
     top: 23px;
 }
 
@@ -188,67 +158,49 @@ body {
     display: none;
 }
 
-#btn-menu:checked~.lbl-menu #spn1 {
+#btn-menu:checked ~ .lbl-menu span:nth-child(1) {
     transform: rotate(140deg);
     top: 10px;
 }
 
-#btn-menu:checked~.lbl-menu #spn2 {
+#btn-menu:checked ~ .lbl-menu span:nth-child(2) {
     opacity: 0;
 }
 
-#btn-menu:checked~.lbl-menu #spn3 {
+#btn-menu:checked ~ .lbl-menu span:nth-child(3) {
     transform: rotate(-140deg);
     top: 10px;
 }
-
-//A ver si pouedes hacer que el desplegable no se salga de la pantalla del móvil
-
-/* .dropdown{
-    width: auto;
-    position: relative;
-} */
 
 .dropdown-menu {
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 0;
-    left: -90px !important;
+    left: auto;
+    right: 0;
+    min-width: 150px;
 }
 
-
 .dropdown-item {
-    display: block;
     padding: 10px 20px;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    /* Transición suave */
 }
 
 .dropdown-item:hover {
     background-color: #dbd6d6;
-    /* Color de fondo al pasar el mouse */
 }
 
-
-//fondo inicio
 .portada {
     display: flex;
     justify-content: center;
-    /* Centrado horizontal */
     align-items: center;
-    /* Centrado vertical */
     width: 100%;
     height: 100vh;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-size: cover;
-    position: relative;
-    /* Necesario para el posicionamiento relativo del contenido */
 }
 
-/* Clase base del título */
 .titulo {
     font-family: Roboto, sans-serif;
     color: #F6F6F6;
@@ -257,9 +209,6 @@ body {
     background-color: rgba(80, 80, 80, 0.7);
     border-radius: 0.5rem;
     text-align: center;
-    transform: translateY(300px);
-    animation: fadeInUp 2s forwards;
-    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 @keyframes fadeInUp {
@@ -267,49 +216,99 @@ body {
         opacity: 0;
         transform: translateY(300px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+@media (max-width: 768px) {
 
-.ocultar {
-    display: none;
-}
-
-/*************************************************************************************************/
-/**Media query para móviles*/
-
-@media (max-width: 431px){
-
-    .logo{
-        display: none;
-        grid-area: logo;
+    .lbl-menu {
+        width: 35px;   /* Reducir el tamaño del botón en pantallas medianas */
+        height: 26px;  /* Reducir la altura del botón */
+        transform: scale(1); /* Quitar el escalado en pantallas más pequeñas */
     }
 
-    .filter{
-        display: none;
-        grid-area: filtro;
+    .lbl-menu span {
+        width: 35px;  /* Reducir el tamaño de las líneas del botón */
     }
 
-    .cart-wrapper{
-        grid-area: carrito;
+    .lbl-menu span:nth-child(2) {
+        top: 10px;    /* Ajustar la posición de la segunda línea */
     }
 
-    .dropdown{
-        grid-area: sesion;
+    .lbl-menu span:nth-child(3) {
+        top: 20px;    /* Ajustar la posición de la tercera línea */
     }
-    
-    .nav{
-        gap: 40px;
-        margin-left: 35px;
+    .logo img {
+        width: 100px;
     }
-
+    .nav {
+        gap: 30px;
+    }
     .titulo {
         font-size: 60px;
     }
+    .iconoFiltro {
+    height: 30px;
+    width: 30px;
+    }
+    .cart-wrapper {
+        height: 30px;   /* Reducir el tamaño del contenedor */
+        width: 30px;    /* Reducir el tamaño del contenedor */
+    }
 
-    
+    .cart-counter {
+        top: -4px;      /* Ajustar la posición en relación al contenedor */
+        right: -8px;    /* Ajustar la posición en relación al contenedor */
+        font-size: 12px; /* Reducir el tamaño de la fuente */
+        padding: 2px 4px; /* Reducir el padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-wrapper {
+        height: 32px;   /* Reducir aún más el tamaño del contenedor */
+        width: 32px;    /* Reducir aún más el tamaño del contenedor */
+    }
+
+    .cart-counter {
+        top: -3px;      /* Ajustar la posición en relación al contenedor */
+        right: -6px;    /* Ajustar la posición en relación al contenedor */
+        font-size: 10px; /* Reducir aún más el tamaño de la fuente */
+        padding: 1px 4px; /* Reducir el padding */
+    }
+
+
+    .iconoFiltro {
+        height: 25px;  /* Reducir más el tamaño del icono en pantallas más pequeñas */
+        width: 25px;   /* Reducir más el tamaño del icono en pantallas más pequeñas */
+    }
+    .logo {
+        width: 80px;
+    }
+    .titulo {
+        font-size: 48px;
+    }
+    .nav {
+        gap: 20px;
+    }
+    .lbl-menu {
+        width: 30px;  /* Reducir aún más el tamaño del botón en pantallas pequeñas */
+        height: 22px; /* Reducir la altura aún más */
+        transform: scale(1); /* Mantener sin escala en pantallas muy pequeñas */
+    }
+
+    .lbl-menu span {
+        width: 30px;  /* Reducir el tamaño de las líneas */
+    }
+
+    .lbl-menu span:nth-child(2) {
+        top: 8px;     /* Ajustar la posición de la segunda línea */
+    }
+
+    .lbl-menu span:nth-child(3) {
+        top: 16px;    /* Ajustar la posición de la tercera línea */
+    }
 }

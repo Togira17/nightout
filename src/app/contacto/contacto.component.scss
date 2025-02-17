@@ -1,32 +1,36 @@
 @use '../../styles.scss' as global;
 
-
-.contacto{
+.contacto {
     display: flex;
     justify-content: center;
-
     height: 100vh;
+    align-items: center; /* Asegura que el contenido se centre verticalmente */
 }
 
-.form-wrapper{
+.form-wrapper {
     margin-top: 5rem;
     background-color: global.$gris-claro;
     padding: 5%;
     border-radius: 5rem;
-    height: 500px;
+    height: auto; /* Ajustamos la altura para que se adapte mejor al contenido */
+    max-width: 800px; /* Establecemos un ancho máximo */
+    width: 100%; /* Asegura que no sobrepase el ancho disponible */
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Centra los elementos dentro del formulario */
 }
 
-h2{
+h2 {
     text-align: center;
+    font-size: 2rem; /* Ajustamos el tamaño para pantallas grandes */
 }
-button{
+
+button {
     align-self: center;
-    border:none;
+    border: none;
     width: 184px;
     height: 53px;
     background-color: global.$color-amarillo;
@@ -40,7 +44,47 @@ button{
     transition: 0.3s ease;
 }
 
-button:hover{
+button:hover {
     color: global.$color-blanco;
     background-color: global.$color-morado;
+}
+
+/* Responsividad para pantallas medianas */
+@media (max-width: 768px) {
+    .form-wrapper {
+        margin-top: 2rem;
+        padding: 4%;
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Ajustamos el tamaño del título */
+    }
+
+    button {
+        width: 150px; /* Ajustamos el tamaño del botón */
+        height: 45px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 480px) {
+    .contacto {
+        padding: 20px; /* Agregamos algo de espacio alrededor */
+    }
+
+    .form-wrapper {
+        margin-top: 1rem;
+        padding: 3%;
+    }
+
+    h2 {
+        font-size: 1.5rem; /* Ajustamos aún más el tamaño del título */
+    }
+
+    button {
+        width: 120px; /* Reducimos el tamaño del botón */
+        height: 40px;
+        font-size: 0.9rem;
+    }
 }
