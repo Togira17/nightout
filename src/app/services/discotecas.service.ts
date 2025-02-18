@@ -62,11 +62,11 @@ export class DiscotecasService {
 
   getDiscotecasCompletos(): Observable<any[]> {
     return forkJoin({
-      dias: this.http.get<{data: DiaSemana[]}>('/assets/data/json/dias_semana.json').pipe(map(res => res.data)),
-      discotecas: this.http.get<{data: Discoteca[]}>('/assets/data/json/discoteca.json').pipe(map(res => res.data)),
-      entradas: this.http.get<{data: Entrada[]}>('/assets/data/json/entrada.json').pipe(map(res => res.data)),
-      horarios: this.http.get<{data: Horario[]}>('/assets/data/json/horarios_discoteca.json').pipe(map(res => res.data)),
-      zonas: this.http.get<{data: Zona[]}>('/assets/data/json/zona.json').pipe(map(res => res.data)),
+      dias: this.http.get<{data: DiaSemana[]}>('http://apidirectus.duckdns.org/items/dias_semana').pipe(map(res => res.data)),
+      discotecas: this.http.get<{data: Discoteca[]}>('http://apidirectus.duckdns.org/items/discoteca').pipe(map(res => res.data)),
+      entradas: this.http.get<{data: Entrada[]}>('http://apidirectus.duckdns.org/items/entrada').pipe(map(res => res.data)),
+      horarios: this.http.get<{data: Horario[]}>('http://apidirectus.duckdns.org/items/horarios_discoteca').pipe(map(res => res.data)),
+      zonas: this.http.get<{data: Zona[]}>('http://apidirectus.duckdns.org/items/zona').pipe(map(res => res.data)),
     }).pipe(
       map(({dias, discotecas, entradas, horarios, zonas}) => {
         if (!Array.isArray(discotecas)) {
