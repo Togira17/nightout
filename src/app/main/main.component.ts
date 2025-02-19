@@ -5,6 +5,7 @@ import { DiscotecasService } from '../services/discotecas.service';
 interface Entrada {
   tipo_entrada: string;
   precio: string;
+  id_entrada:number;
 }
 
 interface Horario {
@@ -46,6 +47,9 @@ class DiscotecaModel {
   fecha: string[] = [];
   entrada: string = 'no disponible';
   reservados: string = 'no disponible';
+  id_entrada:number=0;
+  id_reservado:number=0;
+
   horario_apertura: string = '--:--';
   horario_cierre: string = '--:--';
   fechaSeleccionada: string = '';
@@ -63,9 +67,11 @@ class DiscotecaModel {
 
     const entrada = diaSeleccionado.entradas.find((e) => e.tipo_entrada === 'individual');
     this.entrada = entrada ? entrada.precio : 'no disponible';
-
+    this.id_entrada = entrada ? entrada.id_entrada : 0;  // Asignamos el ID de la entrada individual
+    
     const reservado = diaSeleccionado.entradas.find((e) => e.tipo_entrada === 'reservado');
     this.reservados = reservado ? reservado.precio : 'no disponible';
+    this.id_reservado = reservado ? reservado.id_entrada : 0;  // Asignamos el ID de la entrada reservada
 
     const horario = diaSeleccionado.horarios[0];
     this.horario_apertura = horario?.hora_apertura?.substring(0, 5) || '--:--';
@@ -113,8 +119,9 @@ export class MainComponent implements OnInit {
     discoteca.actualizarPreciosYHorarios();
   }
 
-  agregarAlCarrito(): void {
-    const currentCount = this.cartService.getCurrentCount();
-    this.cartService.updateCartCount(currentCount + 1);
+ 
+
+  agregarProductoAlCarrito(id: string, nombre: string): void {
+    this.cartService.agregarAlCarrito(id, nombre);
   }
 }

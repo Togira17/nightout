@@ -2,7 +2,7 @@
 
     <body class="main">
 
-        <article *ngFor="let discoteca of discotecas" class="discoteca">
+        <article *ngFor="let discoteca of discotecas"  class="discoteca">
 
             <header>
                 <h1 class="discoteca__nombre">{{discoteca.nombre}}</h1>
@@ -109,9 +109,9 @@
 
             </section>
             <div class="discoteca__btn-entrada"><input (click)="agregarAlCarrito()" class="btn-comprar" type="button"
-                    value="Añadir Entrada">
+                    value="Añadir Entrada"><span>{{discoteca.id_entrada}}</span>
             </div>
-            <div class="discoteca__btn-reservado"><input (click)="agregarAlCarrito()" class="btn-comprar" type="button"
+            <div class="discoteca__btn-reservado"><input (click)="agregarAlCarrito(discoteca.id_reservado,discoteca.nombre)" class="btn-comprar" type="button"
                     value="Añadir Reservado">
             </div>
 

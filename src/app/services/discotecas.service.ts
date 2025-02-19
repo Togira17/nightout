@@ -6,6 +6,7 @@ import { map, catchError } from 'rxjs/operators';
 interface DiaSemana {
   id_dia: number;
   nombre_dia: string;
+  id_entrada:string;
 }
 
 interface Discoteca {
