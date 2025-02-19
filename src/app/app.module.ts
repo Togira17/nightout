@@ -15,6 +15,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { AvisoLegalComponent } from './aviso-legal/aviso-legal.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CookieModalComponent } from './components/cookie-modal/cookie-modal.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     PoliticaPrivacidadComponent,
     ContactoComponent,
     AvisoLegalComponent,
+    CookieModalComponent,
   ],
   imports: [
     BrowserModule,

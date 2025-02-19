@@ -1,0 +1,17 @@
+<div *ngIf="showModal" class="modal-overlay" aria-labelledby="cookie-modal-title" role="dialog" aria-hidden="false">
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2 id="cookie-modal-title">🍪 Aviso de Cookies</h2>
+        <button class="close-btn" (click)="aceptarCookies()" aria-label="Cerrar modal">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </header>
+      <div class="modal-body">
+        <p>Este sitio web utiliza cookies para mejorar tu experiencia. Si continúas navegando, consideramos que aceptas su uso. Puedes obtener más información en nuestra <a href="/politica-de-privacidad" target="_blank">Política de Privacidad</a>.</p>
+      </div>
+      <footer class="modal-footer">
+        <button class="accept-btn" (click)="aceptarCookies()">Aceptar Cookies</button>
+        <button class="decline-btn" (click)="aceptarCookies()">Rechazar</button>
+      </footer>
+    </div>
+  </div>
