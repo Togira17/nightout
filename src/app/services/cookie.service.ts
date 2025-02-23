@@ -14,7 +14,7 @@ export class CookieService {
       fecha.setTime(fecha.getTime() + dias * 24 * 60 * 60 * 1000);
       fechaExpiracion = "; expires=" + fecha.toUTCString();
     }
-    document.cookie = `${nombre}=${valor}; path=/ ${fechaExpiracion}`;
+    document.cookie = `${nombre}=${valor}; path=/; ${fechaExpiracion}`;
   }
   
   getCookie(nombre: string): string | null {
@@ -30,10 +30,20 @@ export class CookieService {
   }
   
   aceptarCookies() {
-    this.setCookie('cookiesAceptadas', 'true', 30);  // Guardamos la preferencia por 30 días
+    this.setCookie('cookiesAceptadas', 'true', 30);  // Guarda la preferencia por 30 días
   }
-  
+
+  rechazarCookies() {
+    this.setCookie('cookiesAceptadas', 'false', 30);  // Guarda el rechazo
+  }
+
   cookiesAceptadas(): boolean {
-    return this.getCookie('cookiesAceptadas') === 'true';
+    const valor = this.getCookie('cookiesAceptadas');
+    return valor === 'true';  // Solo devuelve `true` si está aceptada
+  }
+
+  cookiesRechazadas(): boolean {
+    const valor = this.getCookie('cookiesAceptadas');
+    return valor === 'false';  // Devuelve `true` si el usuario las rechazó
   }
 }

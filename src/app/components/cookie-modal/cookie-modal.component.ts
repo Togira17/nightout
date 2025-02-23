@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-cookie-modal',
   templateUrl: './cookie-modal.component.html',
-  styleUrls: ['./cookie-modal.component.scss']  // Usamos SCSS aquí
+  styleUrls: ['./cookie-modal.component.scss']
 })
 export class CookieModalComponent implements OnInit {
 
@@ -14,17 +14,22 @@ export class CookieModalComponent implements OnInit {
   constructor(private cookieService: CookieService, private router: Router) {}
 
   ngOnInit() {
-    // Verifica si el usuario ya aceptó las cookies
-    if (!this.cookieService.cookiesAceptadas()) {
-      this.showModal = true;  // Mostrar modal si no están aceptadas
-    } else {
-      this.router.navigate(['/']);  // Redirigir si ya aceptó
+    if (!this.cookieService.cookiesAceptadas() && !this.cookieService.cookiesRechazadas()) {
+      this.showModal = true;  // Mostrar modal si no ha tomado una decisión
     }
   }
 
   aceptarCookies() {
     this.cookieService.aceptarCookies();
-    this.showModal = false;  // Ocultar modal después de aceptar
-    this.router.navigate(['/']);  // Redirigir a la página principal
+    this.showModal = false;
+    console.log("✅ Usuario aceptó las cookies"); // Debug
+    this.router.navigate(['/']);
+  }
+
+  rechazarCookies() {
+    this.cookieService.rechazarCookies();
+    this.showModal = false;
+    console.log("❌ Usuario rechazó las cookies"); // Debug
+    this.router.navigate(['/avisoLegal']); // Redirige a la página de cookies
   }
 }

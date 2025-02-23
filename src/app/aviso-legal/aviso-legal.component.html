@@ -53,6 +53,21 @@
                 <li>Sergio Casado</li>
                 <li>Manuel González</li>
             </ul>
+
+            <!-- Apartado sobre la obligatoriedad de las cookies -->
+            <h3>9. COOKIES OBLIGATORIAS</h3>
+            <p>Este sitio web utiliza cookies para garantizar que se ofrezca la mejor experiencia de usuario. Algunas cookies son esenciales para el funcionamiento del sitio web y son obligatorias para acceder a nuestros servicios. Si el usuario decide no aceptar las cookies, algunas funcionalidades del sitio podrían no estar disponibles.</p>
+            <p>Para aceptar nuestras cookies, por favor haga clic en el botón de aceptación en el banner que aparece al acceder a la página. Si necesita revisar nuestra política de cookies o cambiar su preferencia, puede hacerlo en cualquier momento.</p>
+
+            <p>Si desea ver el aviso de cookies nuevamente, haga clic en el siguiente enlace para volver a mostrar el banner de aceptación:<button class="accept-btn" (click)="aceptarCookies()">Aceptar Cookies</button></p>
         </article>
     </div>
 </section>
+<!-- Modal de cookies -->
+<div *ngIf="showModal" class="cookie-modal">
+    <div class="cookie-content">
+      <p>Este sitio web utiliza cookies para mejorar la experiencia de usuario. ¿Aceptas el uso de cookies?</p>
+      <button (click)="aceptarCookies()">Aceptar</button>
+      <button (click)="rechazarCookies()">Rechazar</button>
+    </div>
+  </div>

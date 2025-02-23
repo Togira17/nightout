@@ -9,17 +9,20 @@ import { PoliticaPrivacidadComponent } from './politica-privacidad/politica-priv
 import { ContactoComponent } from './contacto/contacto.component';
 import{ AvisoLegalComponent} from './aviso-legal/aviso-legal.component';
 import { CookieModalComponent } from './components/cookie-modal/cookie-modal.component';
+import { CookieGuard } from './guards/cookie.guard'; // Importa el guard
+
+
 
 const routes: Routes = [
-  { path: '', component: MainComponent },
-  { path: 'header', component: HeaderComponent},
-  { path: 'footer', component: FooterComponent},
-  { path: 'carrito', component: CarritoComponent},
-  { path: 'aboutUs', component:AboutUsComponent },
-  { path: 'politicaPrivacidad', component:PoliticaPrivacidadComponent },
-  { path: 'contacto', component:ContactoComponent },
-  { path: 'cookies', component: CookieModalComponent }, // Ruta para la modal de cookies
-  {path: 'avisoLegal',component:AvisoLegalComponent}
+  { path: '', component: MainComponent, canActivate: [CookieGuard] }, // Protegido
+  { path: 'header', component: HeaderComponent, canActivate: [CookieGuard] },
+  { path: 'footer', component: FooterComponent, canActivate: [CookieGuard] },
+  { path: 'carrito', component: CarritoComponent, canActivate: [CookieGuard] },
+  { path: 'aboutUs', component: AboutUsComponent, canActivate: [CookieGuard] },
+  { path: 'politicaPrivacidad', component: PoliticaPrivacidadComponent, canActivate: [CookieGuard] },
+  { path: 'contacto', component: ContactoComponent, canActivate: [CookieGuard] },
+  { path: 'cookies', component: CookieModalComponent }, // No se protege para que puedan aceptar cookies
+  { path: 'avisoLegal', component: AvisoLegalComponent }
 ];
 
 @NgModule({
