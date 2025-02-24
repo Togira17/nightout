@@ -90,7 +90,7 @@ export class HeaderComponent implements OnInit {
     if (this.isLoggedIn) {
       this.AuthServiceService.getUserData().subscribe(
         (user) => {
-          //console.log('Datos del usuario:', user); // Para verificar en consola
+          console.log('Datos del usuario:', user); // Para verificar en consola
           this.userName = user.data?.nombre_usuario ?? 'Usuario';
           localStorage.setItem('usuario', JSON.stringify(user.data)); // Guardar solo `data`
         },

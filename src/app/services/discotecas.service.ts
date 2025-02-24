@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
@@ -59,15 +59,38 @@ interface DiaCompleto extends DiaSemana {
 })
 export class DiscotecasService {
 
+  private baseUrl = 'http://apidirectus.duckdns.org/items/discoteca';
+
   constructor(private http: HttpClient) { }
 
-  getDiscotecasCompletos(): Observable<any[]> {
+  getDiscotecasCompletos(filters: any = {}): Observable<any[]> {
+
+
+    
+
+    let params = new HttpParams();
+    
+    // Agregar filtros dinámicamente
+    Object.keys(filters).forEach(key => {
+      params = params.set(key, filters[key]);
+    });
+
     return forkJoin({
       dias: this.http.get<{data: DiaSemana[]}>('http://apidirectus.duckdns.org/items/dias_semana').pipe(map(res => res.data)),
-      discotecas: this.http.get<{data: Discoteca[]}>('http://apidirectus.duckdns.org/items/discoteca').pipe(map(res => res.data)),
+
+
+      discotecas: this.http.get<{data: Discoteca[]}>(this.baseUrl, { params }).pipe(map(res => res.data)),
+
+
       entradas: this.http.get<{data: Entrada[]}>('http://apidirectus.duckdns.org/items/entrada').pipe(map(res => res.data)),
+
+
       horarios: this.http.get<{data: Horario[]}>('http://apidirectus.duckdns.org/items/horarios_discoteca').pipe(map(res => res.data)),
+
+
       zonas: this.http.get<{data: Zona[]}>('http://apidirectus.duckdns.org/items/zona').pipe(map(res => res.data)),
+
+
     }).pipe(
       map(({dias, discotecas, entradas, horarios, zonas}) => {
         if (!Array.isArray(discotecas)) {

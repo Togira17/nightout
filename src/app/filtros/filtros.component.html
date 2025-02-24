@@ -10,13 +10,13 @@
       <div class="mt-4">
           <h6>Extras</h6>
           <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="guardarropa">
+              <input class="form-check-input" type="checkbox" id="guardarropa" name="guardarropa" [(ngModel)]="filtros.guardarropa">
               <label class="form-check-label" for="guardarropa">
                   Con Guardarropa
               </label>
           </div>
           <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="parking">
+              <input class="form-check-input" type="checkbox" name="parking" id="parking" [(ngModel)]="filtros.parking">
               <label class="form-check-label" for="parking">
                   Con Parking
               </label>
@@ -26,18 +26,14 @@
               <!-- Desplegable de Zonas -->
               <div class="mt-4">
                 <h6>Filtrar por Zona</h6>
-                <select class="form-select" id="zonaFiltro">
-                    <option value="" selected>Selecciona una zona</option>
-                    <option value="centro">Centro</option>
-                    <option value="norte">Zona Norte</option>
-                    <option value="sur">Zona Sur</option>
-                    <option value="este">Zona Este</option>
-                    <option value="oeste">Zona Oeste</option>
+                <select class="form-select" id="zonaFiltro" [(ngModel)]="filtros.id_zona">
+                    <option value="0" selected>Selecciona una zona</option>
+                    <option *ngFor="let zona of zonas" [value]="zona.id_zona">{{zona.nombre}}</option>
                 </select>
             </div>
 
       <div class="mt-4 text-center">
-        <button class="btn btn-primary" id="applyFilters" onclick="applyFilters()">
+        <button class="btn btn-primary" id="applyFilters" (click)="aplicarFiltros()">
             Aplicar Filtros
         </button>
       </div>

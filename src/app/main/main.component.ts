@@ -84,8 +84,10 @@ class DiscotecaModel {
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
+
 export class MainComponent implements OnInit {
   discotecas: DiscotecaModel[] = [];
+
 
   constructor(
     private cartService: CartService,
@@ -96,8 +98,8 @@ export class MainComponent implements OnInit {
     this.cargarDiscotecas();
   }
 
-  cargarDiscotecas(): void {
-    this.discotecasService.getDiscotecasCompletos().subscribe({
+  cargarDiscotecas(filtros: any = {} ): void {
+    this.discotecasService.getDiscotecasCompletos(filtros).subscribe({
       next: (data: any) => {
         if (Array.isArray(data)) {
           this.discotecas = data.map((item) => new DiscotecaModel(item));

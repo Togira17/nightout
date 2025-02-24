@@ -2,6 +2,7 @@
 
     <body class="main">
 
+        <app-filtros (filtrosAplicados)="cargarDiscotecas($event)"></app-filtros>
         <article *ngFor="let discoteca of discotecas"  class="discoteca">
 
             <header>
