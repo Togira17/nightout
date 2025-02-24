@@ -4,29 +4,18 @@ import { HttpClient } from '@angular/common/http';  // Importa HttpClient
 import { Observable } from 'rxjs';  // Para manejar las respuestas asíncronas
 
 export class Entrada {
-  id: string;
+  id: number;
   nombre: string;
   precio: string;
-  stock_actual: number;
-  tipo_entrada: string;
+  tipo_entrada:string;
+  cantidad: number; // Nueva propiedad para cantidad
 
-  constructor(id: string, nombre: string) {
+  constructor(id: number, nombre: string,precio:string,tipo_entrada:string) {
     this.id = id;
     this.nombre = nombre;
-    this.precio = '';
-    this.stock_actual = 0;
-    this.tipo_entrada = '';
-  }
-
-  completarDatos(datos: any[]): void {
-    const entradaEncontrada = datos.find((entrada) => entrada.id === this.id);
-    if (entradaEncontrada) {
-      this.precio = entradaEncontrada.precio;
-      this.stock_actual = entradaEncontrada.stock_actual;
-      this.tipo_entrada = entradaEncontrada.tipo_entrada;
-    } else {
-      console.log(`Entrada con id ${this.id} no encontrada en los datos.`);
-    }
+    this.precio = precio;
+    this.tipo_entrada=tipo_entrada
+    this.cantidad = 1; // Inicializamos la cantidad por defecto
   }
 }
 
@@ -34,46 +23,66 @@ export class Entrada {
   providedIn: 'root',
 })
 export class CartService {
-  private cartItemsCount = new BehaviorSubject<number>(0);
-  cartItemsCount$ = this.cartItemsCount.asObservable();
+  private cartItemsCount = new BehaviorSubject<number>(0);  // El contador de productos en el carrito
+  cartItemsCount$ = this.cartItemsCount.asObservable();  // Observable para que los componentes se suscriban
 
-  constructor(private http: HttpClient) {}
-
-  getCurrentCount(): number {
-    return this.cartItemsCount.value;
+  constructor(private http: HttpClient) {
+    // Al iniciar, revisamos el carrito en localStorage
+    this.actualizarContadorDesdeStorage();
   }
 
-  updateCartCount(count: number) {
-    this.cartItemsCount.next(count);
+  // Método para obtener el carrito actual desde localStorage
+  obtenerCarrito(): any[] {
+    return JSON.parse(localStorage.getItem('carrito') || '[]');
   }
 
-  // Método para obtener los datos del archivo JSON
-  obtenerDatosEntradas(): Observable<any> {
-    return this.http.get<any>('http://apidirectus.duckdns.org/items/entrada');
+  // Método para actualizar el contador de productos en el carrito
+  actualizarContador() {
+    const carrito = this.obtenerCarrito();
+    this.cartItemsCount.next(carrito.length);  // Contamos cuántos productos hay en el carrito
   }
 
   // Método para agregar una entrada al carrito
-  agregarAlCarrito(id: string, nombre: string, dia: string): void {
-    const currentCount = this.getCurrentCount();
-    this.updateCartCount(currentCount + 1);
-
-    // Crear un nuevo objeto Entrada
-    const entrada = new Entrada(id, nombre);
+  agregarAlCarrito(id: number, nombre: string, precio:string ,tipo_entrada:string): void {
+    const entrada = new Entrada(id, nombre , precio,tipo_entrada);
 
     // Obtener los datos del JSON y completar la entrada
     this.obtenerDatosEntradas().subscribe((datos) => {
-      entrada.completarDatos(datos);
 
       // Obtener el carrito actual desde localStorage
-      let carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
+      let carrito = this.obtenerCarrito();
 
-      // Agregar la entrada completa al carrito
+      // Agregar la entrada al carrito
       carrito.push(entrada);
 
       // Guardar el carrito actualizado en localStorage
       localStorage.setItem('carrito', JSON.stringify(carrito));
 
-      console.log('Producto agregado al carrito:', entrada);
+      // Actualizar el contador de productos en el carrito
+      this.actualizarContador();
     });
+  }
+
+  // Método para eliminar un producto del carrito
+  eliminarDelCarrito(id: number): void {
+    let carrito = this.obtenerCarrito();
+    carrito = carrito.filter((producto: Entrada) => producto.id !== id);  // Filtrar el producto por ID
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    // Actualizar el contador de productos en el carrito
+    this.actualizarContador();
+  }
+
+  // Método para actualizar el contador desde localStorage cuando se inicia la aplicación
+  private actualizarContadorDesdeStorage(): void {
+    const carrito = this.obtenerCarrito();
+    this.cartItemsCount.next(carrito.length);  // Contamos los productos en el carrito
+  }
+
+  // Método para obtener los datos del archivo JSON
+  obtenerDatosEntradas(): Observable<any> {
+    return this.http.get<any>('http://apidirectus.duckdns.org/items/entrada');
   }
 }

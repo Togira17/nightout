@@ -108,19 +108,19 @@
             <section>
 
             </section>
-       <!--   <div class="discoteca__btn-entrada"><input (click)="agregarAlCarrito()" class="btn-comprar" type="button"
-                    value="Añadir Entrada"><span>{{discoteca.id_entrada}}</span>
+          <div class="discoteca__btn-entrada"><input (click)="agregarProductoAlCarrito(discoteca.id_entrada , discoteca.nombre,discoteca.entrada,'Individual')" class="btn-comprar" type="button"
+                    value="Añadir Entrada">
             </div>
-            <div class="discoteca__btn-reservado"><input (click)="agregarAlCarrito(discoteca.id_reservado,discoteca.nombre)" class="btn-comprar" type="button"
+            <div class="discoteca__btn-reservado"><input (click)="agregarProductoAlCarrito(discoteca.id_reservado , discoteca.nombre,discoteca.reservados,'Reservado')" class="btn-comprar" type="button"
                     value="Añadir Reservado">
             </div>
--->  
-            <div class="discoteca__btn-entrada"><input class="btn-comprar" type="button"
-                    value="Añadir Entrada"><span>{{discoteca.id_entrada}}</span>
+
+            <!-- <div class="discoteca__btn-entrada"><input class="btn-comprar" type="button"
+                    value="Añadir Entrada">
             </div>
             <div class="discoteca__btn-reservado"><input  class="btn-comprar" type="button"
                     value="Añadir Reservado">
-            </div>
+            </div> -->
             <!-- Ambiente -->
             <section class="discoteca__ambiente">
                 <p><span>Ambiente: </span><span>{{discoteca.ambiente}}</span></p>
