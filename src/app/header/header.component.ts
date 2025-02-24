@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   //Variable para realizar la cuenta de productos
   cartCount = 0; // Inicializamos en 0
-  
+
   title = 'nightout';
 
   //Variables para el dropdown dinámico del usuario
@@ -29,19 +29,19 @@ export class HeaderComponent implements OnInit {
   // Variable para controlar la visibilidad del inicio
   showInicio: boolean = false;
 
-  constructor(private router: Router, private cartService: CartService, private AuthServiceService: AuthServiceService) {}
+  constructor(private router: Router, private cartService: CartService, private AuthServiceService: AuthServiceService) { }
 
   cerrarSesion(): void {
     alert('Sesión cerrada');
-     this.AuthServiceService.logout();
-     this.isLoggedIn = false;
-     this.userName = null;
+    this.AuthServiceService.logout();
+    this.isLoggedIn = false;
+    this.userName = null;
   }
 
   ngOnInit(): void {
     // Inicializamos la constante con el valor de la posición del header y la altura del bloque superior (100vh)
     const header = document.querySelector('.header') as HTMLElement;
-    
+
     // Suponemos que el bloque superior tiene una altura de 100vh
     const topBlockHeight = window.innerHeight;  // Esto captura el valor de 100vh (alto de la ventana)
 
@@ -71,12 +71,15 @@ export class HeaderComponent implements OnInit {
   @HostListener('window:scroll', [])
   // Función que se ejecuta cada vez que se hace scroll
   onWindowScroll() {
-    const scrollPosition = window.scrollY; 
-    this.isFixed = scrollPosition > this.headerInitialOffset; 
+
+    if (this.router.url === '/') {
+      const scrollPosition = window.scrollY;
+      this.isFixed = scrollPosition > this.headerInitialOffset;
 
 
-    if (this.isFixed && !this.isTopBlockHidden) {
-      this.isTopBlockHidden = true;
+      if (this.isFixed && !this.isTopBlockHidden) {
+        this.isTopBlockHidden = true;
+      }
     }
   }
 
