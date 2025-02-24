@@ -239,8 +239,8 @@ $border_radius: 25px;
     }
 
     .body__producto {
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     .body__totales {
@@ -258,7 +258,7 @@ $border_radius: 25px;
 
     /* Ajuste de botones */
     .body__btnComprar input {
-        width: 100%;
+        width: 150px;
         height: 50px;
     }
 
