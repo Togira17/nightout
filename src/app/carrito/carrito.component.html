@@ -3,47 +3,50 @@
     <div class="body__principal">
       <!-- Titulo de la seccion -->
       <h1 class="body__h1">Carrito de la compra</h1>
-      <!-- Estructura para 1 producto -->
-      <div class="body__producto-wraper">
+
+      <!-- Estructura para los productos en el carrito -->
+      <div class="body__producto-wraper" *ngFor="let producto of carrito">
         <div class="body__producto">
           <div class="body__info">
-            <p class="body__nombreProducto">Rosso</p>
-            <p class="body__tipoEntrada">Entrada individual</p>
-            <p class="body__precio">10€</p>
+            <p class="body__nombreProducto">{{ producto.nombre }}</p>
+            <p class="body__tipoEntrada">{{ producto.tipo_entrada }}</p>
+            <p class="body__precio">{{ producto.precio }}€</p>
           </div>
-          <div clqass="body__unidades">
+          <div class="body__unidades">
             Unidades:
             <div class="body__cantidad">
               <div
-              role="group"
-              aria-label="Selector de cantidad"
-              class="body__selectorCantidad"
-            >
-              <button
-                aria-label="Disminuir cantidad"
-                title="Disminuir cantidad"
-                class="body__botonCantidad"
+                role="group"
+                aria-label="Selector de cantidad"
+                class="body__selectorCantidad"
               >
-                -
-              </button>
-              <span
-                class="body__valorCantidad"
-                aria-live="polite"
-                aria-atomic="true"
-              >
-                1
-              </span>
-              <button
-                aria-label="Incrementar cantidad"
-                title="Aumentar cantidad"
-                class="body__botonCantidad"
-              >
-                +
-              </button>
-            </div>
-            
+                <button
+                  aria-label="Disminuir cantidad"
+                  title="Disminuir cantidad"
+                  class="body__botonCantidad"
+                  (click)="actualizarCantidad(producto, producto.cantidad - 1)"
+                >
+                  -
+                </button>
+                <span
+                  class="body__valorCantidad"
+                  aria-live="polite"
+                  aria-atomic="true"
+                >
+                  {{ producto.cantidad || 1 }}
+                </span>
+                <button
+                  aria-label="Incrementar cantidad"
+                  title="Aumentar cantidad"
+                  class="body__botonCantidad"
+                  (click)="actualizarCantidad(producto, producto.cantidad + 1)"
+                >
+                  +
+                </button>
+              </div>
             </div>
           </div>
+          <button (click)="eliminarProducto(producto)">Eliminar</button>
         </div>
         <hr class="body__separador">
       </div>
@@ -52,11 +55,10 @@
     <!-- Estructura para los totales -->
     <div class="body__totales">
       <h1 class="body__totales--h1">Resumen</h1>
-      <div class="body__totales--info"><span>Subtotal: </span><span>10€</span></div>
-      <div class="body__totales--info"><span>Gastos de servicio</span><span>3€</span></div>
-      <div class="body__totales--info total"><span>Total a pagar:</span><span>13€</span></div>
+      <div class="body__totales--info"><span>Subtotal: </span><span>{{ subtotal }}€</span></div>
+      <div class="body__totales--info"><span>Gastos de servicio</span><span>{{ gastosServicio }}€</span></div>
+      <div class="body__totales--info total"><span>Total a pagar:</span><span>{{ total }}€</span></div>
       <div class="body__btnComprar">
-        <!-- Botón que abre el modal -->
         <input type="button" value="COMPRAR" data-bs-toggle="modal" data-bs-target="#compraConfirmada">
       </div>
     </div>

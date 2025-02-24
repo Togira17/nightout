@@ -121,7 +121,7 @@ export class MainComponent implements OnInit {
 
  
 
- // agregarProductoAlCarrito(id: string, nombre: string): void {
-   // this.cartService.agregarAlCarrito(id, nombre);
+  agregarProductoAlCarrito(id: number, nombre: string ,precio:string,tipo_entrada:string): void {
+   this.cartService.agregarAlCarrito(id, nombre,precio,tipo_entrada);
   }
-//}
+}

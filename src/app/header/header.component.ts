@@ -3,13 +3,11 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { CartService } from '../services/cart.service';
 
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-
 export class HeaderComponent implements OnInit {
   // Variable para saber si el header debe estar fijo
   isFixed = false;
@@ -17,12 +15,12 @@ export class HeaderComponent implements OnInit {
   isTopBlockHidden = false;
   headerInitialOffset = 0;
 
-  //Variable para realizar la cuenta de productos
+  // Variable para realizar la cuenta de productos
   cartCount = 0; // Inicializamos en 0
-  
+
   title = 'nightout';
 
-  //Variables para el dropdown dinámico del usuario
+  // Variables para el dropdown dinámico del usuario
   isLoggedIn: boolean = false;
   userName: string | null = null;
 
@@ -33,9 +31,9 @@ export class HeaderComponent implements OnInit {
 
   cerrarSesion(): void {
     alert('Sesión cerrada');
-     this.AuthServiceService.logout();
-     this.isLoggedIn = false;
-     this.userName = null;
+    this.AuthServiceService.logout();
+    this.isLoggedIn = false;
+    this.userName = null;
   }
 
   ngOnInit(): void {
@@ -59,21 +57,18 @@ export class HeaderComponent implements OnInit {
     this.checkAuthStatus();
 
     /**------------------------------------------------------------------------- */
-    //Lógica para el contador del carrito
-
+    // Lógica para el contador del carrito
     // Suscríbete a los cambios del contador
     this.cartService.cartItemsCount$.subscribe((count) => {
-      this.cartCount = count;
+      this.cartCount = count; // Actualiza la variable cartCount cada vez que cambia el contador
     });
-
   }
 
   @HostListener('window:scroll', [])
   // Función que se ejecuta cada vez que se hace scroll
   onWindowScroll() {
-    const scrollPosition = window.scrollY; 
-    this.isFixed = scrollPosition > this.headerInitialOffset; 
-
+    const scrollPosition = window.scrollY;
+    this.isFixed = scrollPosition > this.headerInitialOffset;
 
     if (this.isFixed && !this.isTopBlockHidden) {
       this.isTopBlockHidden = true;
@@ -86,9 +81,8 @@ export class HeaderComponent implements OnInit {
     this.showInicio = url === '/';
   }
 
-
   checkAuthStatus(): void {
-    console.log("entra en la función")
+    console.log("entra en la función");
     this.isLoggedIn = this.AuthServiceService.isAuthenticated();
 
     if (this.isLoggedIn) {
@@ -105,6 +99,4 @@ export class HeaderComponent implements OnInit {
       );
     }
   }
-
-
 }
