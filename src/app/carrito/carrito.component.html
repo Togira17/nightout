@@ -58,7 +58,7 @@
       <div class="body__totales--info"><span>Subtotal: </span><span>{{ subtotal }}€</span></div>
       <div class="body__totales--info total"><span>Total a pagar:</span><span>{{ total }}€</span></div>
       <div class="body__btnComprar">
-        <input type="button" value="COMPRAR" [attr.data-bs-toggle]="'modal'" [attr.data-bs-target]="modalObjetivo" (click)="intentarCompra()">
+        <input type="button" value="COMPRAR" [attr.data-bs-toggle]="'modal'" [attr.data-bs-target]="modalObjetivo" (click)="intentarCompra()" [disabled]="carritoVacio">
       </div>
     </div>
   </div>
@@ -74,7 +74,7 @@
       <div class="modal-body" style="margin-top: 15px;">
         <p style="font-size: 1.2rem;">Debes estar registrado para realizar una compra.</p>
       </div>
-      <div class="modal-footer" style="justify-content: center;">
+      <div class="modal-footer">
         <a href="/login" class="btn btn-primary">Iniciar Sesión</a>
         <a href="/registro" class="btn btn-secondary">Registrarse</a>
       </div>

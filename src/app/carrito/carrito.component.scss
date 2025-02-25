@@ -190,7 +190,6 @@ $border_radius: 25px;
     color: global.$color-blanco;
     background-color: global.$color-morado;
 }
-
 .modal.fade .modal-dialog {
     position: absolute;
     top: 50%;
@@ -211,7 +210,123 @@ $border_radius: 25px;
 }
 
 .modal-footer {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    justify-content: center !important;
+}
+
+
+/*Estilos para las modales*/
+
+
+/* Estilo general de las modales */
+.modal-content {
+    background-color: #5F3FC3; /* Color de fondo similar al de login */
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    color: white; /* Color del texto */
+}
+
+/* Títulos de las modales */
+.modal-title {
+    font-family: belanosima;
+    letter-spacing: 2px !important;
+    font-size: 1.5rem !important;
+    color: white !important;
+    margin: 0% !important;
+    text-align: center !important;
+}
+
+/* Cuerpo de la modal */
+.modal-body {
+    font-size: 1.2rem;
+    padding: 20px;
+    color: white;
+}
+
+/* Footer de la modal (botones) */
+.modal-footer {
+    display: flex;
     justify-content: center;
+    border-top: none;
+}
+
+/* Botones dentro de las modales */
+.modal-footer .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    
+}
+
+/* Botón de cierre */
+.btn-close {
+    filter: invert(1); /* Hace que el botón de cerrar sea blanco */
+}
+
+/* Botón de "Iniciar Sesión" */
+.btn-primary {
+
+}
+
+.btn-primary:hover {
+    background-color: #e5cc13;
+    color: black;
+}
+
+
+.btn-secondary:hover {
+    background-color: #e5cc13;
+    color: black;
+}
+
+/* Centrado del contenedor */
+.centrar-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Texto dentro de las modales */
+p {
+    color: white;
+}
+
+/* Links dentro de las modales */
+a {
+    color: rgb(0, 140, 255);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(0, 180, 255);
+}
+
+/* 📌 RESPONSIVE DESIGN para pantallas pequeñas */
+@media (max-width: 430px) {
+    /* Ajusta el ancho del modal */
+    .modal-dialog {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Ajusta el contenido del formulario */
+    .modal-body {
+        padding: 1rem;
+    }
+
+    /* Asegura que los textos tengan un tamaño adecuado */
+    .modal-title {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    /* Botón de cierre */
+    .btn-close {
+        filter: invert(1); /* Asegura que se vea bien en fondos oscuros */
+    }
 }
 
 @media(max-width: 1024px) {

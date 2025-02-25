@@ -12,6 +12,7 @@ declare var bootstrap: any;
 })
 export class CarritoComponent implements OnInit {
   carrito: Entrada[] = [];
+  carritoVacio: boolean = true;
   subtotal: number = 0;
   total: number = 0;
   modalObjetivo: string = '';
@@ -27,6 +28,7 @@ export class CarritoComponent implements OnInit {
 
   obtenerCarrito(): void {
     this.carrito = this.cartService.obtenerCarrito();
+    this.carritoVacio = this.carrito.length === 0;
     this.calcularTotales();
   }
 
@@ -86,16 +88,16 @@ export class CarritoComponent implements OnInit {
       }))
     };
 
-    // 🚀 Depuración: Mostrar los datos en la consola antes de enviarlos
-    //console.log('📦 Datos que se enviarían a la API:', JSON.stringify(datosCompra, null, 2));
+    // Depuración: Mostrar los datos en la consola antes de enviarlos
+    //console.log(' Datos que se enviarían a la API:', JSON.stringify(datosCompra, null, 2));
 
-    // ❌ Comentamos la solicitud HTTP para pruebas
     
     this.http.post(this.apiUrl, datosCompra).subscribe(
       response => {
         console.log('Compra realizada con éxito:', response);
         alert('Compra realizada con éxito');
-        localStorage.removeItem('carrito'); // Limpiar carrito después de la compra
+        localStorage.removeItem('carrito'); 
+        this.carritoVacio = true; 
       },
       error => {
         console.error('Error al procesar la compra:', error);
