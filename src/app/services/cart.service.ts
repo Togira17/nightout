@@ -43,21 +43,29 @@ export class CartService {
   }
 
   // Método para agregar una entrada al carrito
-  agregarAlCarrito(id: number, nombre: string, precio:string ,tipo_entrada:string): void {
-    const entrada = new Entrada(id, nombre , precio,tipo_entrada);
-
+  agregarAlCarrito(id: number, nombre: string, precio: string, tipo_entrada: string): void {
+    const entrada = new Entrada(id, nombre, precio, tipo_entrada);
+  
     // Obtener los datos del JSON y completar la entrada
     this.obtenerDatosEntradas().subscribe((datos) => {
-
+  
       // Obtener el carrito actual desde localStorage
       let carrito = this.obtenerCarrito();
-
-      // Agregar la entrada al carrito
-      carrito.push(entrada);
-
+  
+      // Buscar si el producto ya existe en el carrito
+      const productoExistente = carrito.find((producto: Entrada) => producto.id === entrada.id);
+  
+      if (productoExistente) {
+        // Si el producto ya existe, incrementamos su cantidad
+        productoExistente.cantidad += 1;
+      } else {
+        // Si no existe, agregamos el producto al carrito
+        carrito.push(entrada);
+      }
+  
       // Guardar el carrito actualizado en localStorage
       localStorage.setItem('carrito', JSON.stringify(carrito));
-
+  
       // Actualizar el contador de productos en el carrito
       this.actualizarContador();
     });

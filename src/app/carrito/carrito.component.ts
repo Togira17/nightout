@@ -10,7 +10,6 @@ import { Entrada } from '../services/cart.service'; // Asegúrate de importar la
 export class CarritoComponent implements OnInit {
   carrito: Entrada[] = [];
   subtotal: number = 0;
-  gastosServicio: number = 3;
   total: number = 0;
 
   constructor(private cartService: CartService) {}
@@ -25,8 +24,13 @@ export class CarritoComponent implements OnInit {
   }
 
   calcularTotales(): void {
-    this.subtotal = this.carrito.reduce((total, entrada) => total + parseFloat(entrada.precio), 0);
-    this.total = this.subtotal + this.gastosServicio;
+    // Calcular el subtotal sumando el precio de cada producto * su cantidad
+    this.subtotal = this.carrito.reduce((total, entrada) => {
+      return total + (parseFloat(entrada.precio) * entrada.cantidad);  // Multiplicamos por la cantidad
+    }, 0);
+
+    // El total es igual al subtotal, ya que no hay gastos de servicio
+    this.total = this.subtotal;
   }
 
   actualizarCantidad(entrada: Entrada, cantidad: number): void {
