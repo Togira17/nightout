@@ -15,7 +15,7 @@ export class CarritoComponent implements OnInit {
   subtotal: number = 0;
   total: number = 0;
   modalObjetivo: string = '';
-  apiUrl: string = 'http://mibackend.duckdns.org/';
+  apiUrl: string = 'http://mibackend.duckdns.org/api/pedido.php';
 
   constructor(private cartService: CartService, private cdr: ChangeDetectorRef, private http: HttpClient) { }
 
@@ -87,10 +87,10 @@ export class CarritoComponent implements OnInit {
     };
 
     // 🚀 Depuración: Mostrar los datos en la consola antes de enviarlos
-    console.log('📦 Datos que se enviarían a la API:', JSON.stringify(datosCompra, null, 2));
+    //console.log('📦 Datos que se enviarían a la API:', JSON.stringify(datosCompra, null, 2));
 
     // ❌ Comentamos la solicitud HTTP para pruebas
-    /*
+    
     this.http.post(this.apiUrl, datosCompra).subscribe(
       response => {
         console.log('Compra realizada con éxito:', response);
@@ -102,7 +102,7 @@ export class CarritoComponent implements OnInit {
         alert('Hubo un error al procesar la compra');
       }
     );
-    */
+    
 
   }
 
