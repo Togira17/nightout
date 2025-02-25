@@ -1,41 +1,45 @@
 <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel" style="top: 90px;">
-  <!-- Header del Offcanvas -->
-  <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Filtros</h5>
+    <!-- Header del Offcanvas -->
+    <header class="offcanvas-header">
+        <h2 class="offcanvas-title" id="offcanvasScrollingLabel">Filtros</h2>
+    </header>
+  
+    <!-- Contenido del Offcanvas -->
+    <div class="offcanvas-body">
+        <!-- Sección de Filtros Adicionales -->
+        <section class="mt-4">
+            <fieldset>
+                <legend>Extras</legend>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="guardarropa" name="guardarropa" [(ngModel)]="filtros.guardarropa">
+                    <label class="form-check-label" for="guardarropa">
+                        Con Guardarropa
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="parking" name="parking" [(ngModel)]="filtros.parking">
+                    <label class="form-check-label" for="parking">
+                        Con Parking
+                    </label>
+                </div>
+            </fieldset>
+        </section>
+  
+        <!-- Sección de Filtrado por Zona -->
+        <section class="mt-4">
+            <label for="zonaFiltro"><h6>Filtrar por Zona</h6></label>
+            <select class="form-select" id="zonaFiltro" [(ngModel)]="filtros.id_zona">
+                <option value="0" selected>Selecciona una zona</option>
+                <option *ngFor="let zona of zonas" [value]="zona.id_zona">{{zona.nombre}}</option>
+            </select>
+        </section>
+  
+        <!-- Botón de Aplicar Filtros -->
+        <div class="mt-4 text-center">
+          <button class="btn btn-primary" id="applyFilters" (click)="aplicarFiltros()">
+              Aplicar Filtros
+          </button>
+        </div>
+    </div>
   </div>
-
-  <!-- Contenido del Offcanvas -->
-  <div class="offcanvas-body">
-      <!-- Filtros Adicionales con Checkbox -->
-      <div class="mt-4">
-          <h6>Extras</h6>
-          <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="guardarropa" name="guardarropa" [(ngModel)]="filtros.guardarropa">
-              <label class="form-check-label" for="guardarropa">
-                  Con Guardarropa
-              </label>
-          </div>
-          <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="parking" id="parking" [(ngModel)]="filtros.parking">
-              <label class="form-check-label" for="parking">
-                  Con Parking
-              </label>
-          </div>
-            </div>
-
-              <!-- Desplegable de Zonas -->
-              <div class="mt-4">
-                <h6>Filtrar por Zona</h6>
-                <select class="form-select" id="zonaFiltro" [(ngModel)]="filtros.id_zona">
-                    <option value="0" selected>Selecciona una zona</option>
-                    <option *ngFor="let zona of zonas" [value]="zona.id_zona">{{zona.nombre}}</option>
-                </select>
-            </div>
-
-      <div class="mt-4 text-center">
-        <button class="btn btn-primary" id="applyFilters" (click)="aplicarFiltros()">
-            Aplicar Filtros
-        </button>
-      </div>
-  </div>
-</div>
+  

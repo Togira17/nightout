@@ -82,7 +82,7 @@ export class DiscotecasService {
       discotecas: this.http.get<{data: Discoteca[]}>(this.baseUrl, { params }).pipe(map(res => res.data)),
 
 
-      entradas: this.http.get<{data: Entrada[]}>('http://apidirectus.duckdns.org/items/entrada').pipe(map(res => res.data)),
+      entradas: this.http.get<{data: Entrada[]}>('http://apidirectus.duckdns.org/items/entrada?limit=-1').pipe(map(res => res.data)),
 
 
       horarios: this.http.get<{data: Horario[]}>('http://apidirectus.duckdns.org/items/horarios_discoteca').pipe(map(res => res.data)),
@@ -113,12 +113,13 @@ export class DiscotecasService {
 
             return { ...dia, entradas: diaEntradas, horarios: diaHorarios };
           }).filter(d => d.entradas.length > 0 || d.horarios.length > 0);
-
+          
           return {
             ...discoteca,
             zona,
             dias: diasConInfo
           };
+          
         });
       })
     );
