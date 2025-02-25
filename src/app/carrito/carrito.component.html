@@ -58,10 +58,29 @@
       <div class="body__totales--info"><span>Subtotal: </span><span>{{ subtotal }}€</span></div>
       <div class="body__totales--info total"><span>Total a pagar:</span><span>{{ total }}€</span></div>
       <div class="body__btnComprar">
-        <input type="button" value="COMPRAR" data-bs-toggle="modal" data-bs-target="#compraConfirmada">
+        <input type="button" value="COMPRAR" [attr.data-bs-toggle]="'modal'" [attr.data-bs-target]="modalObjetivo" (click)="intentarCompra()">
       </div>
     </div>
   </div>
+
+  <!-- Modal de acceso requerido -->
+<div class="modal fade" id="accesoRequerido" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style="padding: 30px; border-radius: 12px; text-align: center;">
+      <div class="modal-header">
+        <h5 class="modal-title" style="margin: auto; font-size: 1.5rem;">Acceso Requerido</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body" style="margin-top: 15px;">
+        <p style="font-size: 1.2rem;">Debes estar registrado para realizar una compra.</p>
+      </div>
+      <div class="modal-footer" style="justify-content: center;">
+        <a href="/login" class="btn btn-primary">Iniciar Sesión</a>
+        <a href="/registro" class="btn btn-secondary">Registrarse</a>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Modal de confirmación -->
   <div class="modal fade" id="compraConfirmada" tabindex="-1" aria-hidden="true">

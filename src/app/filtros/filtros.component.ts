@@ -51,7 +51,7 @@ export class FiltrosComponent implements OnInit {
     if (this.filtros.parking) filtrosActivos['filter[parking][_eq]'] = 1;
     if (this.filtros.id_zona > 0) filtrosActivos['filter[id_zona][_eq]'] = this.filtros.id_zona;
 
-    console.log("Filtros enviados a MainComponent:", filtrosActivos); // <-- Depuración
+    //console.log("Filtros enviados a MainComponent:", filtrosActivos); // <-- Depuración
 
     this.filtrosAplicados.emit(filtrosActivos);
   }

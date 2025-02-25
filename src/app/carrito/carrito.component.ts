@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CartService } from '../services/cart.service';
-import { Entrada } from '../services/cart.service'; // Asegúrate de importar la clase Entrada
+import { Entrada } from '../services/cart.service';
+import { HttpClient } from '@angular/common/http';
+
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-carrito',
@@ -11,12 +14,16 @@ export class CarritoComponent implements OnInit {
   carrito: Entrada[] = [];
   subtotal: number = 0;
   total: number = 0;
+  modalObjetivo: string = '';
+  apiUrl: string = 'http://mibackend.duckdns.org/';
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private cdr: ChangeDetectorRef, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.obtenerCarrito();
+    this.verificarSesion();
   }
+
 
   obtenerCarrito(): void {
     this.carrito = this.cartService.obtenerCarrito();
@@ -50,4 +57,53 @@ export class CarritoComponent implements OnInit {
     localStorage.setItem('carrito', JSON.stringify(carrito));
     this.obtenerCarrito(); // Actualizar la vista
   }
+
+  verificarSesion() {
+    // Comprobar si hay token y asignar el modal correspondiente
+    this.modalObjetivo = localStorage.getItem('token') ? '#compraConfirmada' : '#accesoRequerido';
+  }
+
+  intentarCompra() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.realizarCompra();
+    }
+  }
+  realizarCompra() {
+    const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
+    const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
+
+    if (!usuario.email || carrito.length === 0) {
+      console.error('No se puede procesar la compra: faltan datos.');
+      return;
+    }
+
+    const datosCompra = {
+      usuario: usuario.email,
+      carrito: carrito.map((producto: any) => ({
+        id_producto: producto.id,
+        cantidad: producto.cantidad
+      }))
+    };
+
+    // 🚀 Depuración: Mostrar los datos en la consola antes de enviarlos
+    console.log('📦 Datos que se enviarían a la API:', JSON.stringify(datosCompra, null, 2));
+
+    // ❌ Comentamos la solicitud HTTP para pruebas
+    /*
+    this.http.post(this.apiUrl, datosCompra).subscribe(
+      response => {
+        console.log('Compra realizada con éxito:', response);
+        alert('Compra realizada con éxito');
+        localStorage.removeItem('carrito'); // Limpiar carrito después de la compra
+      },
+      error => {
+        console.error('Error al procesar la compra:', error);
+        alert('Hubo un error al procesar la compra');
+      }
+    );
+    */
+
+  }
+
 }
