@@ -20,6 +20,11 @@ $border_radius: 25px;
     min-height: 80vh;
 }
 
+.mensaje-vacio {
+    margin-top: 5rem;
+    text-align: center;
+}
+
 .body__wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -38,6 +43,7 @@ $border_radius: 25px;
     min-height: 640px;
     border-radius: $border_radius;
     background-color: global.$gris-claro;
+    margin-top: 3rem;
 }
 
 /* Estilos del letrero carrito de la compra */

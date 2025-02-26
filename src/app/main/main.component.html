@@ -3,136 +3,146 @@
     <body class="main">
 
         <app-filtros (filtrosAplicados)="cargarDiscotecas($event)"></app-filtros>
-        <article *ngFor="let discoteca of discotecas"  class="discoteca">
+        <div *ngFor="let discoteca of discotecas" >
+            <article class="discoteca">
 
-            <header>
-                <h1 class="discoteca__nombre">{{discoteca.nombre}}</h1>
-            </header>
 
-            <!-- Carrusel de imágenes -->
-            <figure class="discoteca__img">
-                <div class="slider">
-                    <div >
-                        <div [id]="'carouselDiscoteca' + discoteca.id_discoteca" class="carousel slide">
-                            <!-- Indicadores -->
-                            <div class="carousel-indicators">
-                                <button *ngFor="let i of [0, 1, 2]; let index = index" type="button"
+                <header>
+                    <h1 class="discoteca__nombre">{{discoteca.nombre}}</h1>
+                </header>
+
+                <!-- Carrusel de imágenes -->
+                <figure class="discoteca__img">
+                    <div class="slider">
+                        <div>
+                            <div [id]="'carouselDiscoteca' + discoteca.id_discoteca" class="carousel slide">
+                                <!-- Indicadores -->
+                                <div class="carousel-indicators">
+                                    <button *ngFor="let i of [0, 1, 2]; let index = index" type="button"
+                                        [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.id_discoteca"
+                                        [attr.data-bs-slide-to]="index" [class.active]="index === 0"
+                                        [attr.aria-current]="index === 0 ? 'true' : null"
+                                        [attr.aria-label]="'Slide ' + (index + 1)"></button>
+                                </div>
+
+                                <!-- Contenido del carrusel -->
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{{discoteca.imagen1}}" class="d-block w-100"
+                                            alt="Imagen de discoteca {{discoteca.nombre}}"
+                                            title="Imagen de discoteca {{discoteca.nombre}}. Fuente: Stock LTD. Obtenida de ImageStock.com">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{discoteca.imagen2}}" class="d-block w-100"
+                                            alt="Imagen de discoteca {{discoteca.nombre}}"
+                                            title="Imagen de discoteca {{discoteca.nombre}}. Fuente: Stock LTD. Obtenida de ImageStock.com">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{{discoteca.imagen3}}" class="d-block w-100"
+                                            alt="Imagen de discoteca {{discoteca.nombre}}"
+                                            title="Imagen de discoteca {{discoteca.nombre}}. Fuente: Stock LTD. Obtenida de ImageStock.com">
+                                    </div>
+                                </div>
+
+                                <!-- Controles -->
+                                <button class="carousel-control-prev" type="button"
                                     [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.id_discoteca"
-                                    [attr.data-bs-slide-to]="index" [class.active]="index === 0"
-                                    [attr.aria-current]="index === 0 ? 'true' : null"
-                                    [attr.aria-label]="'Slide ' + (index + 1)"></button>
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Anterior</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.id_discoteca"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Siguiente</span>
+                                </button>
                             </div>
-
-                            <!-- Contenido del carrusel -->
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="{{discoteca.imagen1}}" class="d-block w-100"
-                                        alt="Imagen de discoteca {{discoteca.nombre}}"
-                                        title="Imagen de discoteca {{discoteca.nombre}}. Fuente: Stock LTD. Obtenida de ImageStock.com">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="{{discoteca.imagen2}}" class="d-block w-100"
-                                        alt="Imagen de discoteca {{discoteca.nombre}}"
-                                        title="Imagen de discoteca {{discoteca.nombre}}. Fuente: Stock LTD. Obtenida de ImageStock.com">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="{{discoteca.imagen3}}" class="d-block w-100"
-                                        alt="Imagen de discoteca {{discoteca.nombre}}"
-                                        title="Imagen de discoteca {{discoteca.nombre}}. Fuente: Stock LTD. Obtenida de ImageStock.com">
-                                </div>
-                            </div>
-
-                            <!-- Controles -->
-                            <button class="carousel-control-prev" type="button"
-                                [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.id_discoteca"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Anterior</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                [attr.data-bs-target]="'#carouselDiscoteca' + discoteca.id_discoteca"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Siguiente</span>
-                            </button>
                         </div>
                     </div>
+                </figure>
+
+                <!-- Lista de servicios -->
+                <section class="discoteca__listaServicios">
+                    <ul>
+                        <li>
+                            <p><span class="servicio">Dirección: </span><span>{{discoteca.direccion}}</span></p>
+                        </li>
+                        <li>
+                            <p><span class="servicio">Horario: </span><span>{{discoteca.horario_apertura}} -
+                                    {{discoteca.horario_cierre}} am</span></p>
+                        </li>
+                        <li>
+                            <p><span class="servicio">Guardarropa: </span><span>{{ discoteca.guardarropa ? 'Sí' : 'No'
+                                    }}</span></p>
+                        </li>
+                        <li>
+                            <p><span class="servicio">Parking cerca: </span> <span>{{ discoteca.parking ? 'Sí' : 'No'
+                                    }}</span></p>
+                        </li>
+                        <li>
+                            <p><span class="servicio">Etiqueta: </span><span>{{discoteca.etiqueta}}</span></p>
+                        </li>
+                        <li>
+                            <p><span class="servicio">Numero de entradas disponibles:
+                                </span><span>{{discoteca.stock_inicial}}</span></p>
+                        </li>
+                        <li>
+                            <div><label for="'zona-seleccionada' + discoteca.id_discoteca" class="servicio">Fecha:
+                                </label>
+                                <select id="'zona-seleccionada' + discoteca.id_discoteca"
+                                    [(ngModel)]="discoteca.fechaSeleccionada"
+                                    (change)="actualizarPreciosYHorarios(discoteca)" class="form-select w-25">
+                                    <option value="" disabled selected hidden>Seleccione la fecha deseada</option>
+                                    <option *ngFor="let fecha of discoteca.fecha" [value]="fecha">
+                                        {{ fecha }}
+                                    </option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Lista de precios -->
+                <section class="discoteca__precios">
+                    <h2><span>Entrada:</span><span> {{discoteca.entrada}}€</span></h2>
+                    <h2><span>Reservado: </span><span>{{discoteca.reservados}}€</span></h2>
+                </section>
+
+                <!-- Botones de compra -->
+                <section>
+
+                </section>
+                <div class="discoteca__btn-entrada"><input
+                        (click)="agregarProductoAlCarrito(discoteca.id_entrada , discoteca.nombre,discoteca.entrada,'Individual')"
+                        class="btn-comprar" type="button" value="Añadir Entrada">
                 </div>
-            </figure>
+                <div class="discoteca__btn-reservado"><input
+                        (click)="agregarProductoAlCarrito(discoteca.id_reservado , discoteca.nombre,discoteca.reservados,'Reservado')"
+                        class="btn-comprar" type="button" value="Añadir Reservado">
+                </div>
 
-            <!-- Lista de servicios -->
-            <section class="discoteca__listaServicios">
-                <ul>
-                    <li>
-                        <p><span class="servicio">Dirección: </span><span>{{discoteca.direccion}}</span></p>
-                    </li>
-                    <li>
-                        <p><span class="servicio">Horario: </span><span>{{discoteca.horario_apertura}} -
-                                {{discoteca.horario_cierre}} am</span></p>
-                    </li>
-                    <li>
-                        <p><span class="servicio">Guardarropa: </span><span>{{ discoteca.guardarropa ? 'Sí' : 'No'
-                                }}</span></p>
-                    </li>
-                    <li>
-                        <p><span class="servicio">Parking cerca: </span> <span>{{ discoteca.parking ? 'Sí' : 'No'
-                                }}</span></p>
-                    </li>
-                    <li>
-                        <p><span class="servicio">Etiqueta: </span><span>{{discoteca.etiqueta}}</span></p>
-                    </li>
-                    <li>
-                        <p><span class="servicio">Numero de entradas disponibles:
-                            </span><span>{{discoteca.stock_inicial}}</span></p>
-                    </li>
-                    <li>
-                        <div><label for="'zona-seleccionada' + discoteca.id_discoteca" class="servicio">Fecha: </label>
-                            <select id="'zona-seleccionada' + discoteca.id_discoteca" [(ngModel)]="discoteca.fechaSeleccionada"
-                                (change)="actualizarPreciosYHorarios(discoteca)">
-                            <option value="" disabled selected hidden>Seleccione la fecha deseada</option>
-                                <option *ngFor="let fecha of discoteca.fecha" [value]="fecha">
-                                    {{ fecha }}
-                                </option>
-                            </select>
-                        </div>
-                    </li>
-                </ul>
-            </section>
+                <!-- <div class="discoteca__btn-entrada"><input class="btn-comprar" type="button"
+                        value="Añadir Entrada">
+                </div>
+                <div class="discoteca__btn-reservado"><input  class="btn-comprar" type="button"
+                        value="Añadir Reservado">
+                </div> -->
+                <!-- Ambiente -->
+                <section class="discoteca__ambiente">
+                    <p><span>Ambiente: </span><span>{{discoteca.ambiente}}</span></p>
+                </section>
 
-            <!-- Lista de precios -->
-            <section class="discoteca__precios">
-                <h2><span>Entrada:</span><span> {{discoteca.entrada}}€</span></h2>
-                <h2><span>Reservado: </span><span>{{discoteca.reservados}}€</span></h2>
-            </section>
+                <!-- Descripcion -->
+                <section class="discoteca__descripcion">
+                    <p><span>Descripción: </span><span>{{discoteca.descripcion}}</span>
+                    </p>
+                </section>
 
-            <!-- Botones de compra -->
-            <section>
+            </article>
+            <hr>
+        </div>
 
-            </section>
-          <div class="discoteca__btn-entrada"><input (click)="agregarProductoAlCarrito(discoteca.id_entrada , discoteca.nombre,discoteca.entrada,'Individual')" class="btn-comprar" type="button"
-                    value="Añadir Entrada">
-            </div>
-            <div class="discoteca__btn-reservado"><input (click)="agregarProductoAlCarrito(discoteca.id_reservado , discoteca.nombre,discoteca.reservados,'Reservado')" class="btn-comprar" type="button"
-                    value="Añadir Reservado">
-            </div>
 
-            <!-- <div class="discoteca__btn-entrada"><input class="btn-comprar" type="button"
-                    value="Añadir Entrada">
-            </div>
-            <div class="discoteca__btn-reservado"><input  class="btn-comprar" type="button"
-                    value="Añadir Reservado">
-            </div> -->
-            <!-- Ambiente -->
-            <section class="discoteca__ambiente">
-                <p><span>Ambiente: </span><span>{{discoteca.ambiente}}</span></p>
-            </section>
-
-            <!-- Descripcion -->
-            <section class="discoteca__descripcion">
-                <p><span>Descripción: </span><span>{{discoteca.descripcion}}</span>
-                </p>
-            </section>
-
-        </article>
 
     </body>

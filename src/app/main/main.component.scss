@@ -11,13 +11,14 @@
   color: global.$color-blanco;
 }
 
+
 /* Tarjeta de cada discoteca en resoluciones grandes */
 .discoteca {
   /* Para pantallas grandes: se fuerza el tamaño original */
   height: 530px;
   width: 1200px;
   max-width: 1200px;
-  margin-bottom: 25rem;
+  margin-bottom: 15rem;
   display: grid;
   gap: 20px;
   grid-template:
@@ -28,6 +29,11 @@
     "img reservado reservado" auto
     "ambiente ambiente ambiente" auto 
     "descripcion descripcion descripcion" auto / auto auto auto;
+}
+
+hr {
+  opacity: 100%;
+  margin-bottom: 5rem;
 }
 
 .discoteca__nombre {
@@ -66,11 +72,16 @@
   width: 499px;
 }
 
+.form-select{
+display: inline !important;
+margin-left: 2rem;
+}
+
 .discoteca__listaServicios {
   grid-area: listaServicios;
   padding-left: 5%;
   font-size: 18px;
-  
+  font-family: global.$fuente-botones;
   .servicio {
     font-weight: 800;
   }
@@ -138,7 +149,7 @@
   .discoteca {
     /* Se elimina la altura fija y se utiliza el 100% del ancho disponible */
     height: auto;
-    width: 100%;
+    width: 60%;
     max-width: 100%;
     margin: 0 auto 5rem;
     
@@ -169,13 +180,13 @@
 }
 
 /** Media Query para resoluciones pequeñas (móviles, <= 431px) */
-@media (max-width: 540px) {
+@media (max-width: 768px) {
   .main {
     padding-top: 13%;
   }
   
   .discoteca {
-    width: 400px;
+    width: 100%;
     margin-bottom: 10rem;
     
     /* Redefinición del grid para pantallas pequeñas */

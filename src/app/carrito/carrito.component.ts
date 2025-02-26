@@ -95,9 +95,11 @@ export class CarritoComponent implements OnInit {
     this.http.post(this.apiUrl, datosCompra).subscribe(
       response => {
         console.log('Compra realizada con éxito:', response);
-        alert('Compra realizada con éxito');
+        //alert('Compra realizada con éxito');
         localStorage.removeItem('carrito'); 
+        this.carrito = [];
         this.carritoVacio = true; 
+        this.total = 0;
       },
       error => {
         console.error('Error al procesar la compra:', error);
