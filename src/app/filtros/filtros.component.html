@@ -9,7 +9,7 @@
         <!-- Sección de Filtros Adicionales -->
         <section class="mt-4">
             <fieldset>
-                <legend>Extras</legend>
+                <legend class="legend">Extras</legend>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="guardarropa" name="guardarropa" 
                         [(ngModel)]="filtros.guardarropa" aria-labelledby="label-guardarropa">
@@ -29,7 +29,7 @@
     
         <!-- Sección de Filtrado por Zona -->
         <section class="mt-4">
-            <label id="zona-label" for="zonaFiltro"><h3>Filtrar por Zona</h3></label>
+            <label id="zona-label" for="zonaFiltro"><h2 class="h2">Filtrar por Zona</h2></label>
             <select class="form-select" id="zonaFiltro" [(ngModel)]="filtros.id_zona" aria-labelledby="zona-label">
                 <option value="0" selected>Selecciona una zona</option>
                 <option *ngFor="let zona of zonas" [value]="zona.id_zona">{{zona.nombre}}</option>
