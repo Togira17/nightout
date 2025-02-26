@@ -86,15 +86,15 @@
                             </span><span>{{discoteca.stock_inicial}}</span></p>
                     </li>
                     <li>
-                        <p><span class="servicio">Fecha: </span>
-                            <select [(ngModel)]="discoteca.fechaSeleccionada"
+                        <div><label for="'zona-seleccionada' + discoteca.id_discoteca" class="servicio">Fecha: </label>
+                            <select id="'zona-seleccionada' + discoteca.id_discoteca" [(ngModel)]="discoteca.fechaSeleccionada"
                                 (change)="actualizarPreciosYHorarios(discoteca)">
-                                <option value="" disabled selected hidden>Seleccione la fecha deseada</option>
+                            <option value="" disabled selected hidden>Seleccione la fecha deseada</option>
                                 <option *ngFor="let fecha of discoteca.fecha" [value]="fecha">
                                     {{ fecha }}
                                 </option>
                             </select>
-                        </p>
+                        </div>
                     </li>
                 </ul>
             </section>

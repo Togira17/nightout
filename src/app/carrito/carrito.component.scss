@@ -58,6 +58,7 @@ $border_radius: 25px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 
 .body__nombreProducto {
@@ -127,6 +128,27 @@ $border_radius: 25px;
     }
 }
 
+/* Boton para eliminar un producto del carrito */
+.btn-eliminar{
+    border: none;
+    width: 100px;
+    height: 40px;
+    background-color: global.$gris-oscuro;
+    color: global.$color-blanco;
+    text-transform: uppercase;
+    border-radius: 25px;
+    font-family: global.$fuente-botones;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    transition: 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    color: global.$color-blanco;
+    background-color: global.$color-morado;
+}
+
 /* Separador de productos */
 .body__separador {
     align-self: flex-end;
@@ -185,6 +207,7 @@ $border_radius: 25px;
     letter-spacing: 6px;
     transition: 0.3s ease;
 }
+
 
 .body__btnComprar input:hover {
     color: global.$color-blanco;
@@ -333,6 +356,22 @@ a:hover {
 }  
 /* Responsividad para pantallas pequeñas */
 @media(max-width: 768px) {  
+
+    .btn-eliminar{
+        border: none;
+        width: 80px;
+        height: 40px;
+        background-color: global.$gris-oscuro;
+        color: global.$color-blanco;
+        text-transform: uppercase;
+        border-radius: 25px;
+        font-family: global.$fuente-botones;
+        font-size: .6rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        transition: 0.3s ease;
+    }
+
     .body__wrapper {
         display: flex;
         flex-direction: column;
