@@ -43,15 +43,24 @@ export class CarritoComponent implements OnInit {
   }
 
   actualizarCantidad(entrada: Entrada, cantidad: number): void {
-    // Aquí deberías actualizar la cantidad en el carrito (localStorage)
+    if (cantidad < 1) {
+      alert("La cantidad no puede ser menor a 1.${entrada.stock_individual}");
+      return;
+    }
+    if (cantidad > entrada.stock_individual) {
+      alert(`No puedes añadir más de ${entrada.stock_individual} unidades.`);
+      return;
+    }
+  
     const carrito = this.cartService.obtenerCarrito();
     const index = carrito.findIndex(item => item.id === entrada.id);
     if (index !== -1) {
       carrito[index].cantidad = cantidad;
       localStorage.setItem('carrito', JSON.stringify(carrito));
-      this.obtenerCarrito(); // Para actualizar la vista
+      this.obtenerCarrito();
     }
   }
+  
 
   eliminarProducto(entrada: Entrada): void {
     let carrito = this.cartService.obtenerCarrito();

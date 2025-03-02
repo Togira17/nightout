@@ -14,7 +14,10 @@ $fuente-botones: "Noto Sans JP", serif;
 */
 
 $border_radius: 25px;
-
+.reservado{
+    .body__unidades{display:none;}
+    
+}
 .body {
     background-color: global.$gris-oscuro;
     min-height: 80vh;

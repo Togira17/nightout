@@ -8,14 +8,14 @@
       <p *ngIf="carrito.length === 0" class="mensaje-vacio">El carrito está vacío</p>
 
       <!-- Estructura para los productos en el carrito -->
-      <div class="body__producto-wraper" *ngFor="let producto of carrito">
-        <div class="body__producto">
+      <div class="body__producto-wraper" *ngFor="let producto of carrito" >
+        <div class="body__producto" [ngClass]="{ 'reservado': producto.tipo_entrada === 'reservado' }">
           <div class="body__info">
             <p class="body__nombreProducto">{{ producto.nombre }}</p>
             <p class="body__tipoEntrada">{{ producto.tipo_entrada }}</p>
             <p class="body__precio">{{ producto.precio }}€</p>
           </div>
-          <div class="body__unidades">
+          <div class="body__unidades" >
             Unidades:
             <div class="body__cantidad">
               <div role="group" aria-label="Selector de cantidad" class="body__selectorCantidad">

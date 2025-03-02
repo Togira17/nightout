@@ -8,14 +8,16 @@ export class Entrada {
   nombre: string;
   precio: string;
   tipo_entrada:string;
-  cantidad: number; // Nueva propiedad para cantidad
+  cantidad: number; 
+  stock_individual:number;
 
-  constructor(id: number, nombre: string,precio:string,tipo_entrada:string) {
+  constructor(id: number, nombre: string,precio:string,tipo_entrada:string,stock_individual:number) {
     this.id = id;
     this.nombre = nombre;
     this.precio = precio;
     this.tipo_entrada=tipo_entrada
     this.cantidad = 1; // Inicializamos la cantidad por defecto
+    this.stock_individual=stock_individual
   }
 }
 
@@ -43,8 +45,8 @@ export class CartService {
   }
 
   // Método para agregar una entrada al carrito
-  agregarAlCarrito(id: number, nombre: string, precio: string, tipo_entrada: string): void {
-    const entrada = new Entrada(id, nombre, precio, tipo_entrada);
+  agregarAlCarrito(id: number, nombre: string, precio: string, tipo_entrada: string,stock_entrada:number): void {
+    const entrada = new Entrada(id, nombre, precio, tipo_entrada,stock_entrada);
   
     // Obtener los datos del JSON y completar la entrada
     this.obtenerDatosEntradas().subscribe((datos) => {

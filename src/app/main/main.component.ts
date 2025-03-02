@@ -6,6 +6,7 @@ interface Entrada {
   tipo_entrada: string;
   precio: string;
   id_entrada:number;
+  stock_actual: number;
 }
 
 interface Horario {
@@ -49,6 +50,8 @@ class DiscotecaModel {
   reservados: string = 'no disponible';
   id_entrada:number=0;
   id_reservado:number=0;
+  stock_entrada:number=0;
+  stock_reservado:number=0;
 
   horario_apertura: string = '--:--';
   horario_cierre: string = '--:--';
@@ -67,11 +70,13 @@ class DiscotecaModel {
 
     const entrada = diaSeleccionado.entradas.find((e) => e.tipo_entrada === 'individual');
     this.entrada = entrada ? entrada.precio : 'no disponible';
-    this.id_entrada = entrada ? entrada.id_entrada : 0;  // Asignamos el ID de la entrada individual
+    this.id_entrada = entrada ? entrada.id_entrada : 0;
+    this.stock_entrada =entrada ? entrada.stock_actual :0; 
     
     const reservado = diaSeleccionado.entradas.find((e) => e.tipo_entrada === 'reservado');
     this.reservados = reservado ? reservado.precio : 'no disponible';
     this.id_reservado = reservado ? reservado.id_entrada : 0;  // Asignamos el ID de la entrada reservada
+    this.stock_reservado = entrada ? entrada.stock_actual :0;
 
     const horario = diaSeleccionado.horarios[0];
     this.horario_apertura = horario?.hora_apertura?.substring(0, 5) || '--:--';
@@ -123,7 +128,44 @@ export class MainComponent implements OnInit {
 
  
 
-  agregarProductoAlCarrito(id: number, nombre: string ,precio:string,tipo_entrada:string): void {
-   this.cartService.agregarAlCarrito(id, nombre,precio,tipo_entrada);
+  agregarProductoAlCarrito(id: number, nombre: string, precio: string, tipo_entrada: string,stock_entrada:number): void {
+    // Buscar la discoteca asociada según el tipo de entrada
+    let discoteca: DiscotecaModel | undefined;
+  
+    if (tipo_entrada.toLowerCase() === 'individual') {
+      discoteca = this.discotecas.find(d => d.id_entrada === id);
+      if (!discoteca) {
+        alert('Discoteca no encontrada para entrada individual');
+        return;
+      }
+      if (discoteca.stock_entrada <= 0) {
+        alert('Stock insuficiente para entrada individual');
+        return;
+      }
+    } else if (tipo_entrada.toLowerCase() === 'reservado') {
+      discoteca = this.discotecas.find(d => d.id_reservado === id);
+      if (!discoteca) {
+        alert('Discoteca no encontrada para reservado');
+        return;
+      }
+      if (discoteca.stock_reservado <= 0) {
+        alert('Stock insuficiente para reservado');
+        return;
+      }
+      // Verificar que aún no se haya agregado un 'reservado' para esta discoteca
+      const carrito = this.cartService.obtenerCarrito();
+      const existeReservado = carrito.some(
+        (item: any) =>
+          item.tipo_entrada.toLowerCase() === 'reservado' && item.id === id
+      );
+      if (existeReservado) {
+        alert('Solo se permite un reservado por discoteca');
+        return;
+      }
+    }
+  
+    // Si todas las validaciones pasan, se agrega al carrito
+    this.cartService.agregarAlCarrito(id, nombre, precio, tipo_entrada,stock_entrada);
   }
+  
 }
