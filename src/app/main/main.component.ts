@@ -76,7 +76,7 @@ class DiscotecaModel {
     const reservado = diaSeleccionado.entradas.find((e) => e.tipo_entrada === 'reservado');
     this.reservados = reservado ? reservado.precio : 'no disponible';
     this.id_reservado = reservado ? reservado.id_entrada : 0;  // Asignamos el ID de la entrada reservada
-    this.stock_reservado = entrada ? entrada.stock_actual :0;
+    this.stock_reservado = reservado ? reservado.stock_actual :0;
 
     const horario = diaSeleccionado.horarios[0];
     this.horario_apertura = horario?.hora_apertura?.substring(0, 5) || '--:--';
