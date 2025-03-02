@@ -1,10 +1,14 @@
 <body class="contacto ">
     <div class=" form-wrapper container">
         <h2 class="mb-4">Formulario de Contacto</h2>
-        <form>
+        <form id="contact-form"  (submit)="enviarMail($event)" >
             <div class="mb-3">
-                <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="tu@email.com" required>
+                <label for="user_name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Tu nombre" required>
+            </div>
+            <div class="mb-3">
+                <label for="user_email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="user_email" name="user_email" placeholder="Tu correo" required>
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Mensaje</label>
