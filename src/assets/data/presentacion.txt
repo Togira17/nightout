@@ -1,0 +1,24 @@
+1.Diseño
+    visión, misión, obetivos...
+    Wireframe y Mockup
+    Prototipo
+
+2.Desarrollo
+    Metodología
+    Herramientas
+
+3.Normativa
+    Usabilidad
+    Accesibilidad
+    Licencias
+    Documentación
+    Ayudas
+    Manuales de usuario
+
+4. Pruebas
+    Problemas
+    Accesibilidad
+    Usabilidad
+
+5. Producto
+    Paseo
