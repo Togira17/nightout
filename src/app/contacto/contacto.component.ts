@@ -24,6 +24,7 @@ public enviarMail(e: Event) {
   // Email a la empresa
   const emailEmpresa = {
     to_email: "nightousevilla@gmail.com", // Email de la empresa
+    from_email: "user_name",
     subject: "Nuevo mensaje del formulario de contacto",
     message: `
       Nombre: ${user_name}
@@ -35,6 +36,7 @@ public enviarMail(e: Event) {
   // Email de confirmación para el cliente
   const emailCliente = {
     to_email: user_email,
+    from_email: "nightousevilla@gmail.com",
     subject: "Hemos recibido tu mensaje",
     message: `
       Hola ${user_name},
@@ -45,17 +47,17 @@ public enviarMail(e: Event) {
       "${message}"
 
       Saludos,
-      El equipo de [Nombre de la empresa]
+      El equipo de Nightoutsevilla
     `
   };
 
   // Enviar correo a la empresa
-  emailjs.send(this.serviceId, "template_vacío", emailEmpresa, this.publicKey)
+  emailjs.send(this.serviceId, "contact_form", emailEmpresa, this.publicKey)
     .then(() => {
       console.log("Correo enviado a la empresa.");
 
       // Enviar correo de confirmación al cliente
-      return emailjs.send(this.serviceId, "template_vacío", emailCliente, this.publicKey);
+      return emailjs.send(this.serviceId, "contact_form", emailCliente, this.publicKey);
     })
     .then(() => {
       console.log("Correo de confirmación enviado al cliente.");
