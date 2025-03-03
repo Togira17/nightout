@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { AuthServiceService } from '../auth.service.service';
-
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +8,8 @@ import { AuthServiceService } from '../auth.service.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
+  publicKey: string = "MdEGfO8nqJO-digJf";
 
   user =
     {
@@ -40,6 +42,13 @@ export class LoginComponent {
 
     this.authService.register(this.user).subscribe({
       next: (response) => {
+
+        //Guardar datos antes de limpiar el formulario
+        const userEmail = this.user.email;
+        const userName = this.user.nombre_usuario;
+
+        //Enviar el correo de bienvenida
+        this.enviarCorreoBienvenida(userEmail, userName);
 
         //limpiar campos del formulario
         this.user = {
@@ -84,7 +93,7 @@ export class LoginComponent {
 
     this.authService.login(this.credentials).subscribe({
       next: (response) => {
-        
+
         this.handleLoginSuccess(response);
         //Limpiar formulario
         this.credentials =
@@ -98,7 +107,7 @@ export class LoginComponent {
 
         //Limpiar mensajes de error
         this.loginErrorMessage = '';
-        
+
         //Cerrar la modal
         this.closeModal("login");
 
@@ -144,6 +153,61 @@ export class LoginComponent {
     } else {
       console.error('Error: No se encontró el access_token en la respuesta de la API');
     }
+  }
+
+  enviarCorreoBienvenida(userEmail: string, userName: string) {
+
+
+    const emailParams = {
+      to_email: userEmail,
+      subject: "¡Bienvenido a Nightoutsevilla!",
+      message: `
+      <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto;">
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td align="center">
+        <h2 style="color: #5f3fc3; margin-bottom: 10px;">¡Hola ${userName}!</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p style="margin: 10px 0;">Gracias por registrarte en <strong>Nightoutsevilla</strong>.</p>
+        <p>Ahora puedes acceder a todas nuestras ofertas y eventos exclusivos.</p>
+        <p>¡Esperamos verte pronto!</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <p style="font-size: 14px; color: black; margin: 0;">
+          Saludos,<br>
+          <strong>El equipo de Nightoutsevilla</strong>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <p style="font-size: 12px; color: gray; margin-top: 20px;">
+          Este es un mensaje automático, por favor no respondas a este correo.
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+`
+    };
+
+    emailjs.send("contact_service", "contact_form", emailParams, this.publicKey)
+      .then(() => {
+        console.log("Correo de bienvenida enviado con éxito a:", userEmail);
+      })
+      .catch(error => {
+        console.error("Error al enviar el correo de bienvenida:", error);
+      });
   }
 
 }

@@ -4,22 +4,32 @@
     display: flex;
     justify-content: center;
     height: 100vh;
-    align-items: center; /* Asegura que el contenido se centre verticalmente */
+    align-items: center;
+    /* Asegura que el contenido se centre verticalmente */
 }
 
 .form-wrapper {
     background-color: global.$gris-claro;
     padding: 5%;
     border-radius: 5rem;
-    height: auto; /* Ajustamos la altura para que se adapte mejor al contenido */
-    max-width: 800px; /* Establecemos un ancho máximo */
-    width: 100%; /* Asegura que no sobrepase el ancho disponible */
+    height: auto;
+    /* Ajustamos la altura para que se adapte mejor al contenido */
+    max-width: 800px;
+    /* Establecemos un ancho máximo */
+    width: 100%;
+    /* Asegura que no sobrepase el ancho disponible */
 }
+
+#agradecerContacto .modal-dialog {
+    margin: auto !important;
+}
+
 
 
 h2 {
     text-align: center;
-    font-size: 2rem; /* Ajustamos el tamaño para pantallas grandes */
+    font-size: 2rem;
+    /* Ajustamos el tamaño para pantallas grandes */
 }
 
 button {
@@ -50,11 +60,13 @@ button:hover {
     }
 
     h2 {
-        font-size: 1.8rem; /* Ajustamos el tamaño del título */
+        font-size: 1.8rem;
+        /* Ajustamos el tamaño del título */
     }
 
     button {
-        width: 150px; /* Ajustamos el tamaño del botón */
+        width: 150px;
+        /* Ajustamos el tamaño del botón */
         height: 45px;
         font-size: 0.9rem;
     }
@@ -63,7 +75,8 @@ button:hover {
 /* Responsividad para pantallas pequeñas */
 @media (max-width: 480px) {
     .contacto {
-        padding: 20px; /* Agregamos algo de espacio alrededor */
+        padding: 20px;
+        /* Agregamos algo de espacio alrededor */
     }
 
     .form-wrapper {
@@ -72,11 +85,13 @@ button:hover {
     }
 
     h2 {
-        font-size: 1.5rem; /* Ajustamos aún más el tamaño del título */
+        font-size: 1.5rem;
+        /* Ajustamos aún más el tamaño del título */
     }
 
     button {
-        width: 120px; /* Reducimos el tamaño del botón */
+        width: 120px;
+        /* Reducimos el tamaño del botón */
         height: 40px;
         font-size: 0.9rem;
     }
