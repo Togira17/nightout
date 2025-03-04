@@ -113,6 +113,10 @@ margin-left: 2rem;
   transition: 0.3s ease;
   border: none;
 }
+.btn-comprar:disabled{
+  background-color: lightgray;
+  opacity: 0.5;
+}
 
 .btn-comprar:hover {
   color: global.$color-blanco;
