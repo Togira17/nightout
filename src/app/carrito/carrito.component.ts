@@ -28,7 +28,6 @@ export class CarritoComponent implements OnInit {
     this.verificarSesion();
   }
 
-
   obtenerCarrito(): void {
     this.carrito = this.cartService.obtenerCarrito();
     this.carritoVacio = this.carrito.length === 0;
@@ -36,12 +35,9 @@ export class CarritoComponent implements OnInit {
   }
 
   calcularTotales(): void {
-    // Calcular el subtotal sumando el precio de cada producto * su cantidad
     this.subtotal = this.carrito.reduce((total, entrada) => {
-      return total + (parseFloat(entrada.precio) * entrada.cantidad);  // Multiplicamos por la cantidad
+      return total + (parseFloat(entrada.precio) * entrada.cantidad);
     }, 0);
-
-    // El total es igual al subtotal, ya que no hay gastos de servicio
     this.total = this.subtotal;
   }
 
@@ -63,17 +59,15 @@ export class CarritoComponent implements OnInit {
       this.obtenerCarrito();
     }
   }
-  
 
   eliminarProducto(entrada: Entrada): void {
     let carrito = this.cartService.obtenerCarrito();
     carrito = carrito.filter(item => item.id !== entrada.id);
     localStorage.setItem('carrito', JSON.stringify(carrito));
-    this.obtenerCarrito(); // Actualizar la vista
+    this.obtenerCarrito();
   }
 
   verificarSesion() {
-    // Comprobar si hay token y asignar el modal correspondiente
     this.modalObjetivo = localStorage.getItem('token') ? '#compraConfirmada' : '#accesoRequerido';
   }
 
@@ -83,6 +77,7 @@ export class CarritoComponent implements OnInit {
       this.realizarCompra();
     }
   }
+
   realizarCompra() {
     const usuario = JSON.parse(localStorage.getItem('usuario') || '{}');
     const carrito = JSON.parse(localStorage.getItem('carrito') || '[]');
@@ -100,44 +95,32 @@ export class CarritoComponent implements OnInit {
       }))
     };
 
-    // Depuración: Mostrar los datos en la consola antes de enviarlos
-    //console.log(' Datos que se enviarían a la API:', JSON.stringify(datosCompra, null, 2));
-
-    
     this.http.post(this.apiUrl, datosCompra).subscribe(
       response => {
         console.log('Compra realizada con éxito:', response);
-
-        // ENVIAR EMAIL CON EL RESUMEN DE LA COMPRA
         this.enviarCorreoConfirmacion(usuario, carrito);
-
-        //alert('Compra realizada con éxito');
-        //Vaciar el carrito tras la compra
         localStorage.removeItem('carrito'); 
         this.carrito = [];
         this.carritoVacio = true; 
         this.total = 0;
-         setTimeout(() => {
-          //this.router.navigate(['/']);
+        setTimeout(() => {
           location.reload();
         }, 2000);         
-        
       },
       error => {
         console.error('Error al procesar la compra:', error);
         alert('Hubo un error al procesar la compra');
       }
     );
-    
-
   }
 
-  /* pulsarBoton(boton: string){
-    const miBoton = document.getElementById(boton);
-    miBoton.click();
-  } */
+  // Función para generar la URL del código QR usando la API de Google
+  generarQrCodeUrl(id: string): string {
+    return `https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=${encodeURIComponent(id)}`;
+  }
 
-  enviarCorreoConfirmacion(usuario: any, carrito: any[]) {
+  // Enviar el correo de confirmación con el código QR
+  async enviarCorreoConfirmacion(usuario: any, carrito: any[]) {
     let resumenCompra = `
       <table width="100%" cellpadding="10" cellspacing="0" border="1" style="border-collapse: collapse;">
         <thead>
@@ -151,7 +134,11 @@ export class CarritoComponent implements OnInit {
         <tbody>
     `;
 
+    // Crear la URL del código QR para cada producto
+    let qrUrls: string[] = [];
     carrito.forEach(producto => {
+      const qrUrl = this.generarQrCodeUrl(producto.id.toString()); // Generamos la URL del QR para cada producto
+      qrUrls.push(qrUrl);
       resumenCompra += `
         <tr>
           <td>${producto.nombre}</td>
@@ -198,6 +185,14 @@ export class CarritoComponent implements OnInit {
           </tr>
           <tr>
             <td align="center">
+              <p style="font-weight: bold;">Aquí está tu código QR para la entrada:</p>
+              <p align="center">
+                <img src="${qrUrls[0]}" alt="Código QR" width="150" height="150"/>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
               <p style="font-size: 14px; color: black; margin: 0;">
                 Saludos,<br>
                 <strong>El equipo de Nightoutsevilla</strong>
@@ -216,7 +211,5 @@ export class CarritoComponent implements OnInit {
       .catch(error => {
         console.error("Error al enviar el correo de confirmación:", error);
       });
-}
-
-
+  }
 }
