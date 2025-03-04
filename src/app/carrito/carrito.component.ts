@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { Entrada } from '../services/cart.service';
 import { HttpClient } from '@angular/common/http';
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 
 declare var bootstrap: any;
 
@@ -11,6 +12,7 @@ declare var bootstrap: any;
   styleUrls: ['./carrito.component.scss']
 })
 export class CarritoComponent implements OnInit {
+  publicKey: string = "MdEGfO8nqJO-digJf";
   carrito: Entrada[] = [];
   carritoVacio: boolean = true;
   subtotal: number = 0;
@@ -104,7 +106,12 @@ export class CarritoComponent implements OnInit {
     this.http.post(this.apiUrl, datosCompra).subscribe(
       response => {
         console.log('Compra realizada con éxito:', response);
+
+        // ENVIAR EMAIL CON EL RESUMEN DE LA COMPRA
+        this.enviarCorreoConfirmacion(usuario, carrito);
+
         //alert('Compra realizada con éxito');
+        //Vaciar el carrito tras la compra
         localStorage.removeItem('carrito'); 
         this.carrito = [];
         this.carritoVacio = true; 
@@ -118,5 +125,87 @@ export class CarritoComponent implements OnInit {
     
 
   }
+
+  enviarCorreoConfirmacion(usuario: any, carrito: any[]) {
+    let resumenCompra = `
+      <table width="100%" cellpadding="10" cellspacing="0" border="1" style="border-collapse: collapse;">
+        <thead>
+          <tr style="background-color: #f3f3f3;">
+            <th>Producto</th>
+            <th>Tipo de Entrada</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    carrito.forEach(producto => {
+      resumenCompra += `
+        <tr>
+          <td>${producto.nombre}</td>
+          <td>${producto.tipo_entrada}</td>
+          <td>${producto.cantidad}</td>
+          <td>${producto.precio}€</td>
+        </tr>
+      `;
+    });
+
+    resumenCompra += `
+        </tbody>
+      </table>
+    `;
+
+    const emailParams = {
+      to_email: usuario.email,
+      subject: "Confirmación de tu compra en Nightoutsevilla",
+      message: `
+      <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td align="center">
+              <h2 style="color: #5f3fc3; margin-bottom: 10px;">¡Gracias por tu compra, ${usuario.first_name}!</h2>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Hemos recibido tu pedido y aquí tienes un resumen de tu compra:</p>
+            </td>
+          </tr>
+          <tr>
+            <td>${resumenCompra}</td>
+          </tr>
+          <tr>
+            <td>
+              <p>Total: <strong>${carrito.reduce((total, p) => total + (parseFloat(p.precio) * p.cantidad), 0).toFixed(2)}€</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <p style="font-size: 14px; color: black; margin: 0;">
+                Saludos,<br>
+                <strong>El equipo de Nightoutsevilla</strong>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      `
+    };
+
+    emailjs.send("contact_service", "contact_form", emailParams, this.publicKey)
+      .then(() => {
+        console.log("Correo de confirmación enviado con éxito a:", usuario.email);
+      })
+      .catch(error => {
+        console.error("Error al enviar el correo de confirmación:", error);
+      });
+}
+
 
 }
