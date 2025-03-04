@@ -20,6 +20,7 @@
             <div class="body__cantidad">
               <div role="group" aria-label="Selector de cantidad" class="body__selectorCantidad">
                 <button aria-label="Disminuir cantidad" title="Disminuir cantidad" class="body__botonCantidad"
+                [disabled]="producto.cantidad === 1"
                   (click)="actualizarCantidad(producto, producto.cantidad - 1)">
                   -
                 </button>
