@@ -3,6 +3,7 @@ import { CartService } from '../services/cart.service';
 import { Entrada } from '../services/cart.service';
 import { HttpClient } from '@angular/common/http';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import { Router } from '@angular/router';
 
 declare var bootstrap: any;
 
@@ -20,7 +21,7 @@ export class CarritoComponent implements OnInit {
   modalObjetivo: string = '';
   apiUrl: string = 'http://mibackend.duckdns.org/api/pedido.php';
 
-  constructor(private cartService: CartService, private cdr: ChangeDetectorRef, private http: HttpClient) { }
+  constructor(private router: Router, private cartService: CartService, private cdr: ChangeDetectorRef, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.obtenerCarrito();
@@ -116,6 +117,11 @@ export class CarritoComponent implements OnInit {
         this.carrito = [];
         this.carritoVacio = true; 
         this.total = 0;
+         setTimeout(() => {
+          //this.router.navigate(['/']);
+          location.reload();
+        }, 2000);         
+        
       },
       error => {
         console.error('Error al procesar la compra:', error);
@@ -125,6 +131,11 @@ export class CarritoComponent implements OnInit {
     
 
   }
+
+  /* pulsarBoton(boton: string){
+    const miBoton = document.getElementById(boton);
+    miBoton.click();
+  } */
 
   enviarCorreoConfirmacion(usuario: any, carrito: any[]) {
     let resumenCompra = `
