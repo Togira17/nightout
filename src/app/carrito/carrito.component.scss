@@ -121,6 +121,7 @@ $border_radius: 25px;
 .body__botonCantidad:disabled{
     background-color: lightgray;
     opacity: 0.5;
+    pointer-events: none;
 }
 
 /* Sombra para al hacer focus */
@@ -213,11 +214,6 @@ $border_radius: 25px;
     margin-top: 2rem;
 }
 
-.body__btnComprar input:disabled{
-    background-color: lightgray;
-    opacity: 0.5;
-}
-
 .body__btnComprar input {
     border: none;
     width: 184px;
@@ -238,6 +234,13 @@ $border_radius: 25px;
     color: global.$color-blanco;
     background-color: global.$color-morado;
 }
+
+.body__btnComprar input:disabled{
+    background-color: lightgray;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 
 .modal.fade .modal-dialog {
     position: absolute;
