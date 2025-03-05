@@ -4,6 +4,7 @@ import { Entrada } from '../services/cart.service';
 import { HttpClient } from '@angular/common/http';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { Router } from '@angular/router';
+import { environment } from './../../environments/environment';
 
 declare var bootstrap: any;
 
@@ -19,7 +20,7 @@ export class CarritoComponent implements OnInit {
   subtotal: number = 0;
   total: number = 0;
   modalObjetivo: string = '';
-  apiUrl: string = 'http://mibackend.duckdns.org/api/pedido.php';
+  backendUrl: string = environment.backendUrl;
 
   constructor(private router: Router, private cartService: CartService, private cdr: ChangeDetectorRef, private http: HttpClient) { }
 
@@ -43,7 +44,7 @@ export class CarritoComponent implements OnInit {
 
   actualizarCantidad(entrada: Entrada, cantidad: number): void {
     if (cantidad < 1) {
-      alert("La cantidad no puede ser menor a 1.${entrada.stock_individual}");
+      console.log("La cantidad no puede ser menor a 1.${entrada.stock_individual}");
       return;
     }
     if (cantidad > entrada.stock_individual) {
@@ -95,7 +96,7 @@ export class CarritoComponent implements OnInit {
       }))
     };
 
-    this.http.post(this.apiUrl, datosCompra).subscribe(
+    this.http.post(this.backendUrl, datosCompra).subscribe(
       response => {
         console.log('Compra realizada con éxito:', response);
         this.enviarCorreoConfirmacion(usuario, carrito);

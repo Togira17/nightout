@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';  // Importa HttpClient
 import { Observable } from 'rxjs';  // Para manejar las respuestas asíncronas
+import { environment } from './../../environments/environment';
 
 export class Entrada {
   id: number;
@@ -10,6 +11,7 @@ export class Entrada {
   tipo_entrada:string;
   cantidad: number; 
   stock_individual:number;
+  
 
   constructor(id: number, nombre: string,precio:string,tipo_entrada:string,stock_individual:number) {
     this.id = id;
@@ -27,6 +29,7 @@ export class Entrada {
 export class CartService {
   private cartItemsCount = new BehaviorSubject<number>(0);  // El contador de productos en el carrito
   cartItemsCount$ = this.cartItemsCount.asObservable();  // Observable para que los componentes se suscriban
+  private apiUrl = environment.apiUrl; 
 
   constructor(private http: HttpClient) {
     // Al iniciar, revisamos el carrito en localStorage
@@ -49,7 +52,7 @@ export class CartService {
     const entrada = new Entrada(id, nombre, precio, tipo_entrada,stock_entrada);
   
     // Obtener los datos del JSON y completar la entrada
-    this.obtenerDatosEntradas().subscribe((datos) => {
+    this.obtenerDatosEntradas(this.apiUrl).subscribe((datos) => {
   
       // Obtener el carrito actual desde localStorage
       let carrito = this.obtenerCarrito();
@@ -92,7 +95,8 @@ export class CartService {
   }
 
   // Método para obtener los datos del archivo JSON
-  obtenerDatosEntradas(): Observable<any> {
-    return this.http.get<any>('http://apidirectus.duckdns.org/items/entrada');
+  obtenerDatosEntradas(apiUrl: string): Observable<any> {
+    return this.http.get<any>(`${apiUrl}/items/entrada`);
+                            //(`${this.apiUrl}/items/entrada`)
   }
 }
