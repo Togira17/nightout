@@ -9,13 +9,14 @@
 
       <div class="modal-body centrar-contenedor p-3">
         <form (submit)="login(logForm)" #logForm="ngForm">
+
           <div class="form-group mt-5 ">
 
             <input type="text" class="form-control formulario" name="email" [(ngModel)]="credentials.email"
               id="formGroupUsuarioLogin" aria-label="Recuadro correo" placeholder="Tu correo" required
               #username="ngModel">
 
-            <div *ngIf="username.invalid && username.touched">
+            <div *ngIf="username.invalid && username.dirty">
               <span *ngIf="username.errors?.['required']">El nombre de usuario es obligatorio</span>
             </div>
           </div>
@@ -25,7 +26,7 @@
               id="formGroupContraseñaLogin" aria-label="Recuadro contraseña" placeholder="Contraseña" required
               #pass="ngModel">
 
-            <div *ngIf="pass.invalid && email.touched" class="text-danger">
+            <div *ngIf="pass.invalid && email.dirty" class="text-danger">
               <span *ngIf="email.errors?.['required']">La contraseña es obligatoria</span>
             </div>
           </div>
@@ -68,7 +69,7 @@
               #first_name="ngModel">
 
 
-            <div *ngIf="first_name.invalid && first_name.touched" class="text-danger">
+            <div *ngIf="first_name.invalid && first_name.dirty" class="text-danger">
               <span *ngIf="first_name.errors?.['required']">El nombre es obligatorio</span>
             </div>
           </div>
@@ -78,7 +79,7 @@
               [(ngModel)]="user.last_name" aria-label="Cuadro apellidos" placeholder="Apellidos" required
               #last_name="ngModel">
 
-            <div *ngIf="last_name.invalid && last_name.touched" class="text-danger">
+            <div *ngIf="last_name.invalid && last_name.dirty" class="text-danger">
               <span *ngIf="last_name.errors?.['required']">Los apellidos son obligatorio</span>
             </div>
           </div>
@@ -88,7 +89,7 @@
               aria-label="Cuadro DNI" placeholder="DNI (Ej: 12345678a)" required pattern="^[0-9]{8}[A-HJ-NP-TV-Za-hj-np-tv-z]$"
               #dni="ngModel">
 
-            <div *ngIf="dni.invalid && dni.touched" class="text-danger">
+            <div *ngIf="dni.invalid && dni.dirty" class="text-danger">
               <span *ngIf="dni.errors?.['required']">El DNI es obligatorio.</span>
               <span *ngIf="dni.errors?.['pattern']">Formato incorrecto (Ej: 12345678A).</span>
             </div>
@@ -102,7 +103,7 @@
               #email="ngModel">
 
 
-            <div *ngIf="email.invalid && email.touched" class="text-danger">
+            <div *ngIf="email.invalid && email.dirty" class="text-danger">
               <span *ngIf="email.errors?.['required']">El correo es obligatorio.</span>
               <span *ngIf="email.errors?.['email']">Introduce un correo válido.</span>
             </div>
@@ -116,7 +117,7 @@
               #nombre_usario="ngModel">
 
 
-            <div *ngIf="nombre_usario.invalid && nombre_usario.touched" class="text-danger">
+            <div *ngIf="nombre_usario.invalid && nombre_usario.dirty" class="text-danger">
               <span *ngIf="nombre_usario.errors?.['required']">El nombre de usuario es obligatorio</span>
             </div>
           </div>
@@ -128,7 +129,7 @@
               placeholder="Titular de la tarjeta de credito" required #titular_tarjeta="ngModel">
 
 
-            <div *ngIf="titular_tarjeta.invalid && titular_tarjeta.touched" class="text-danger">
+            <div *ngIf="titular_tarjeta.invalid && titular_tarjeta.dirty" class="text-danger">
               <span *ngIf="titular_tarjeta.errors?.['required']">El titular de la tarjeta es obligatorio</span>
             </div>
           </div>
@@ -139,7 +140,7 @@
               aria-label="Número de su tarjeta de crédito" placeholder="Número de tarjeta (16 dígitos)" required
               pattern="^[0-9]{16}$" #numeroTarjeta="ngModel" required>
 
-            <div *ngIf="numeroTarjeta.invalid && numeroTarjeta.touched" class="text-danger">
+            <div *ngIf="numeroTarjeta.invalid && numeroTarjeta.dirty" class="text-danger">
               <span *ngIf="numeroTarjeta.errors?.['required']">El número de tarjeta es obligatorio.</span>
               <span *ngIf="numeroTarjeta.errors?.['pattern']">Debe contener exactamente 16 dígitos.</span>
             </div>
@@ -149,7 +150,7 @@
               name="cvc" [(ngModel)]="user.cvc" aria-label="CVC de su tarjeta de crédito" placeholder="CVC (3 dígitos)"
               #cvc="ngModel" required pattern="^[0-9]{3}$">
 
-            <div *ngIf="cvc.invalid && cvc.touched" class="text-danger">
+            <div *ngIf="cvc.invalid && cvc.dirty" class="text-danger">
               <span *ngIf="cvc.errors?.['required']">El CVC es obligatorio</span>
               <span *ngIf="cvc.errors?.['pattern']">El CVC debe tener exactamente 3 dígitos</span>
             </div>
@@ -163,7 +164,7 @@
               pattern="^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$" #password="ngModel">
 
 
-            <div *ngIf="password.invalid && password.touched" class="text-danger">
+            <div *ngIf="password.invalid && password.dirty" class="text-danger">
               <span *ngIf="password.errors?.['required']">La contraseña es obligatoria.</span>
               <span *ngIf="password.errors?.['pattern']">
                 La contraseña debe tener al menos 8 caracteres, una letra mayúscula y un número.
