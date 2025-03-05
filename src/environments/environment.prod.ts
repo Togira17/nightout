@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
-    apiUrl: 'http://localhost:8055',
-    backendUrl: 'http://localhost/api/pedido.php',
+    apiUrl: 'https://apidirectus.duckdns.org',
+    backendUrl: 'https://mibackend.duckdns.org/api/pedido.php',
 };
