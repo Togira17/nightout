@@ -113,103 +113,96 @@ export class CarritoComponent implements OnInit {
       }
     );
   }
+// Función para generar la URL del código QR usando la API de QR Server
+private generarQrCodeUrl(nombre: string, id: string, tipo_entrada: string): string {
+  const qrData = encodeURIComponent(`Nombre: ${nombre}, ID: ${id}, Tipo: ${tipo_entrada}`);
+  return `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${qrData}`;
+}
 
-  // Función para generar la URL del código QR usando la API de Google
-  generarQrCodeUrl(id: string): string {
-    return `https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=${encodeURIComponent(id)}`;
-  }
+// Enviar el correo de confirmación con los códigos QR
+async enviarCorreoConfirmacion(usuario: any, carrito: any[]) {
+  const totalCompra = carrito.reduce((total, p) => total + (parseFloat(p.precio) * p.cantidad), 0).toFixed(2);
 
-  // Enviar el correo de confirmación con el código QR
-  async enviarCorreoConfirmacion(usuario: any, carrito: any[]) {
-    let resumenCompra = `
-      <table width="100%" cellpadding="10" cellspacing="0" border="1" style="border-collapse: collapse;">
-        <thead>
-          <tr style="background-color: #f3f3f3;">
-            <th>Producto</th>
-            <th>Tipo de Entrada</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-          </tr>
-        </thead>
-        <tbody>
-    `;
-
-    // Crear la URL del código QR para cada producto
-    let qrUrls: string[] = [];
-    carrito.forEach(producto => {
-      const qrUrl = this.generarQrCodeUrl(producto.id.toString()); // Generamos la URL del QR para cada producto
-      qrUrls.push(qrUrl);
-      resumenCompra += `
-        <tr>
-          <td>${producto.nombre}</td>
-          <td>${producto.tipo_entrada}</td>
-          <td>${producto.cantidad}</td>
-          <td>${producto.precio}€</td>
+  // Construcción de la tabla de resumen de compra
+  let resumenCompra = `
+    <table width="100%" cellpadding="10" cellspacing="0" border="1" style="border-collapse: collapse; text-align: left; width: 100%;">
+      <thead>
+        <tr style="background-color: #f3f3f3; text-align: center;">
+          <th>Producto</th>
+          <th>Tipo de Entrada</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
         </tr>
-      `;
-    });
+      </thead>
+      <tbody>
+  `;
 
+  let qrImages = "";
+
+  carrito.forEach(producto => {
     resumenCompra += `
-        </tbody>
-      </table>
+      <tr style="text-align: center;">
+        <td>${producto.nombre}</td>
+        <td>${producto.tipo_entrada}</td>
+        <td>${producto.cantidad}</td>
+        <td>${producto.precio}€</td>
+      </tr>
     `;
 
-    const emailParams = {
-      to_email: usuario.email,
-      subject: "Confirmación de tu compra en Nightoutsevilla",
-      message: `
-      <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto;">
-        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-          <tr>
-            <td align="center">
-              <h2 style="color: #5f3fc3; margin-bottom: 10px;">¡Gracias por tu compra, ${usuario.first_name}!</h2>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p>Hemos recibido tu pedido y aquí tienes un resumen de tu compra:</p>
-            </td>
-          </tr>
-          <tr>
-            <td>${resumenCompra}</td>
-          </tr>
-          <tr>
-            <td>
-              <p>Total: <strong>${carrito.reduce((total, p) => total + (parseFloat(p.precio) * p.cantidad), 0).toFixed(2)}€</strong></p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
-            </td>
-          </tr>
-          <tr>
-            <td align="center">
-              <p style="font-weight: bold;">Aquí está tu código QR para la entrada:</p>
-              <p align="center">
-                <img src="${qrUrls[0]}" alt="Código QR" width="150" height="150"/>
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td align="center">
-              <p style="font-size: 14px; color: black; margin: 0;">
-                Saludos,<br>
-                <strong>El equipo de Nightoutsevilla</strong>
-              </p>
-            </td>
-          </tr>
-        </table>
-      </div>
-      `
-    };
+    // Generar un QR por cada entrada con información y agradecimiento
+    for (let i = 0; i < producto.cantidad; i++) {
+      const qrUrl = this.generarQrCodeUrl(producto.nombre, producto.id.toString(), producto.tipo_entrada);
+      qrImages += `
+        <div style="display: flex; align-items: center; justify-content: space-between; padding: 15px; border: 1px solid #ddd; margin-bottom: 15px;">
+          <div style="flex: 1; padding-right: 20px;">
+            <h3 style="color: #5f3fc3;">${producto.nombre} - Entrada ${i + 1}</h3>
+            <p><strong>Tipo:</strong> ${producto.tipo_entrada}</p>
+            <p><strong>ID:</strong> ${producto.id}</p>
+            <p>¡Gracias por tu compra! Esperamos que disfrutes del evento.</p>
+          </div>
+          <div>
+            <img src="${qrUrl}" alt="Código QR" width="150" height="150" style="border: 1px solid #ddd; padding: 5px;"/>
+          </div>
+        </div>
+      `;
+    }
+  });
 
-    emailjs.send("contact_service", "contact_form", emailParams, this.publicKey)
-      .then(() => {
-        console.log("Correo de confirmación enviado con éxito a:", usuario.email);
-      })
-      .catch(error => {
-        console.error("Error al enviar el correo de confirmación:", error);
-      });
-  }
+  resumenCompra += `</tbody></table>`;
+
+  // Parámetros del correo
+  const emailParams = {
+    to_email: usuario.email,
+    subject: "Confirmación de tu compra en Nightoutsevilla",
+    message: `
+    <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto;">
+      <h2 style="color: #5f3fc3; text-align: center;">¡Gracias por tu compra, ${usuario.first_name}!</h2>
+      <p>Hemos recibido tu pedido y aquí tienes un resumen de tu compra:</p>
+      ${resumenCompra}
+      <p style="font-size: 18px;"><strong>Total: ${totalCompra}€</strong></p>
+      <hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">
+      <h3 style="text-align: center;">Tus códigos QR para cada entrada:</h3>
+      ${qrImages}
+      <p style="text-align: center; margin-top: 20px;">
+        <a href="https://docs.google.com/forms/d/1jCeEqDfjN5B4KkfSOpp4u0OJ7U-r7gLtYhU4NaiEbsg/edit" 
+           style="display: inline-block; padding: 10px 20px; background-color: #5f3fc3; color: #fff; text-decoration: none; border-radius: 5px;">
+          Rellena nuestro formulario de opinión
+        </a>
+      </p>
+      <p style="text-align: center; font-size: 14px; color: black;">
+        Saludos,<br>
+        <strong>El equipo de Nightoutsevilla</strong>
+      </p>
+    </div>
+    `
+  };
+
+  emailjs.send("contact_service", "contact_form", emailParams, this.publicKey)
+    .then(() => {
+      console.log("Correo de confirmación enviado con éxito a:", usuario.email);
+    })
+    .catch(error => {
+      console.error("Error al enviar el correo de confirmación:", error);
+    });
+}
 }
