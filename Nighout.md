@@ -12,10 +12,12 @@ paginate: true
 ## 1. Diseño
 
 ### Visión, Misión y Objetivos
-- **Visión:**  
-  Ser la plataforma de referencia en Sevilla para centralizar la información sobre ocio nocturno y facilitar el acceso a eventos y locales.
 - **Misión:**  
   Ofrecer una experiencia digital intuitiva y segura que permita a los usuarios descubrir, explorar y reservar salidas nocturnas.
+
+- **Visión:**  
+  Ser la plataforma de referencia en Sevilla para centralizar la información sobre ocio nocturno y facilitar el acceso a eventos y locales.
+
 - **Objetivos:**  
   - Centralizar información dispersa.  
   - Facilitar la compra y reserva de entradas.  
